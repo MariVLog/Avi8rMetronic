@@ -1,0 +1,372 @@
+﻿
+@{
+    ViewBag.Title = "Offline";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+
+<!--start: Subheader-->
+<div class="kt-subheader kt-grid__item" id="kt_subheader" style="margin-top:-15px!important;">
+    <div class="alert alert-light alert-elevate myAlrt" role="alert">
+        <div class="alert-icon myAlrtIc2"><i class="flaticon-warning kt-font-brand"></i></div>
+        <div class="alert-text">
+            Offline Requests
+        </div>
+    </div>
+</div>
+<!--end: Subheader-->
+
+
+<div class="row">
+    <div class="col-md-10 formSpcing">
+        <div class="kt-portlet__body">
+            <ul class="nav nav-pills nav-fill" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#kt_tabs_off_1"><i class="flaticon-time-1"></i>Pending</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kt_tabs_off_2"><i class="flaticon-share"></i>In Progress</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kt_tabs_off_3"><i class="flaticon-circle"></i>Closed</a>
+                </li>
+
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="kt_tabs_off_1" role="tabpanel">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Pending Requests
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Request Name</th>
+                                    <th>Travelers</th>
+                                    <th>Requestor</th>
+                                    <th>Reference</th>
+                                    <th>Create Date</th>
+                                    <th>Actions<i class="flaticon-refresh flicnRefs"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Get a flight</td>
+                                    <td>Vernon Bear</td>
+                                    <td>Mari v L</td>
+                                    <td>Jh1258</td>
+                                    <td>2019-05-21</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Get a hotel</td>
+                                    <td>Christo van Loggerenberg</td>
+                                    <td>Mari v L</td>
+                                    <td>PL7541</td>
+                                    <td>2019-05-20</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>get a car</td>
+                                    <td>Dawood Tagari</td>
+                                    <td>Mari v L</td>
+                                    <td>QA4412</td>
+                                    <td>2019-05-17</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--PAGINATION-->
+                    <div class="kt-portlet__body">
+                        <div class="tab-content">
+                            <!--begin: Section-->
+                            <div class="kt-section">
+                                <p class="kt-section__desc">Basic pagination example:</p>
+                                <p class="kt-section__content">
+                                    <!--begin: Pagination-->
+                                </p>
+                                <div class="kt-pagination  kt-pagination--brand">
+                                    <ul class="kt-pagination__links">
+                                        <li class="kt-pagination__link--first">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-double-left kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li class="kt-pagination__link--next">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-left kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">...</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">29</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">30</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">31</a>
+                                        </li>
+                                        <li class="kt-pagination__link--active">
+                                            <a href="#">32</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">33</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">34</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">...</a>
+                                        </li>
+                                        <li class="kt-pagination__link--prev">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-right kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li class="kt-pagination__link--last">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-double-right kt-font-brand pagIc"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--end: Pagination-->
+                                <p></p>
+                            </div>
+                            <!--end: Section-->
+                        </div>
+                    </div>
+                    <!--PAGINATION END-->
+                </div>
+                <div class="tab-pane" id="kt_tabs_off_2" role="tabpanel">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Requests in Progress
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Request Name</th>
+                                    <th>Travelers</th>
+                                    <th>Requestor</th>
+                                    <th>Agent</th>
+                                    <th>Reference</th>
+                                    <th>Status</th>
+                                    <th>Create Date</th>
+                                    <th>Actions<i class="flaticon-refresh flicnRefs"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Get a flight</td>
+                                    <td>Vernon Bear</td>
+                                    <td>Mari v L</td>
+                                    <td>TWF</td>
+                                    <td>Kn24153</td>
+                                    <td>Awaiting Approval</td>
+                                    <td>2019-05-21</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Get a hotel</td>
+                                    <td>Christo van Loggerenberg</td>
+                                    <td>Mari v L</td>
+                                    <td>TWF</td>
+                                    <td>fdsf551</td>
+                                    <td>Awaiting Feedback</td>
+                                    <td>2019-05-20</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>get a car</td>
+                                    <td>Dawood Tagari</td>
+                                    <td>Mari v L</td>
+                                    <td>TWF</td>
+                                    <td>sr5741</td>
+                                    <td>Awaiting Feedback</td>
+                                    <td>2019-05-17</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--PAGINATION-->
+                    <div class="kt-portlet__body">
+                        <div class="tab-content">
+                            <!--begin: Section-->
+                            <div class="kt-section">
+                                <p class="kt-section__desc">Basic pagination example:</p>
+                                <p class="kt-section__content">
+                                    <!--begin: Pagination-->
+                                </p>
+                                <div class="kt-pagination  kt-pagination--brand">
+                                    <ul class="kt-pagination__links">
+                                        <li class="kt-pagination__link--first">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-double-left kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li class="kt-pagination__link--next">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-left kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">...</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">29</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">30</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">31</a>
+                                        </li>
+                                        <li class="kt-pagination__link--active">
+                                            <a href="#">32</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">33</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">34</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">...</a>
+                                        </li>
+                                        <li class="kt-pagination__link--prev">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-right kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li class="kt-pagination__link--last">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-double-right kt-font-brand pagIc"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--end: Pagination-->
+                                <p></p>
+                            </div>
+                            <!--end: Section-->
+                        </div>
+                    </div>
+                    <!--PAGINATION END-->
+                </div>
+                <div class="tab-pane" id="kt_tabs_off_3" role="tabpanel">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Closed Requests
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Request Name</th>
+                                    <th>Travelers</th>
+                                    <th>Requestor</th>
+                                    <th>Agent</th>
+                                    <th>Reference</th>
+                                    <th>Status</th>
+                                    <th>Create Date</th>
+                                    <th>Actions<i class="flaticon-refresh flicnRefs"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Get a flight</td>
+                                    <td>Vernon Bear</td>
+                                    <td>Mari v L</td>
+                                    <td>TWF</td>
+                                    <td>gfg1258l</td>
+                                    <td>Awaiting Feedback</td>
+                                    <td>2019-05-21</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Get a hotel</td>
+                                    <td>Christo van Loggerenberg</td>
+                                    <td>Mari v L</td>
+                                    <td>TWF</td>
+                                    <td>ikh45632</td>
+                                    <td>Awaiting Feedback</td>
+                                    <td>2019-05-20</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Get a car</td>
+                                    <td>Dawood Tagari</td>
+                                    <td>Mari v L</td>
+                                    <td>TWF</td>
+                                    <td>qw456</td>
+                                    <td>Awaiting Feedback</td>
+                                    <td>2019-05-17</td>
+                                    <td><i class="flaticon-interface-2 spcbub"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--PAGINATION-->
+                    <div class="kt-portlet__body">
+                        <div class="tab-content">
+                            <!--begin: Section-->
+                            <div class="kt-section">
+                                <p class="kt-section__desc">Basic pagination example:</p>
+                                <p class="kt-section__content">
+                                    <!--begin: Pagination-->
+                                </p>
+                                <div class="kt-pagination  kt-pagination--brand">
+                                    <ul class="kt-pagination__links">
+                                        <li class="kt-pagination__link--first">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-double-left kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li class="kt-pagination__link--next">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-left kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">...</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">29</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">30</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">31</a>
+                                        </li>
+                                        <li class="kt-pagination__link--active">
+                                            <a href="#">32</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">33</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">34</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">...</a>
+                                        </li>
+                                        <li class="kt-pagination__link--prev">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-right kt-font-brand pagIc"></i></a>
+                                        </li>
+                                        <li class="kt-pagination__link--last">
+                                            <a href="#" class="pagSt"><i class="fa fa-angle-double-right kt-font-brand pagIc"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--end: Pagination-->
+                                <p></p>
+                            </div>
+                            <!--end: Section-->
+                        </div>
+                    </div>
+                    <!--PAGINATION END-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

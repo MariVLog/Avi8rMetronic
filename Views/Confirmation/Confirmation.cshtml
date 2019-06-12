@@ -1,0 +1,368 @@
+﻿
+@{
+    ViewBag.Title = "Confirmation";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+
+<div class="kt-portlet kt-portlet--responsive-tablet-and-mobile" style="margin-top:-80px;">
+    <div class="kt-portlet__head" style="background-color:orange;">
+        <div class="kt-portlet__head-label">
+            <h3 class="kt-portlet__head-title" style="color:white!important;font-size:20px!important;margin-bottom:0px!important;">
+                YOUR RESERVATION IS CONFIRMED
+            </h3>
+        </div>
+        <div class="kt-portlet__head-toolbar">
+            <div class="btn-group btn-group btn-group-pill" role="group" aria-label="...">
+                <button type="button" class="btn btn-brand" style="background-color:#1e1e2d!important;margin-right:5px;border-color:#1e1e2d">Email to me</button>
+                <button type="button" class="btn btn-brand" style="background-color:#1e1e2d!important;margin-right:5px;border-color:#1e1e2d">Ancillaries</button>
+                <button type="button" class="btn btn-brand" style="background-color:#1e1e2d!important;border-color:#1e1e2d">Passenger Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="kt-portlet__body">
+        <div class="ociTxt">
+            Thank you for your reservation.  We will proceed with processing the final fulfillment subject to the applicable authorisation and communicate the outcome thereof
+            via email.  You will receive proof of the approved booking via an email confirmation with voucher(s) and/or airline ticket(s) affirming the booking with the travel provider(s).
+            Passengers will receive their travel itinerary via email confirming their trip.
+        </div>
+        <div class="TripDet">
+            Trip Details - TravX Ref No: <span class="travX">KN0548P</span>
+        </div>
+        <table class="table-responsive" style="width:50%;">
+            <colgroup>
+                <col style="width:50%;float:right;" />
+                <col style="width:50%;float:left;" />
+            </colgroup>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">Requestor Name:</td>
+                <td class="OpskInfo" valign="middle">Mari van Loggerenberg</td>
+            </tr>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">Date Created:</td>
+                <td class="OpskInfo" valign="middle">03 June 2019</td>
+            </tr>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">Trip Name:</td>
+                <td class="OpskInfo" valign="middle">Aquisition Trip</td>
+            </tr>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">Start Date:</td>
+                <td class="OpskInfo" valign="middle">15 June 2019</td>
+            </tr>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">End Date:</td>
+                <td class="OpskInfo" valign="middle">20 June 2019</td>
+            </tr>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">Primary Pax:</td>
+                <td class="OpskInfo" valign="middle">Vernon Bear</td>
+            </tr>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">Total Pax:</td>
+                <td class="OpskInfo" valign="middle">1</td>
+            </tr>
+            <tr>
+                <td class="Opsk" align="right" valign="middle">Total Est. Cost:</td>
+                <td class="OpskInfo" valign="middle">R 4820</td>
+            </tr>
+        </table>
+        <div class="row">
+            <div class="tritm">
+                Trip Items
+            </div>
+        </div>
+        <!---->
+        <table class="table table-bordered responsive-table" style="width:100%!important;margin-left:-10px!important;">
+            <colgroup>
+                <col class="Cl2" />
+                <col class="Cl4" />
+                <col class="Cl4" />
+                <col class="Cl4" />
+            </colgroup>
+            <tr>
+                <td rowspan="2"><img src="~/Content/Images/NU.png" /></td>
+                <td class="Opsk1">British Airways</td>
+                <td class="Opsk1"><i class="fa fa-plane icn" aria-hidden="true"></i>09:15 - 15 June 2019</td>
+                <td class="Opsk1"><i class="fa fa-plane icnR fa-rotate-90" aria-hidden="true"></i>10:30 - 15 June 2019</td>
+            </tr>
+            <tr>
+                <td class="OpskInfo1">0 Stop(s)</td>
+                <td class="OpskInfo1">Johannesburg, JNB</td>
+                <td class="OpskInfo1">Durban, DBN</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="cCode">BA 2406</td>
+                <td class="OpskInfo1">Comair</td>
+                <td class="OpskInfo1">Johannesburg</td>
+                <td class="OpskInfo1">Durban</td>
+            </tr>
+            <tr>
+                <td class="OpskInfo1">Boeing 474</td>
+                <td class="OpskInfo1"></td>
+                <td class="OpskInfo1"></td>
+            </tr>
+        </table>
+        <br />
+        <table class="table table-borderless responsive-table" style="width:100%!important;margin-left:-10px!important;border-top-color:transparent!important;">
+            <colgroup>
+                <col style="width:50%;" />
+                <col style="width:50%;" />
+            </colgroup>
+            <tr>
+                <td>
+                    <table class="table responsive-table table-bordered" style="width:100%;">
+                        <colgroup>
+                            <col class="Cl5" />
+                            <col class="Cl5" />
+                            <col class="Cl5" />
+                        </colgroup>
+                        <tr>
+                            <td class="Opsk1">Traveller(s)</td>
+                            <td class="Opsk1">Confirmation Nr</td>
+                            <td class="Opsk1">PNR</td>
+                        </tr>
+                        <tr>
+                            <td class="OpskInfo1">Bear, Vernon</td>
+                            <td class="OpskInfo1">QT245</td>
+                            <td class="OpskInfo1">THG1447LK</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="table responsive-table table-bordered" style="width:100%;">
+                        <colgroup>
+                            <col style="width:30%" />
+                            <col style="width:70%" />
+                        </colgroup>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Baggage:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">10kg</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Duration:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">1H15M</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Booking Class:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Ec</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Cabin Class:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Economy</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Pax:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">1</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Total:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">R 3800</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Missed Savings:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">R 260</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">In Policy:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">YES</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Status:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Confirmed</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!---->
+        <table class="table table-bordered responsive-table" style="width:100%!important;margin-left:-10px!important;">
+            <colgroup>
+                <col class="Cl2" />
+                <col class="Cl4" />
+                <col class="Cl4" />
+                <col class="Cl4" />
+            </colgroup>
+            <tr>
+                <td rowspan="2"><img src="~/Content/Images/Cars/ZE.png" /></td>
+                <td class="Opsk1">Vendor</td>
+                <td class="Opsk1"><i class="fa fa-plane icn" aria-hidden="true"></i>Pick-up</td>
+                <td class="Opsk1"><i class="fa fa-plane icnR fa-rotate-90" aria-hidden="true"></i>Drop-off</td>
+            </tr>
+            <tr>
+                <td class="OpskInfo1">Hertz Car Rental</td>
+                <td class="OpskInfo1">10:30, 15 June 2019</td>
+                <td class="OpskInfo1">11:00, 20 June 2019</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="cCode">ZE</td>
+                <td class="Opsk1">Car Group</td>
+                <td class="OpskInfo1">King Shaka Intl</td>
+                <td class="OpskInfo1">King Shaka Intl</td>
+            </tr>
+            <tr>
+                <td class="OpskInfo1">Something</td>
+                <td class="OpskInfo1"></td>
+                <td class="OpskInfo1"></td>
+            </tr>
+        </table>
+        <br />
+        <table class="table table-borderless responsive-table" style="width:100%!important;margin-left:-10px!important;border-top-color:transparent!important;">
+            <colgroup>
+                <col style="width:50%;" />
+                <col style="width:50%;" />
+            </colgroup>
+            <tr>
+                <td>
+                    <table class="table responsive-table table-bordered" style="width:100%;">
+                        <colgroup>
+                            <col class="Cl5" />
+                            <col class="Cl5" />
+                            <col class="Cl5" />
+                        </colgroup>
+                        <tr>
+                            <td class="Opsk1">Driver(s)</td>
+                            <td class="Opsk1">Confirmation Nr</td>
+                            <td class="Opsk1">PNR</td>
+                        </tr>
+                        <tr>
+                            <td class="OpskInfo1">Bear, Vernon</td>
+                            <td class="OpskInfo1">QT245</td>
+                            <td class="OpskInfo1">THG1447LK</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="table responsive-table table-bordered" style="width:100%;">
+                        <colgroup>
+                            <col style="width:30%" />
+                            <col style="width:70%" />
+                        </colgroup>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Vehicle Class:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Economy</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Vehicle Type:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Chevrolet</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Pax:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">1</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Total:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">R 420</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Missed Savings:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">R 0</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">In Policy:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">YES</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Status:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Confirmed</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!---->
+        <table class="table table-bordered responsive-table" style="width:100%!important;margin-left:-10px!important;">
+            <colgroup>
+                <col class="Cl2" />
+                <col class="Cl4" />
+                <col class="Cl4" />
+                <col class="Cl4" />
+            </colgroup>
+            <tr>
+                <td rowspan="2"><img src="~/Content/Images/hotel.png" style="width:200px!important;" /></td>
+                <td class="Opsk1">Hotel Name</td>
+                <td class="Opsk1"><i class="fa fa-plane icn" aria-hidden="true"></i>Check-In</td>
+                <td class="Opsk1"><i class="fa fa-plane icnR fa-rotate-90" aria-hidden="true"></i>Check-Out</td>
+            </tr>
+            <tr>
+                <td class="OpskInfo1">Marriott Hotel</td>
+                <td class="OpskInfo1">15 June 2019</td>
+                <td class="OpskInfo1">20 June 2019</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="cCode">MA</td>
+                <td class="Opsk1">Hotel Chain</td>
+                <td class="Opsk1">Number Of Nights</td>
+                <td class="Opsk1">Location</td>
+            </tr>
+            <tr>
+                <td class="OpskInfo1">Protea Hotels</td>
+                <td class="OpskInfo1">5</td>
+                <td class="OpskInfo1">5 Barberry Street, Durban</td>
+            </tr>
+        </table>
+        <br />
+        <table class="table table-borderless responsive-table" style="width:100%!important;margin-left:-10px!important;border-top-color:transparent!important;">
+            <colgroup>
+                <col style="width:50%;" />
+                <col style="width:50%;" />
+            </colgroup>
+            <tr>
+                <td>
+                    <table class="table responsive-table table-bordered" style="width:100%;">
+                        <colgroup>
+                            <col class="Cl5" />
+                            <col class="Cl5" />
+                            <col class="Cl5" />
+                        </colgroup>
+                        <tr>
+                            <td class="Opsk1">Traveller(s)</td>
+                            <td class="Opsk1">Confirmation Nr</td>
+                            <td class="Opsk1">PNR</td>
+                        </tr>
+                        <tr>
+                            <td class="OpskInfo1">Bear, Vernon</td>
+                            <td class="OpskInfo1">QT245</td>
+                            <td class="OpskInfo1">THG1447LK</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="table responsive-table table-bordered" style="width:100%;">
+                        <colgroup>
+                            <col style="width:30%" />
+                            <col style="width:70%" />
+                        </colgroup>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Pax:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">1</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Total:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">R 8430</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Missed Savings:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">R 600</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">In Policy:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="Opsk1" align="left" valign="middle">Status:</td>
+                            <td class="OpskInfo1" align="left" valign="middle">Confirmed</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!---->
+    </div>
+</div>
+
+
+
+
+
+

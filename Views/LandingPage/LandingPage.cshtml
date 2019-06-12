@@ -1,0 +1,346 @@
+﻿
+@{
+    ViewBag.Title = "LandingPage";
+    Layout = "~/Views/LandingPage/SiteLayout.cshtml";
+}
+
+
+
+    <div style="margin-top:-50px!important;">
+        <div class="row">
+            <div class="col-xl-6">
+                <!--begin:: Widgets/Quick Stats-->
+                <div class="row row-full-height">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="kt-portlet kt-portlet--height-fluid-half kt-portlet--border-bottom-brand dash1">
+                            <div class="kt-portlet__body kt-portlet__body--fluid">
+                                <div class="kt-widget26">
+                                    <div class="kt-widget26__content" >
+                                        <span class="kt-widget26__number">4</span>
+                                        <span class="kt-widget26__desc" style="color:white;">Trips in Progress</span>
+                                    </div>
+                                    <div class="kt-widget26__chart" style="height:100px; width: 230px;">
+                                        <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="kt_chart_quick_stats_1" width="230" height="115" class="chartjs-render-monitor" style="display: block; width: 230px; height: 115px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-space-20"></div>
+                        <div class="kt-portlet kt-portlet--height-fluid-half kt-portlet--border-bottom-danger dash2">
+                            <div class="kt-portlet__body kt-portlet__body--fluid">
+                                <div class="kt-widget26">
+                                    <div class="kt-widget26__content">
+                                        <span class="kt-widget26__number">21</span>
+                                        <span class="kt-widget26__desc" style="color:white;">Future Travel</span>
+                                    </div>
+                                    <div class="kt-widget26__chart" style="height:100px; width: 230px;">
+                                        <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="kt_chart_quick_stats_2" width="230" height="115" class="chartjs-render-monitor" style="display: block; width: 230px; height: 115px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="kt-portlet kt-portlet--height-fluid-half kt-portlet--border-bottom-success dash2">
+                            <div class="kt-portlet__body kt-portlet__body--fluid">
+                                <div class="kt-widget26">
+                                    <div class="kt-widget26__content">
+                                        <span class="kt-widget26__number">11</span>
+                                        <span class="kt-widget26__desc" style="color:white;">Bookings awaiting Approval</span>
+                                    </div>
+                                    <div class="kt-widget26__chart" style="height:100px; width: 230px;">
+                                        <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="kt_chart_quick_stats_3" width="230" height="115" class="chartjs-render-monitor" style="display: block; width: 230px; height: 115px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-space-20"></div>
+                        <div class="kt-portlet kt-portlet--height-fluid-half kt-portlet--border-bottom-warning dash1">
+                            <div class="kt-portlet__body kt-portlet__body--fluid">
+                                <div class="kt-widget26">
+                                    <div class="kt-widget26__content">
+                                        <span class="kt-widget26__number">3</span>
+                                        <span class="kt-widget26__desc" style="color:white;">Bookings Rejected</span>
+                                    </div>
+                                    <div class="kt-widget26__chart" style="height:100px; width: 230px;">
+                                        <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="kt_chart_quick_stats_4" width="230" height="115" class="chartjs-render-monitor" style="display: block; width: 230px; height: 115px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end:: Widgets/Quick Stats-->
+            </div>
+            <div class="col-xl-6">
+                    <!--begin:: Widgets/New Users-->
+                    <div class="kt-portlet kt-portlet--tabs kt-portlet--height-fluid">
+                        <div class="kt-portlet__head">
+                                <h3 class="kt-portlet__head-title" style="margin-top:15px;margin-bottom:unset!important;">
+                                    Bookings by Traveller
+                                </h3>
+                        </div>
+                        <div class="kt-portlet__body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="kt_widget4_tab1_content">
+                                    <div class="kt-widget4">
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_4.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Anna Strong
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Visual Designer,Google Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-brand btn-bold">VIP</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_14.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Milano Esco
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Product Designer, Apple Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-warning btn-bold">Follow</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_11.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Nick Bold
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Web Developer, Facebook Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-danger btn-bold">Follow</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_1.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Wiltor Delton
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Project Manager, Amazon Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-success btn-bold">Follow</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_5.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Nick Stone
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Visual Designer, Github Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-primary btn-bold">Follow</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="kt_widget4_tab2_content">
+                                    <div class="kt-widget4">
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_2.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Kristika Bold
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Product Designer,Apple Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-success">Follow</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_13.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Ron Silk
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Release Manager, Loop Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-brand">Follow</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_9.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Nick Bold
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Web Developer, Facebook Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-danger">Follow</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_2.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Wiltor Delton
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Project Manager, Amazon Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-success">Follow</a>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="./assets/media/users/100_8.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username">
+                                                    Nick Bold
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Web Developer, Facebook Inc
+                                                </p>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-label-info">Follow</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+
+                    <!--end:: Widgets/New Users-->
+                </div>
+                <!--end:: Widgets/Order Statistics-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4">
+                <!--begin:: Widgets/Daily Sales-->
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-widget14">
+                        <div class="kt-widget14__header kt-margin-b-30">
+                            <h3 class="kt-widget14__title">
+                                Daily Sales
+                            </h3>
+                            <span class="kt-widget14__desc">
+                                Check out each collumn for more details
+                            </span>
+                        </div>
+                        <div class="kt-widget14__chart" style="height:120px;">
+                            <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <canvas id="kt_chart_daily_sales" style="display: block; width: 466px; height: 120px;" width="466" height="120" class="chartjs-render-monitor"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--end:: Widgets/Daily Sales-->
+            </div>
+            <div class="col-xl-4">
+                <!--begin:: Widgets/Profit Share-->
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-widget14">
+                        <div class="kt-widget14__header">
+                            <h3 class="kt-widget14__title">
+                                Bookings by Category
+                            </h3>
+                            <span class="kt-widget14__desc">
+                                Amount of bookings in each Category
+                            </span>
+                        </div>
+                        <div class="kt-widget14__content">
+                            <div class="kt-widget14__chart">
+                                <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                <div class="kt-widget14__stat">45</div>
+                                <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px; display: block;" width="140" height="140" class="chartjs-render-monitor"></canvas>
+                            </div>
+                            <div class="kt-widget14__legends">
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-success"></span>
+                                    <span class="kt-widget14__stats">37% Flights</span>
+                                </div>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                    <span class="kt-widget14__stats">47% Hotel</span>
+                                </div>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                    <span class="kt-widget14__stats">19% Car</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end:: Widgets/Profit Share-->
+            </div>
+            <div class="col-xl-4">
+                <!--begin:: Widgets/Profit Share-->
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-widget14">
+                        <div class="kt-widget14__header">
+                            <h3 class="kt-widget14__title">
+                                Profit Share
+                            </h3>
+                            <span class="kt-widget14__desc">
+                                Profit Share between customers
+                            </span>
+                        </div>
+                        <div class="kt-widget14__content">
+                            <div class="kt-widget14__chart">
+                                <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                <div class="kt-widget14__stat">45</div>
+                                <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px; display: block;" width="140" height="140" class="chartjs-render-monitor"></canvas>
+                            </div>
+                            <div class="kt-widget14__legends">
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-success"></span>
+                                    <span class="kt-widget14__stats">37% Sport Tickets</span>
+                                </div>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                    <span class="kt-widget14__stats">47% Business Events</span>
+                                </div>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                    <span class="kt-widget14__stats">19% Others</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end:: Widgets/Profit Share-->
+            </div>
+        </div>
+    </div>
+
+
+
+

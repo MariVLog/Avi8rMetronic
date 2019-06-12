@@ -1,0 +1,492 @@
+﻿
+@{
+    ViewBag.Title = "BookingInfo";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+<div class="kt-portlet__body" style="margin-top:-70px;">
+    <ul class="nav nav-pills nav-fill myclr" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#kt_tabs_5_1"><i class="la la-briefcase"></i>Booking Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_2"><i class="la la-paperclip"></i>Trip Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_3"><i class="la la-comments"></i>Post Approval Attachments</a>
+        </li>
+
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="kt_tabs_5_1" role="tabpanel">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <table border="0" style="width:100%;margin-bottom:15px!important;">
+                        <colgroup>
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                        </colgroup>
+                        <tr>
+                            <td class="TrStyle hdrTxt">Main Order</td>
+                            <td class="TrStyle"><div style="float:left;">fgdg</div></td>
+                            <td class="TrStyle"><a href="@Url.Action("ClnBook","CloneBooking")"><div style="font-weight:500;color:orangered;cursor:pointer;"><i class="fa fa-clone" aria-hidden="true"></i> Clone</div></a></td>
+                            <td class="TrStyle hdrTxt">Booker</td>
+                            <td class="TrStyle">Mari v Loggerenberg</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt">Travel Date</td>
+                            <td colspan="2" class="TrStyle">30/05/2019</td>
+                            <td class="TrStyle hdrTxt">  Missed Savings</td>
+                            <td class="TrStyle">ZAR 200</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt"> Booker Num.</td>
+                            <td colspan="2" class="TrStyle">0828577391</td>
+                            <td class="TrStyle hdrTxt">Total</td>
+                            <td class="TrStyle">ZAR <span>4000</span></td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt">Trip Name</td>
+                            <td colspan="4" class="TrStyle">My Trip</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt">Cost Center</td>
+                            <td colspan="4" class="TrStyle">H900</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt">Travel Reason</td>
+                            <td class="TrStyle">I was bored</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt"> Policy Breach</td>
+                            <td colspan="4" class="TrStyle">gfdgfdhh</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt">Missed Savings</td>
+                            <td colspan="4" class="TrStyle">gfgfdhh</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle hdrTxt">Notes to Approver</td>
+                            <td colspan="4" class="TrStyle">fdgfhh</td>
+                        </tr>
+                    </table>
+
+                    <table border="0" style="width:60%;margin-bottom:15px!important;">
+                        <colgroup>
+                            <col style="width:33%;" />
+                            <col style="width:33%;" />
+                            <col style="width:34%;" />
+                        </colgroup>
+                        <tr>
+                            <td colspan="3" style="background:white;padding:5px 0px 5px 5px;font-weight:500;" align="center">Orders</td>
+                        </tr>
+                        <tr>
+                            <td class="hdrTxt TrStyle"> Sequence</td>
+                            <td class="hdrTxt TrStyle"> PNR</td>
+                            <td class="hdrTxt TrStyle">Main traveler on order</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle">gfh</td>
+                            <td class="TrStyle">gfdh</td>
+                            <td class="TrStyle">Tagari</td>
+                        </tr>
+                        <tr>
+                            <td class="TrStyle">fhth</td>
+                            <td class="TrStyle" style="cursor:pointer;color:royalblue;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> View</td>
+                            <td class="TrStyle"></td>
+                        </tr>
+                    </table>
+
+                    <table border="0" style="width:60%;margin-bottom:15px!important;">
+                        <colgroup>
+                            <col style="width:100%;" />
+                        </colgroup>
+                        <tr>
+                            <td style="background:white;padding:5px 0px 5px 5px;font-weight:500;" valign="middle" align="center">
+                                Comments by booker
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td valign="middle">
+                                No comments
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+
+                    <table border="0" style="width:60%;margin-bottom:15px!important;">
+                        <colgroup>
+                            <col style="width:80%;" />
+                            <col style="width:20%;" />
+                        </colgroup>
+                        <tr>
+                            <td colspan="2" style="background:white;padding:5px 0px 5px 5px;font-size:13px;font-weight:500;" valign="middle" align="center">
+                                Booking Attachments
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:white;padding:5px 5px 5px 5px;font-size:12px;" valign="middle" align="left">
+                                <div style="font-weight: 500;">hfgjhd</div>
+                                <div style="padding-left: 5px; font-size: 11px;">bfghj</div>
+                            </td>
+                            <td style="background:white;padding:5px 5px 5px 5px;font-size:12px;" align="right" valign="middle">
+                                <i class="fa fa-download PrimaryColor1" aria-hidden="true" style="cursor:pointer;font-size:16px;color:brown;"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px;border-bottom:1px solid lightgrey;padding-bottom:10px;padding-top:10px;border-top:1px solid lightgrey;margin-bottom:20px;">
+                <div class="col-xs-12">
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:100%" valign="middle">
+                                <div style="font-weight:500;">Trip Items</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="kt-portlet">
+                <div class="kt-portlet__body">
+                    <div class="kt-widget kt-widget--user-profile-3">
+                        <div class="kt-widget__top">
+                            <div class="kt-widget__media kt-hidden-">
+                                <img src="~/Content/Images/NU.png" alt="image">
+                            </div>
+                            <div class="kt-widget__content">
+                                <div class="kt-widget__head">
+                                    <a href="#" class="kt-widget__username" style="font-size:14px;">
+                                        Comair Ltd
+                                        @*<i class="flaticon2-correct kt-font-success"></i>*@
+                                    </a>
+                                </div>
+                                <div class="kt-widget__subhead">
+                                    <a href="#"><i class="flaticon2-list-1"></i>MN603</a>
+                                    <a href="#"><i class="flaticon-stopwatch"></i>Stops </a>
+                                </div>
+                                <div class="kt-widget__info">
+                                    <div class="kt-widget__desc">
+                                        <div class="flight-line">
+                                            <div class="flight-line-a" style="margin-left:0px!important;">
+                                                <b class="fnt"><i class="la la-plane"></i>17:15 - 01 JUL</b>
+                                                <span class="fnt" style="padding-left:0px!important;">OR Tambo Intl Arpt</span><br />
+                                                <span class="fnt" style="padding-left:0px!important;">Johannesburg</span>
+                                            </div>
+                                            <div class="flight-line-d spcarw"><i class="flaticon2-right-arrow"></i></div>
+                                            <div class="flight-line-a" style="padding-left:0px!important;">
+                                                <span class="myspn" style="padding-left:0px!important;"><i class="la la-clock-o"></i>1H 5M</span>
+                                            </div>
+                                            <div class="flight-line-d spcarw"><i class="flaticon2-right-arrow"></i></div>
+                                            <div class="flight-line-a">
+                                                <b class="fnt"><i class="la la-plane"></i>18:20 - 01 JUL</b>
+                                                <span class="fnt" style="padding-left:0px!important;">King Shaka Intl Arpt</span><br />
+                                                <span class="fnt" style="padding-left:0px!important;">Durban</span>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget__progress">
+                                        <panel style="background-color:gainsboro;height:80px;width:450px;">
+                                            <span style="margin-left:180px;"><i class="flaticon2-correct kt-font-success"></i> In Policy</span>
+
+                                        </panel>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-widget__bottom">
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-user"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title fnt">Traveler</span>
+                                    <span class="kt-widget__value fnt">Vernon Bear</span>
+                                </div>
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-security"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title fnt">Action</span>
+                                    <span class="kt-widget__value fnt">Awaiting Booking</span>
+                                </div>
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon2-delivery-truck"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title fnt">Status</span>
+                                    <span class="kt-widget__value fnt"><i class="la la-warning" style="color:orangered;"></i>Unconfirmed</span>
+                                </div>
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__details">
+                                    <a href="#" class="cat-list-btn" style="background-color:darkred!important;">Remove</a>
+                                </div>
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-medal"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__value fnt">Cheaper flight available for</span><span class="fnt" style="color:mediumseagreen;font-weight:500;">ZAR 855.47</span><span>""</span><span class="fnt" style="color:red;font-weight:500;">(82.04 Cheaper)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-portlet">
+                <div class="kt-portlet__body">
+                    <div class="kt-widget kt-widget--user-profile-3">
+                        <div class="kt-widget__top">
+                            <div class="kt-widget__media kt-hidden-">
+                                <img src="~/Content/Images/Cars/BV_EBMR.jpg" alt="image">
+                            </div>
+                            <div class="kt-widget__content">
+                                <div class="kt-widget__head">
+                                    <a href="#" class="kt-widget__username fnt">
+                                        Economy 4-5 Door
+                                    </a>
+                                </div>
+                                <div class="kt-widget__subhead">
+                                    <a href="#"><i class="flaticon2-paper"></i>(ZI)</a>
+                                    <a href="#"><i class="flaticon2-delivery-truck"></i>Avis Rent A Car System, Inc</a>
+                                    <a href="#"><i class="flaticon-computer"></i>EDMR, Group B</a>
+                                </div>
+                                <div class="kt-widget__info">
+                                    <div class="kt-widget__desc">
+                                        <div class="flight-line">
+                                            <div class="flight-line-a" style="margin-left:0px!important;">
+                                                <b class="fnt"><i class="la la-arrow-up"></i>18:20 - 01 JUL</b>
+                                                <span class="fnt" style="padding-left:0px!important;">OR Tambo Intl Arpt</span><br />
+                                                <span class="fnt" style="padding-left:0px!important;">Johannesburg</span>
+                                            </div>
+                                            <div class="flight-line-d spcarw"><i class="flaticon2-right-arrow"></i></div>
+                                            <div class="flight-line-a" style="padding-left:0px!important;">
+                                                <span class="myspn" style="padding-left:0px!important;"><i class="la la-sun-o"></i>2 Day(s)</span>
+                                            </div>
+                                            <div class="flight-line-d spcarw"><i class="flaticon2-right-arrow"></i></div>
+                                            <div class="flight-line-a">
+                                                <b class="fnt"><i class="la la-arrow-down"></i>05:15 - 03 JUL</b>
+                                                <span class="fnt" style="padding-left:0px!important;">King Shaka Intl Arpt</span><br />
+                                                <span class="fnt" style="padding-left:0px!important;">Durban</span>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget__progress">
+                                        <panel style="background-color:gainsboro;height:80px;width:450px;">
+                                            <span style="margin-left:180px;"><i class="flaticon2-correct kt-font-success"></i> In Policy</span><br />
+                                            <span style="margin-left:180px;"><i class="la la-user-secret kt-font-success" style="color:darkred!important;"></i> Corporate Deal</span>
+                                        </panel>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-widget__bottom">
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-user"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title fnt">Traveler</span>
+                                    <span class="kt-widget__value fnt">Vernon Bear</span>
+                                </div>
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon-security"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title fnt">Action</span>
+                                    <span class="kt-widget__value fnt">Awaiting Booking</span>
+                                </div>
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__icon">
+                                    <i class="flaticon2-delivery-truck"></i>
+                                </div>
+                                <div class="kt-widget__details">
+                                    <span class="kt-widget__title fnt">Status</span>
+                                    <span class="kt-widget__value fnt"><i class="la la-warning" style="color:orangered;"></i>Unconfirmed</span>
+                                </div>
+                            </div>
+                            <div class="kt-widget__item">
+                                <div class="kt-widget__details">
+                                    <a href="#" class="cat-list-btn" style="background-color:darkred!important;">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="kt_tabs_5_2" role="tabpanel">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 booking_info_main">
+                    <table border="0" class="b_i_table">
+                        <colgroup>
+                            <col style="width:80%;" />
+                            <col style="width:20%;" />
+                        </colgroup>
+                        <tr>
+                            <td colspan="2" style="background:white;padding:5px 0px 5px 5px;font-size:13px;font-weight:500;" valign="middle" align="center">
+                                Booking Attachments
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="background:white;padding:5px 5px 5px 5px;font-size:12px;" valign="middle" align="left">
+                                <div style="font-weight: 500;">gfj</div>
+                            </td>
+                            <td style="background:white;padding:5px 5px 5px 5px;font-size:12px;" align="right" valign="middle">
+                                <i class="fa fa-download" aria-hidden="true" style="cursor:pointer;font-size:16px;color:brown;"></i>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="kt_tabs_5_3" role="tabpanel">
+            <div>
+
+                <div class="row" style="padding:20px;">
+                    <div class="col-md-12">
+                        <div style="border-width: 1px 1px medium; border-style: solid solid none; border-color: lightgrey lightgrey currentColor; padding: 10px; border-image: none; width: 100%; text-align: center;">
+
+                            No Post Approval Attachments
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="grd">
+                            <table id="paprgrdtble">
+                                <thead>
+                                    <tr>
+                                        <th class="mw150 tath">Create Date</th>
+                                        <th class="mw150 tath">Status</th>
+                                        <th class="mw150 tath">User Whom Actioned</th>
+                                        <th class="mw150 tath">Process Name</th>
+                                        <th class="mw150 tath">Process Description</th>
+                                        <th class="mw150 tath">Documents Attached</th>
+                                        <th class="mw150 tath">Documents Total Size</th>
+                                        <th class="mw150 tath">Documents</th>
+                                        <th class="mw150 tath" style="width:50px!important;">
+                                            Ghost
+                                        </th>
+                                        <th class="mw150 tath" style="position:absolute;right:0;z-index:10;background:white;width:130px!important;background:#f9f9f9;border-right:1px solid lightgrey">
+                                            <div class="pull-left">
+                                                Actions
+                                            </div>
+                                            <div class="pull-right">
+                                                <i class="fa fa-refresh" aria-hidden="true" style="color:green;cursor:pointer;"></i>
+                                            </div>
+                                            <div class="pull-right">
+                                                <i class="fa fa-plus-square" aria-hidden="true" style="color:brown;cursor:pointer;margin-right:10px;"></i>
+                                            </div>
+                                            <div class="clear-float">
+
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tatd">
+                                            <div class="sup_col">30/05/2019</div>
+                                        </td>
+                                        <td class="tatd">
+                                            <div class="sup_col">Completed</div>
+                                        </td>
+                                        <td class="tatd">
+                                            <div class="sup_col">ngxfngf</div>
+                                        </td>
+                                        <td class="tatd">
+                                            <div class="sup_col">ghfgjh</div>
+                                        </td>
+                                        <td class="tatd">
+                                            <div class="sup_col">hjhg</div>
+                                        </td>
+                                        <td class="tatd">
+                                            <div class="sup_col">jhgjkk</div>
+                                        </td>
+                                        <td class="tatd">
+                                            <div class="sup_col">jhhj</div>
+                                        </td>
+                                        <td class="tatd needScroll">
+
+                                            <table border="0" style="border:none;">
+                                                <tr>
+                                                    <td style="border:none;">
+                                                        <div style="background: rgb(243, 243, 243); margin-right: 15px; cursor: pointer;">
+                                                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>gfhsh</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                            <div class="sup_col">ghfgjh</div>
+
+                                            <ul style="padding:0;margin:0;list-style-type:none;width:255px;">
+                                                <li style="float:left;">
+                                                    <input maxlength="40" placeholder="reason for delete" type="text" class="form-control" style="padding: 5px; border-radius: 0px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 200px; height: 30px; line-height: 0; margin-top: -8px; margin-bottom: -10px;">
+                                                </li>
+                                                <li style="margin-left: 10px; float: left;">
+                                                    <i class="fa fa-check-square-o" aria-hidden="true" style="color: green; font-size: 20px; margin-top: -5px; margin-bottom: -14px;cursor:pointer;"></i>
+                                                </li>
+                                                <li style="margin-left: 10px; float: left;">
+                                                    <i class="fa fa-times" aria-hidden="true" style="color: brown; font-size: 20px; margin-top: -5px; margin-bottom: -14px;cursor:pointer;"></i>
+                                                </li>
+                                            </ul>
+
+
+                                        </td>
+                                        <td class="mw150 tath" style="width:50px!important;">
+                                            <div>
+                                                GHOST
+                                            </div>
+                                        </td>
+                                        <td class="mw150 tath" style="position:absolute;right:0;z-index:9999;background:white;width:130px!important;background:#f9f9f9;border-right:1px solid lightgrey">
+                                            &nbsp;
+
+                                            <div class="pull-right" style="margin-right:15px;">
+                                                <a style="color:brown;cursor:pointer;">
+                                                    delete <i class="fa fa-ban" aria-hidden="true" style="color:red;"></i>
+                                                </a>
+                                            </div>
+                                            <div class="clear-float">
+
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center;">
+                    Booking needs to be approved in order to use this feature.
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<a href="@Url.Action("Conf","Confirmation")"><span type="reset" class="btn kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light srchBtn" style="margin-bottom:20px;">Complete Booking</span></a>
+

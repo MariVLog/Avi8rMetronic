@@ -1,0 +1,1045 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA291100-ACF9-48FD-B63D-49BADED83580}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Avi8rMetronic</RootNamespace>
+    <AssemblyName>Avi8rMetronic</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppScripts\LandingPage.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Images\300_19.jpg" />
+    <Content Include="Content\Images\AV8R logo ResizedLogin.png" />
+    <Content Include="Content\Images\AV8RlogoSite.png" />
+    <Content Include="Content\Images\BA.png" />
+    <Content Include="Content\Images\banner.png" />
+    <Content Include="Content\Images\Cars\bg-border-h.png" />
+    <Content Include="Content\Images\Cars\bg-border-v.png" />
+    <Content Include="Content\Images\Cars\BV.png" />
+    <Content Include="Content\Images\Cars\BV_CDAR.jpg" />
+    <Content Include="Content\Images\Cars\BV_CDMR.jpg" />
+    <Content Include="Content\Images\Cars\BV_EBMR.jpg" />
+    <Content Include="Content\Images\Cars\BV_EDAR.jpg" />
+    <Content Include="Content\Images\Cars\BV_EDMR.jpg" />
+    <Content Include="Content\Images\Cars\BV_IFMR.jpg" />
+    <Content Include="Content\Images\Cars\BV_PCAR.jpg" />
+    <Content Include="Content\Images\Cars\BV_PRAR.jpg" />
+    <Content Include="Content\Images\Cars\BV_PVMR.jpg" />
+    <Content Include="Content\Images\Cars\BV_SFMR.jpg" />
+    <Content Include="Content\Images\Cars\IM.png" />
+    <Content Include="Content\Images\Cars\ZD.png" />
+    <Content Include="Content\Images\Cars\ZE.png" />
+    <Content Include="Content\Images\Cars\ZI.png" />
+    <Content Include="Content\Images\cut.jpg" />
+    <Content Include="Content\Images\DSC100076316.jpg" />
+    <Content Include="Content\Images\hotel.png" />
+    <Content Include="Content\Images\Keyboard with keys to book flight rental car and hotel - online booking concept.jpg" />
+    <Content Include="Content\Images\NU.png" />
+    <Content Include="Content\Images\Sparrow Img\2-4.jpg" />
+    <Content Include="Content\Images\Sparrow Img\2-5.jpg" />
+    <Content Include="Content\Images\Sparrow Img\3-1.jpg" />
+    <Content Include="Content\Images\Sparrow Img\3-2.jpg" />
+    <Content Include="Content\Images\Sparrow Img\89.gif" />
+    <Content Include="Content\Images\Sparrow Img\about-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\about-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\about-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\about-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\about-facebook.png" />
+    <Content Include="Content\Images\Sparrow Img\about-gp.png" />
+    <Content Include="Content\Images\Sparrow Img\about-insta.png" />
+    <Content Include="Content\Images\Sparrow Img\about-pinterest.png" />
+    <Content Include="Content\Images\Sparrow Img\about-slider-img.jpg" />
+    <Content Include="Content\Images\Sparrow Img\about-slider-img.png" />
+    <Content Include="Content\Images\Sparrow Img\about-styled.jpg" />
+    <Content Include="Content\Images\Sparrow Img\about-ts.jpg" />
+    <Content Include="Content\Images\Sparrow Img\about-twitter.png" />
+    <Content Include="Content\Images\Sparrow Img\about-vk.png" />
+    <Content Include="Content\Images\Sparrow Img\accordeon-i.png" />
+    <Content Include="Content\Images\Sparrow Img\add-pass-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\add.png" />
+    <Content Include="Content\Images\Sparrow Img\adv-01.png" />
+    <Content Include="Content\Images\Sparrow Img\adv-02.png" />
+    <Content Include="Content\Images\Sparrow Img\adv-03.png" />
+    <Content Include="Content\Images\Sparrow Img\adv-a-01.png" />
+    <Content Include="Content\Images\Sparrow Img\adv-a-02.png" />
+    <Content Include="Content\Images\Sparrow Img\adv-a-03.png" />
+    <Content Include="Content\Images\Sparrow Img\adv-a-04.png" />
+    <Content Include="Content\Images\Sparrow Img\africa.png" />
+    <Content Include="Content\Images\Sparrow Img\alert-close.png" />
+    <Content Include="Content\Images\Sparrow Img\alert-info.png" />
+    <Content Include="Content\Images\Sparrow Img\alt-depart.png" />
+    <Content Include="Content\Images\Sparrow Img\alt-return.png" />
+    <Content Include="Content\Images\Sparrow Img\alt-time.png" />
+    <Content Include="Content\Images\Sparrow Img\asia.png" />
+    <Content Include="Content\Images\Sparrow Img\australia.png" />
+    <Content Include="Content\Images\Sparrow Img\available-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\available-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\available-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\available-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\bg1.jpg" />
+    <Content Include="Content\Images\Sparrow Img\blogpost-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\blogpost-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\blogpost-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\book-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\btn-play.gif" />
+    <Content Include="Content\Images\Sparrow Img\cal-clear.png" />
+    <Content Include="Content\Images\Sparrow Img\cal-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\cal-left.png" />
+    <Content Include="Content\Images\Sparrow Img\cal-right.png" />
+    <Content Include="Content\Images\Sparrow Img\calc-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\card-select.png" />
+    <Content Include="Content\Images\Sparrow Img\cat-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cat-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cat-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cat-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cat-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cat-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cat-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cat-icon-01.png" />
+    <Content Include="Content\Images\Sparrow Img\cat-icon-02.png" />
+    <Content Include="Content\Images\Sparrow Img\cat-icon-03.png" />
+    <Content Include="Content\Images\Sparrow Img\cat-icon-04.png" />
+    <Content Include="Content\Images\Sparrow Img\cat-icon-05.png" />
+    <Content Include="Content\Images\Sparrow Img\cat-icon-06.png" />
+    <Content Include="Content\Images\Sparrow Img\catalog-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-09.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-10.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-11.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-12.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-13.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-14.jpg" />
+    <Content Include="Content\Images\Sparrow Img\catalog-15.jpg" />
+    <Content Include="Content\Images\Sparrow Img\check-img-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\check-img-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\check-img.jpg" />
+    <Content Include="Content\Images\Sparrow Img\check-img.png" />
+    <Content Include="Content\Images\Sparrow Img\checkbox.png" />
+    <Content Include="Content\Images\Sparrow Img\chk-edit.png" />
+    <Content Include="Content\Images\Sparrow Img\chk-star-a.png" />
+    <Content Include="Content\Images\Sparrow Img\chk-star-b.png" />
+    <Content Include="Content\Images\Sparrow Img\colorbox-close.png" />
+    <Content Include="Content\Images\Sparrow Img\colorbox-left.png" />
+    <Content Include="Content\Images\Sparrow Img\colorbox-right.png" />
+    <Content Include="Content\Images\Sparrow Img\columns-bg.png" />
+    <Content Include="Content\Images\Sparrow Img\comment-01.png" />
+    <Content Include="Content\Images\Sparrow Img\comment-02.png" />
+    <Content Include="Content\Images\Sparrow Img\counters-d.png" />
+    <Content Include="Content\Images\Sparrow Img\counters-i-01.png" />
+    <Content Include="Content\Images\Sparrow Img\counters-i-02.png" />
+    <Content Include="Content\Images\Sparrow Img\counters-i-03.png" />
+    <Content Include="Content\Images\Sparrow Img\counters-i-04.png" />
+    <Content Include="Content\Images\Sparrow Img\cover01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\cover02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\custom-select.png" />
+    <Content Include="Content\Images\Sparrow Img\datepick.png" />
+    <Content Include="Content\Images\Sparrow Img\de.gif" />
+    <Content Include="Content\Images\Sparrow Img\depart-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\details-icon-up.png" />
+    <Content Include="Content\Images\Sparrow Img\details-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\en.gif" />
+    <Content Include="Content\Images\Sparrow Img\europe.png" />
+    <Content Include="Content\Images\Sparrow Img\exp-01.png" />
+    <Content Include="Content\Images\Sparrow Img\exp-02.png" />
+    <Content Include="Content\Images\Sparrow Img\exp-03.png" />
+    <Content Include="Content\Images\Sparrow Img\f-tour-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\f-tour-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\f-tour-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\faq.png" />
+    <Content Include="Content\Images\Sparrow Img\fl-transp-01.png" />
+    <Content Include="Content\Images\Sparrow Img\fl-transp-02.png" />
+    <Content Include="Content\Images\Sparrow Img\fl-transp-03.png" />
+    <Content Include="Content\Images\Sparrow Img\fl-transp-04.png" />
+    <Content Include="Content\Images\Sparrow Img\fl-transp-05.png" />
+    <Content Include="Content\Images\Sparrow Img\flight-d-logo.png" />
+    <Content Include="Content\Images\Sparrow Img\flight-d-time.png" />
+    <Content Include="Content\Images\Sparrow Img\flight-image.jpg" />
+    <Content Include="Content\Images\Sparrow Img\flt-devider.png" />
+    <Content Include="Content\Images\Sparrow Img\flyght-01.png" />
+    <Content Include="Content\Images\Sparrow Img\flyght-02.png" />
+    <Content Include="Content\Images\Sparrow Img\flyght-03.png" />
+    <Content Include="Content\Images\Sparrow Img\flyght-04.png" />
+    <Content Include="Content\Images\Sparrow Img\flyght-05.png" />
+    <Content Include="Content\Images\Sparrow Img\flyght-cell-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\foot-lbl.gif" />
+    <Content Include="Content\Images\Sparrow Img\footer-facebook.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-icon-01.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-icon-02.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-icon-03.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-icon-04.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-instagram.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-pinterest.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-twitter.png" />
+    <Content Include="Content\Images\Sparrow Img\footer-vimeo.png" />
+    <Content Include="Content\Images\Sparrow Img\fr.gif" />
+    <Content Include="Content\Images\Sparrow Img\free-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\g-star-a.png" />
+    <Content Include="Content\Images\Sparrow Img\g-star-b.png" />
+    <Content Include="Content\Images\Sparrow Img\gall-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\gall-next.png" />
+    <Content Include="Content\Images\Sparrow Img\gall-prev.png" />
+    <Content Include="Content\Images\Sparrow Img\gallery-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\gallery-09.jpg" />
+    <Content Include="Content\Images\Sparrow Img\guest-01.png" />
+    <Content Include="Content\Images\Sparrow Img\guest-02.png" />
+    <Content Include="Content\Images\Sparrow Img\guest-03.png" />
+    <Content Include="Content\Images\Sparrow Img\guest-04.png" />
+    <Content Include="Content\Images\Sparrow Img\h-logo.png" />
+    <Content Include="Content\Images\Sparrow Img\h-phone.png" />
+    <Content Include="Content\Images\Sparrow Img\hd-star-a.png" />
+    <Content Include="Content\Images\Sparrow Img\hd-star-b.png" />
+    <Content Include="Content\Images\Sparrow Img\head-facebook.png" />
+    <Content Include="Content\Images\Sparrow Img\head-instargam.png" />
+    <Content Include="Content\Images\Sparrow Img\head-pinterest.png" />
+    <Content Include="Content\Images\Sparrow Img\head-twitter.png" />
+    <Content Include="Content\Images\Sparrow Img\head-vimeo.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-complete.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-i-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\icon-i-04.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-i-05.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-i-06.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-i-07.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-lamp.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-nights.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-phone.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-solution.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-subscribe.png" />
+    <Content Include="Content\Images\Sparrow Img\icon-tweet.png" />
+    <Content Include="Content\Images\Sparrow Img\icons-i-01.png" />
+    <Content Include="Content\Images\Sparrow Img\icons-i-02.png" />
+    <Content Include="Content\Images\Sparrow Img\icons-i-03.png" />
+    <Content Include="Content\Images\Sparrow Img\in2_popular.jpg" />
+    <Content Include="Content\Images\Sparrow Img\info-c-01.png" />
+    <Content Include="Content\Images\Sparrow Img\info-c-02.png" />
+    <Content Include="Content\Images\Sparrow Img\info-c-03.png" />
+    <Content Include="Content\Images\Sparrow Img\info-c-04.png" />
+    <Content Include="Content\Images\Sparrow Img\inter-i-01.png" />
+    <Content Include="Content\Images\Sparrow Img\inter-i-02.png" />
+    <Content Include="Content\Images\Sparrow Img\inter-i-03.png" />
+    <Content Include="Content\Images\Sparrow Img\interactive-img.png" />
+    <Content Include="Content\Images\Sparrow Img\it.gif" />
+    <Content Include="Content\Images\Sparrow Img\last-order-bg.jpg" />
+    <Content Include="Content\Images\Sparrow Img\left-social-01.png" />
+    <Content Include="Content\Images\Sparrow Img\left-social-02.png" />
+    <Content Include="Content\Images\Sparrow Img\left-social-03.png" />
+    <Content Include="Content\Images\Sparrow Img\left-social-04.png" />
+    <Content Include="Content\Images\Sparrow Img\left-social-05.png" />
+    <Content Include="Content\Images\Sparrow Img\like-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\like-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\like-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\lit-i-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\lit-i-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\lit-i-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\lit-i-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\lit-i-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\lit-i-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\lit-i-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\loader.gif" />
+    <Content Include="Content\Images\Sparrow Img\logo-a.png" />
+    <Content Include="Content\Images\Sparrow Img\logo-bg.png" />
+    <Content Include="Content\Images\Sparrow Img\logo.png" />
+    <Content Include="Content\Images\Sparrow Img\lufthansa.png" />
+    <Content Include="Content\Images\Sparrow Img\map-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\map.png" />
+    <Content Include="Content\Images\Sparrow Img\marked-01.png" />
+    <Content Include="Content\Images\Sparrow Img\marked-02.png" />
+    <Content Include="Content\Images\Sparrow Img\marked-03.png" />
+    <Content Include="Content\Images\Sparrow Img\masonry-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\masonry-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\masonry-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\masonry-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\masonry-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\menu-btn.png" />
+    <Content Include="Content\Images\Sparrow Img\more-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\mp-select.png" />
+    <Content Include="Content\Images\Sparrow Img\north-america.png" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-big-09.jpg" />
+    <Content Include="Content\Images\Sparrow Img\offer-over.png" />
+    <Content Include="Content\Images\Sparrow Img\offers-l.png" />
+    <Content Include="Content\Images\Sparrow Img\offers-r.png" />
+    <Content Include="Content\Images\Sparrow Img\p-slider-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\p-slider-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\p-slider-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\p-slider-l.png" />
+    <Content Include="Content\Images\Sparrow Img\p-slider-r.png" />
+    <Content Include="Content\Images\Sparrow Img\pag-left.png" />
+    <Content Include="Content\Images\Sparrow Img\pag-right.png" />
+    <Content Include="Content\Images\Sparrow Img\paris.jpg" />
+    <Content Include="Content\Images\Sparrow Img\partner-01.gif" />
+    <Content Include="Content\Images\Sparrow Img\partner-01.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-02.gif" />
+    <Content Include="Content\Images\Sparrow Img\partner-02.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-03.gif" />
+    <Content Include="Content\Images\Sparrow Img\partner-03.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-04.gif" />
+    <Content Include="Content\Images\Sparrow Img\partner-04.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-05.gif" />
+    <Content Include="Content\Images\Sparrow Img\partner-05.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-06.gif" />
+    <Content Include="Content\Images\Sparrow Img\partner-06.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-b-01.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-b-02.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-b-03.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-b-04.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-b-05.png" />
+    <Content Include="Content\Images\Sparrow Img\partner-b-06.png" />
+    <Content Include="Content\Images\Sparrow Img\pause.png" />
+    <Content Include="Content\Images\Sparrow Img\paymentt-01.png" />
+    <Content Include="Content\Images\Sparrow Img\paymentt-02.png" />
+    <Content Include="Content\Images\Sparrow Img\paymentt-03.png" />
+    <Content Include="Content\Images\Sparrow Img\persons-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\pop-hdr.gif" />
+    <Content Include="Content\Images\Sparrow Img\pop-hdr.png" />
+    <Content Include="Content\Images\Sparrow Img\popup-close.png" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-09.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-10.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-11.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-12.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-all.png" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-b-09.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-full.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-i-img.jpg" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-l.png" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-more.png" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-r.png" />
+    <Content Include="Content\Images\Sparrow Img\portfolio-zoom.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-01.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-02.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-03.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-04.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-05.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-06.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-07.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-08.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-09.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-10.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-11.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-12.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-13.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-14.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-15.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-16.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-17.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-18.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-01.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-02.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-03.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-04.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-05.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-06.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-07.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-08.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-09.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-10.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-11.png" />
+    <Content Include="Content\Images\Sparrow Img\pref-alt-12.png" />
+    <Content Include="Content\Images\Sparrow Img\quote-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\r-stars-total-a.png" />
+    <Content Include="Content\Images\Sparrow Img\r-stars-total-b.png" />
+    <Content Include="Content\Images\Sparrow Img\r-user.png" />
+    <Content Include="Content\Images\Sparrow Img\rates-srch.png" />
+    <Content Include="Content\Images\Sparrow Img\rating-a.png" />
+    <Content Include="Content\Images\Sparrow Img\rating-b.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-01.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-02.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-03.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-04.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-a.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-b.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-c.png" />
+    <Content Include="Content\Images\Sparrow Img\reasons-lbl.gif" />
+    <Content Include="Content\Images\Sparrow Img\regions-nav.png" />
+    <Content Include="Content\Images\Sparrow Img\regions.png" />
+    <Content Include="Content\Images\Sparrow Img\result-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\return-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\select-bg.gif" />
+    <Content Include="Content\Images\Sparrow Img\select-bg2.png" />
+    <Content Include="Content\Images\Sparrow Img\services-01.png" />
+    <Content Include="Content\Images\Sparrow Img\services-02.png" />
+    <Content Include="Content\Images\Sparrow Img\services-03.png" />
+    <Content Include="Content\Images\Sparrow Img\services-04.png" />
+    <Content Include="Content\Images\Sparrow Img\share-popup-01.png" />
+    <Content Include="Content\Images\Sparrow Img\share-popup-02.png" />
+    <Content Include="Content\Images\Sparrow Img\share-popup-03.png" />
+    <Content Include="Content\Images\Sparrow Img\share-popup.png" />
+    <Content Include="Content\Images\Sparrow Img\sider-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\sider-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\sider-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\sider-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\sider-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\slide-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\solution-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\solution-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\solution-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\solutions-i-a.png" />
+    <Content Include="Content\Images\Sparrow Img\sort-a.png" />
+    <Content Include="Content\Images\Sparrow Img\sort-b.png" />
+    <Content Include="Content\Images\Sparrow Img\sort-c.png" />
+    <Content Include="Content\Images\Sparrow Img\south-america.png" />
+    <Content Include="Content\Images\Sparrow Img\special-offer.jpg" />
+    <Content Include="Content\Images\Sparrow Img\srch-close.gif" />
+    <Content Include="Content\Images\Sparrow Img\srch-close.png" />
+    <Content Include="Content\Images\Sparrow Img\srch-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\ss-l.png" />
+    <Content Include="Content\Images\Sparrow Img\ss-r.png" />
+    <Content Include="Content\Images\Sparrow Img\sstar-a.png" />
+    <Content Include="Content\Images\Sparrow Img\sstar-b.png" />
+    <Content Include="Content\Images\Sparrow Img\star-a.png" />
+    <Content Include="Content\Images\Sparrow Img\star-b.png" />
+    <Content Include="Content\Images\Sparrow Img\swipe-l.png" />
+    <Content Include="Content\Images\Sparrow Img\swipe-r.png" />
+    <Content Include="Content\Images\Sparrow Img\tab-photo-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tab-select.png" />
+    <Content Include="Content\Images\Sparrow Img\tabgall-prev-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tabgall-prev-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tabgall-prev-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tabgall-prev-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tabgall-prev-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tabgall-prev-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tabs-i-01.png" />
+    <Content Include="Content\Images\Sparrow Img\tabs-i-02.png" />
+    <Content Include="Content\Images\Sparrow Img\tabs-i-03.png" />
+    <Content Include="Content\Images\Sparrow Img\tabs-i-04.png" />
+    <Content Include="Content\Images\Sparrow Img\team-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\team-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\team-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\team-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\test-l.gif" />
+    <Content Include="Content\Images\Sparrow Img\test-r.gif" />
+    <Content Include="Content\Images\Sparrow Img\testimonial.gif" />
+    <Content Include="Content\Images\Sparrow Img\testimonials-02.png" />
+    <Content Include="Content\Images\Sparrow Img\testimonials-s.jpg" />
+    <Content Include="Content\Images\Sparrow Img\theme-teaser.jpg" />
+    <Content Include="Content\Images\Sparrow Img\theme.png" />
+    <Content Include="Content\Images\Sparrow Img\todo-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\todo-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\todo-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\todo-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\todostar-a.png" />
+    <Content Include="Content\Images\Sparrow Img\toggle.png" />
+    <Content Include="Content\Images\Sparrow Img\tour-01-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-02-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-03-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-04-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-05-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-06-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-07-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-08-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-09-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-09.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-10-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-10.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-11-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-11.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-12-g.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-12.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-big.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-07.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-08.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-09.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-10.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-11.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-grid-12.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-icon-01.png" />
+    <Content Include="Content\Images\Sparrow Img\tour-icon-02.png" />
+    <Content Include="Content\Images\Sparrow Img\tour-icon.png" />
+    <Content Include="Content\Images\Sparrow Img\tour-prev-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-prev-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-prev-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-prev-04.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-prev-05.jpg" />
+    <Content Include="Content\Images\Sparrow Img\tour-prev-06.jpg" />
+    <Content Include="Content\Images\Sparrow Img\ts-star-a.png" />
+    <Content Include="Content\Images\Sparrow Img\ts-star.png" />
+    <Content Include="Content\Images\Sparrow Img\tweeter-i.png" />
+    <Content Include="Content\Images\Sparrow Img\v-item-01.jpg" />
+    <Content Include="Content\Images\Sparrow Img\v-item-02.jpg" />
+    <Content Include="Content\Images\Sparrow Img\v-item-03.jpg" />
+    <Content Include="Content\Images\Sparrow Img\vol-btn.png" />
+    <Content Include="Content\Images\Sparrow Img\weather-icon-01.png" />
+    <Content Include="Content\Images\Sparrow Img\weather-icon-02.png" />
+    <Content Include="Content\Images\Sparrow Img\whishlist.png" />
+    <Content Include="Content\Images\Sparrow Img\why-we-01.png" />
+    <Content Include="Content\Images\Sparrow Img\why-we-02.png" />
+    <Content Include="Content\Images\Sparrow Img\why-we-03.png" />
+    <Content Include="Content\Images\Sparrow Img\world.png" />
+    <Content Include="Content\Stylesheets\base\dark.css" />
+    <Content Include="Content\Stylesheets\brand\dark.css" />
+    <Content Include="Content\Stylesheets\header base\dark.css" />
+    <Content Include="Content\Stylesheets\header menu\dark.css" />
+    <Content Include="Content\Stylesheets\jquery-ui.css" />
+    <Content Include="Content\Stylesheets\jquery.formstyler.css" />
+    <Content Include="Content\Stylesheets\Landing Page.css" />
+    <Content Include="Content\Stylesheets\Login.css" />
+    <Content Include="Content\Stylesheets\menu\dark.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-1.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-1.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-2.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-2.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-3.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-3.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-4.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-4.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-5.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-5.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-6.css" />
+    <Content Include="Content\Stylesheets\pages\general\error\error-6.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\faq\faq-1.css" />
+    <Content Include="Content\Stylesheets\pages\general\faq\faq-1.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\invoices\invoice-1.css" />
+    <Content Include="Content\Stylesheets\pages\general\invoices\invoice-1.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\invoices\invoice-2.css" />
+    <Content Include="Content\Stylesheets\pages\general\invoices\invoice-2.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-1.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-1.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-2.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-2.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-3.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-3.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-4.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-4.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-5.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-5.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-6.css" />
+    <Content Include="Content\Stylesheets\pages\general\login\login-6.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-1.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-1.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-2.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-2.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-3.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-3.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-4.css" />
+    <Content Include="Content\Stylesheets\pages\general\pricing\pricing-4.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-1.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-1.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-2.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-2.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-3.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-3.rtl.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-4.css" />
+    <Content Include="Content\Stylesheets\pages\general\wizard\wizard-4.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\aside\dark.css" />
+    <Content Include="Content\Stylesheets\skins\aside\dark.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\aside\light.css" />
+    <Content Include="Content\Stylesheets\skins\aside\light.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\brand\dark.css" />
+    <Content Include="Content\Stylesheets\skins\brand\dark.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\brand\light.css" />
+    <Content Include="Content\Stylesheets\skins\brand\light.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\header\base\dark.css" />
+    <Content Include="Content\Stylesheets\skins\header\base\dark.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\header\base\light.css" />
+    <Content Include="Content\Stylesheets\skins\header\base\light.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\header\menu\dark.css" />
+    <Content Include="Content\Stylesheets\skins\header\menu\dark.rtl.css" />
+    <Content Include="Content\Stylesheets\skins\header\menu\light.css" />
+    <Content Include="Content\Stylesheets\skins\header\menu\light.rtl.css" />
+    <Content Include="Content\Stylesheets\Sparrow.css" />
+    <Content Include="Content\Stylesheets\style.bundle.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\builder.js" />
+    <Content Include="Scripts\bxSlider.js" />
+    <Content Include="Scripts\custom.select.js" />
+    <Content Include="Scripts\jqeury.appear.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.formstyler.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\Login\main.js" />
+    <Content Include="Scripts\Login\map-custom.js" />
+    <Content Include="Scripts\nouislider.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\pages\components\base\dropdown.js" />
+    <Content Include="Scripts\pages\components\bootstrap-datepicker.js" />
+    <Content Include="Scripts\pages\components\bootstrap-timepicker.js" />
+    <Content Include="Scripts\pages\components\calendar\background-events.js" />
+    <Content Include="Scripts\pages\components\calendar\basic.js" />
+    <Content Include="Scripts\pages\components\calendar\external-events.js" />
+    <Content Include="Scripts\pages\components\calendar\google.js" />
+    <Content Include="Scripts\pages\components\calendar\list-view.js" />
+    <Content Include="Scripts\pages\components\charts\amcharts\charts.js" />
+    <Content Include="Scripts\pages\components\charts\amcharts\maps.js" />
+    <Content Include="Scripts\pages\components\charts\amcharts\stock-charts.js" />
+    <Content Include="Scripts\pages\components\charts\flotcharts.js" />
+    <Content Include="Scripts\pages\components\charts\google-charts.js" />
+    <Content Include="Scripts\pages\components\charts\morris-charts.js" />
+    <Content Include="Scripts\pages\components\dropdown.js" />
+    <Content Include="Scripts\pages\components\extended\blockui.js" />
+    <Content Include="Scripts\pages\components\extended\bootstrap-notify.js" />
+    <Content Include="Scripts\pages\components\extended\perfect-scrollbar.js" />
+    <Content Include="Scripts\pages\components\extended\sweetalert2.js" />
+    <Content Include="Scripts\pages\components\extended\toastr.js" />
+    <Content Include="Scripts\pages\components\extended\treeview.js" />
+    <Content Include="Scripts\pages\components\maps\google-maps.js" />
+    <Content Include="Scripts\pages\components\maps\jqvmap.js" />
+    <Content Include="Scripts\pages\components\maps\jvectormap.js" />
+    <Content Include="Scripts\pages\components\portlets\draggable.js" />
+    <Content Include="Scripts\pages\components\portlets\tools.js" />
+    <Content Include="Scripts\pages\components\utils\idle-timer.js" />
+    <Content Include="Scripts\pages\components\utils\session-timeout.js" />
+    <Content Include="Scripts\pages\crud\datatables\advanced\column-rendering.js" />
+    <Content Include="Scripts\pages\crud\datatables\advanced\column-visibility.js" />
+    <Content Include="Scripts\pages\crud\datatables\advanced\footer-callback.js" />
+    <Content Include="Scripts\pages\crud\datatables\advanced\multiple-controls.js" />
+    <Content Include="Scripts\pages\crud\datatables\advanced\row-callback.js" />
+    <Content Include="Scripts\pages\crud\datatables\advanced\row-grouping.js" />
+    <Content Include="Scripts\pages\crud\datatables\basic\basic.js" />
+    <Content Include="Scripts\pages\crud\datatables\basic\headers.js" />
+    <Content Include="Scripts\pages\crud\datatables\basic\paginations.js" />
+    <Content Include="Scripts\pages\crud\datatables\basic\scrollable.js" />
+    <Content Include="Scripts\pages\crud\datatables\data-sources\ajax-client-side.js" />
+    <Content Include="Scripts\pages\crud\datatables\data-sources\ajax-server-side.js" />
+    <Content Include="Scripts\pages\crud\datatables\data-sources\html.js" />
+    <Content Include="Scripts\pages\crud\datatables\data-sources\javascript.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\buttons.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\colreorder.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\fixedcolumns.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\fixedheader.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\keytable.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\responsive.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\rowgroup.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\rowreorder.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\scroller.js" />
+    <Content Include="Scripts\pages\crud\datatables\extensions\select.js" />
+    <Content Include="Scripts\pages\crud\datatables\search-options\advanced-search.js" />
+    <Content Include="Scripts\pages\crud\datatables\search-options\column-search.js" />
+    <Content Include="Scripts\pages\crud\forms\validation\form-controls.js" />
+    <Content Include="Scripts\pages\crud\forms\validation\form-widgets.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\autosize.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-datepicker.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-daterangepicker.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-markdown.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-maxlength.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-multipleselectsplitter.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-select.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-switch.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-timepicker.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\bootstrap-touchspin.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\clipboard.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\dropzone.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\form-repeater.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\google-recaptcha.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\input-mask.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\ion-range-slider.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\nouislider.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\select2.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\summernote.js" />
+    <Content Include="Scripts\pages\crud\forms\widgets\typeahead.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\advanced\column-rendering.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\advanced\column-width.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\advanced\modal.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\advanced\record-selection.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\advanced\row-details.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\advanced\vertical.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\api\events.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\api\methods.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\base\data-ajax.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\base\data-json.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\base\data-local.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\base\html-table.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\base\local-sort.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\base\translation.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\child\data-ajax.js" />
+    <Content Include="Scripts\pages\crud\metronic-datatable\child\data-local.js" />
+    <Content Include="Scripts\pages\custom\apps\chat\chat.js" />
+    <Content Include="Scripts\pages\custom\apps\contacts\add-contact.js" />
+    <Content Include="Scripts\pages\custom\apps\contacts\list-columns.js" />
+    <Content Include="Scripts\pages\custom\apps\contacts\list-datatable.js" />
+    <Content Include="Scripts\pages\custom\apps\user\add-user.js" />
+    <Content Include="Scripts\pages\custom\apps\user\list-datatable.js" />
+    <Content Include="Scripts\pages\custom\apps\user\profile.js" />
+    <Content Include="Scripts\pages\dashboard.js" />
+    <Content Include="Scripts\pages\layout\builder.js" />
+    <Content Include="Scripts\pages\login\login-1.js" />
+    <Content Include="Scripts\pages\login\login-general.js" />
+    <Content Include="Scripts\pages\my-script.js" />
+    <Content Include="Scripts\pages\wizard\wizard-1.js" />
+    <Content Include="Scripts\pages\wizard\wizard-2.js" />
+    <Content Include="Scripts\pages\wizard\wizard-3.js" />
+    <Content Include="Scripts\pages\wizard\wizard-4.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\scripts.bundle.js" />
+    <Content Include="Scripts\util.js" />
+    <Content Include="Scripts\vendors\custom\datatables\datatables.bundle.css" />
+    <Content Include="Scripts\vendors\custom\datatables\datatables.bundle.js" />
+    <Content Include="Scripts\vendors\custom\datatables\datatables.bundle.rtl.css" />
+    <Content Include="Scripts\vendors\custom\flot\flot.bundle.js" />
+    <Content Include="Scripts\vendors\custom\fullcalendar\fullcalendar.bundle.css" />
+    <Content Include="Scripts\vendors\custom\fullcalendar\fullcalendar.bundle.js" />
+    <Content Include="Scripts\vendors\custom\fullcalendar\fullcalendar.bundle.rtl.css" />
+    <Content Include="Scripts\vendors\custom\gmaps\gmaps.js" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\jquery-ui.bundle.css" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\jquery-ui.bundle.js" />
+    <Content Include="Scripts\vendors\custom\jquery-ui\jquery-ui.bundle.rtl.css" />
+    <Content Include="Scripts\vendors\custom\jqvmap\jqvmap.bundle.css" />
+    <Content Include="Scripts\vendors\custom\jqvmap\jqvmap.bundle.js" />
+    <Content Include="Scripts\vendors\custom\jqvmap\jqvmap.bundle.rtl.css" />
+    <Content Include="Scripts\vendors\custom\jstree\images\32px.png" />
+    <Content Include="Scripts\vendors\custom\jstree\images\40px.png" />
+    <Content Include="Scripts\vendors\custom\jstree\images\throbber.gif" />
+    <Content Include="Scripts\vendors\custom\jstree\jstree.bundle.css" />
+    <Content Include="Scripts\vendors\custom\jstree\jstree.bundle.js" />
+    <Content Include="Scripts\vendors\custom\jstree\jstree.bundle.rtl.css" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-brands-400.svg" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-regular-400.svg" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-solid-900.svg" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon2\Flaticon2.svg" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon\Flaticon.svg" />
+    <Content Include="Scripts\vendors\global\fonts\line-awesome\line-awesome.svg" />
+    <Content Include="Scripts\vendors\global\fonts\socicon\socicon.svg" />
+    <Content Include="Scripts\vendors\global\img\owl.carousel\ajax-loader.gif" />
+    <Content Include="Scripts\vendors\global\img\owl.carousel\owl.video.play.png" />
+    <Content Include="Scripts\vendors\global\vendors.bundle.css" />
+    <Content Include="Scripts\vendors\global\vendors.bundle.js" />
+    <Content Include="Scripts\vendors\global\vendors.bundle.rtl.css" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\LandingPage\SiteLayout.cshtml" />
+    <Content Include="Views\LandingPage\LandingPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ApprovalDetailController.cs" />
+    <Compile Include="Controllers\ApprovalInboxController.cs" />
+    <Compile Include="Controllers\ApprovalOverrideController.cs" />
+    <Compile Include="Controllers\BnbDetailController.cs" />
+    <Compile Include="Controllers\BnbResponseController.cs" />
+    <Compile Include="Controllers\BnbSearchController.cs" />
+    <Compile Include="Controllers\BookingInfoController.cs" />
+    <Compile Include="Controllers\CarDetailsController.cs" />
+    <Compile Include="Controllers\CarResponseController.cs" />
+    <Compile Include="Controllers\CarSearchController.cs" />
+    <Compile Include="Controllers\CloneBookingController.cs" />
+    <Compile Include="Controllers\ConfirmationController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\FlightResponseController.cs" />
+    <Compile Include="Controllers\FlightSearchController.cs" />
+    <Compile Include="Controllers\FutureTravelController.cs" />
+    <Compile Include="Controllers\HotelDetailController.cs" />
+    <Compile Include="Controllers\HotelMapsController.cs" />
+    <Compile Include="Controllers\HotelResponseController.cs" />
+    <Compile Include="Controllers\HotelSearchController.cs" />
+    <Compile Include="Controllers\ImportChangesController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
+    <Compile Include="Controllers\IncompleteTravelController.cs" />
+    <Compile Include="Controllers\LandingPageController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NewRequestController.cs" />
+    <Compile Include="Controllers\OfflineRequestsController.cs" />
+    <Compile Include="Controllers\PassivesController.cs" />
+    <Compile Include="Controllers\PastTravelController.cs" />
+    <Compile Include="Controllers\QuotationsController.cs" />
+    <Compile Include="Controllers\SavedTravelController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\TesterPageController.cs" />
+    <Compile Include="Controllers\TransferDetailController.cs" />
+    <Compile Include="Controllers\TransferResponseController.cs" />
+    <Compile Include="Controllers\TransferSearchController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-brands-400.eot" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-brands-400.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-brands-400.woff" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-brands-400.woff2" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-regular-400.eot" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-regular-400.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-regular-400.woff" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-regular-400.woff2" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-solid-900.eot" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-solid-900.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-solid-900.woff" />
+    <Content Include="Scripts\vendors\global\fonts\%40fortawesome\fa-solid-900.woff2" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon2\Flaticon2.eot" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon2\Flaticon2.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon2\Flaticon2.woff" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon2\Flaticon2.woff2" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon\Flaticon.eot" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon\Flaticon.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\flaticon\Flaticon.woff" />
+    <Content Include="Scripts\vendors\global\fonts\line-awesome\line-awesome.eot" />
+    <Content Include="Scripts\vendors\global\fonts\line-awesome\line-awesome.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\line-awesome\line-awesome.woff" />
+    <Content Include="Scripts\vendors\global\fonts\line-awesome\line-awesome.woff2" />
+    <Content Include="Scripts\vendors\global\fonts\socicon\socicon.eot" />
+    <Content Include="Scripts\vendors\global\fonts\socicon\socicon.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\socicon\socicon.woff" />
+    <Content Include="Scripts\vendors\global\fonts\summernote\summernote.eot" />
+    <Content Include="Scripts\vendors\global\fonts\summernote\summernote.ttf" />
+    <Content Include="Scripts\vendors\global\fonts\summernote\summernote.woff" />
+    <Content Include="Views\FlightSearch\Flights_Layout.cshtml" />
+    <Content Include="Views\FlightSearch\Flights.cshtml" />
+    <Content Include="Views\HotelSearch\Hotels.cshtml" />
+    <Content Include="Views\BnbSearch\Bnbs.cshtml" />
+    <Content Include="Views\CarSearch\Cars.cshtml" />
+    <Content Include="Views\TransferSearch\Transfers.cshtml" />
+    <Content Include="Views\Passives\Passives.cshtml" />
+    <Content Include="Views\FlightResponse\FlightResponse.cshtml" />
+    <Content Include="Views\HotelResponse\HotelResponse.cshtml" />
+    <Content Include="Views\HotelDetail\HotelDetail.cshtml" />
+    <Content Include="Views\CarResponse\CarResponse.cshtml" />
+    <Content Include="Views\CarDetails\CarDetails.cshtml" />
+    <Content Include="Views\ShoppingCart\ShoppingCart.cshtml" />
+    <Content Include="Views\ApprovalOverride\ApprovalOverride.cshtml" />
+    <Content Include="Views\OfflineRequests\Offline.cshtml" />
+    <Content Include="Views\NewRequest\NewRequest.cshtml" />
+    <Content Include="Views\Import\Import.cshtml" />
+    <Content Include="Views\ImportChanges\ImportChanges.cshtml" />
+    <Content Include="Views\Dashboard\Dashboard.cshtml" />
+    <Content Include="Views\FutureTravel\FutureTravel.cshtml" />
+    <Content Include="Views\PastTravel\PastTravel.cshtml" />
+    <Content Include="Views\SavedTravel\SavedTravel.cshtml" />
+    <Content Include="Views\Quotations\Quotations.cshtml" />
+    <Content Include="Views\IncompleteTravel\IncompleteTravel.cshtml" />
+    <Content Include="Views\BnbResponse\BnbResponse.cshtml" />
+    <Content Include="Views\BnbDetail\BnbDetail.cshtml" />
+    <Content Include="Views\TransferResponse\TransferResponse.cshtml" />
+    <Content Include="Views\TransferDetail\TransferDetail.cshtml" />
+    <Content Include="Views\HotelMaps\HotelMap.cshtml" />
+    <Content Include="Views\Confirmation\Confirmation.cshtml" />
+    <Content Include="Views\ErrorPage\ErrorPage.cshtml" />
+    <Content Include="Views\ApprovalDetail\ApprovalDetail.cshtml" />
+    <Content Include="Views\ApprovalInbox\ApprovalInbox.cshtml" />
+    <Content Include="Views\BookingInfo\BookingInfo.cshtml" />
+    <Content Include="Views\CloneBooking\CloneBooking.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.amd.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64834</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64834/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,754 @@
+﻿
+@{
+    ViewBag.Title = "Flights";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:-50px!important;">
+    <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
+        <div class="kt-portlet__body" style="margin-bottom:30px;">
+            <!--begin::Accordion-->
+            <div class="accordion" id="accordionExample1">
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <div class="card-title collapsed crdTxt" data-toggle="collapse" data-target="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo1">
+                            Select Cost Center
+                        </div>
+                    </div>
+                    <div id="collapseTwo1" class="collapse show" aria-labelledby="headingTwo1" data-parent="#accordionExample1">
+                        <div class="card-body">
+                            <div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
+                                <form method="get" class="kt-quick-search__form">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
+                                        <input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
+                                        <div class="input-group-append"><span class="input-group-text"></span></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <div class="card-title crdTxt" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                            Select Traveler(s)
+                        </div>
+                    </div>
+                    <div id="collapseOne2" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                        <div class="card-body">
+                            <div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
+                                <form method="get" class="kt-quick-search__form">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
+                                        <input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
+                                        <div class="input-group-append"><span class="input-group-text"></span></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="trsrchtag">
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title mdalTit" id="exampleModalLabel">Traveler Info</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="kt-scroll ps ps--active-y" data-scroll="true" data-height="200" style="height: 200px; overflow: hidden;">
+                                            put traveler details in here phone, id etc
+                                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px; height: 200px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 72px;"></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <div class="card-title crdTxt" data-toggle="collapse" data-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">
+                            Allocate Traveler(s) to this Flight
+                        </div>
+                    </div>
+                    <div id="collapseOne3" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                        <div class="card-body">
+                            <div>
+                                <span class="mlbl">Available Traveler(s)</span>
+                                <div class="trsrchtag">
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                </div>
+                            </div>
+                            <div style="padding-top:10px;">
+                                <span class="mlbl">Selected Traveler(s)</span>
+                                <div class="trsrchtag">
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <div class="card-title crdTxt" data-toggle="collapse" data-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
+                            Add Traveler(s)
+                        </div>
+                    </div>
+                    <div id="collapseOne4" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                        <div class="card-body">
+                            <div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
+                                <form method="get" class="kt-quick-search__form">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
+                                        <input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
+                                        <div class="input-group-append"><span class="input-group-text"></span></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="trsrchtag">
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                <button type="button" class="btn btn-primary btn-square adhbtn">Add Ad hoc Traveler</button>
+                            </div>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title mdalTit" id="exampleModalLabel">New Traveler</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="kt-scroll ps ps--active-y" data-scroll="true" data-height="780" style="height: 780px; overflow: hidden;">
+                                        <div class="kt-portlet__body hide-pad">
+                                            <div class="kt-section kt-section--first">
+                                                <div class="form-group frmspc">
+                                                    <label>First Name:</label>
+                                                    <input type="tel" class="form-control" placeholder="Enter First Name">
+                                                </div>
+                                                <div class="form-group frmspc">
+                                                    <label>Last Name:</label>
+                                                    <input type="text" class="form-control" placeholder="Enter Last Name">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group frmspc">
+                                                            <label>Title:</label>
+                                                            <input type="text" class="form-control" placeholder="Mr/Mrs/Ms">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group frmspc">
+                                                            <label>Gender:</label>
+                                                            <input type="text" class="form-control" placeholder="Male/Female/Other">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group frmspc">
+                                                    <label>Date of birth:</label>
+                                                    <input type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                                </div>
+                                                <div class="form-group frmspc">
+                                                    <label>Email address:</label>
+                                                    <input type="email" class="form-control" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group frmspc">
+                                                    <label>Contact Number:</label>
+                                                    <input type="tel" class="form-control" placeholder="Enter number">
+                                                </div>
+                                                <br />
+                                                <div class="form-group frmspc">
+                                                    <label>Company:</label>
+                                                    <input type="text" class="form-control" placeholder="Enter Company Name">
+                                                </div>
+                                                <div class="form-group frmspc">
+                                                    <label>Default Cost Center:</label>
+                                                    <input type="text" class="form-control" placeholder="Select Cost Center">
+                                                </div>
+                                                <div class="form-group frmspc">
+                                                    <label>Default Policy Group:</label>
+                                                    <input type="text" class="form-control" placeholder="Select Policy Group">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kt-portlet__foot">
+                                            <div class="kt-form__actions">
+                                                <button type="submit" class="btn btn-primary srchBtnM">Save Traveler</button>
+                                            </div>
+                                        </div>
+                                        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px; height: 200px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 72px;"></div></div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end::Accordion-->
+        </div>
+    </div>
+
+
+    <div class="col-md-12 formSpcing col-xs-12 col-sm-12 col-lg-7">
+        <div class="kt-portlet__body">
+            <ul class="nav nav-pills nav-fill myclr" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#kt_tabs_5_1">Return</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_2">One Way</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_3">Multi</a>
+                </li>
+
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="kt_tabs_5_1" role="tabpanel">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Flight Search
+                            </h3>
+                        </div>
+                    </div>
+                    <form class="kt-form">
+                        <div class="kt-portlet__body">
+                            <div class="kt-section kt-section--first">
+                                <div class="kt-section__body">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-md-12 col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-form-label">Origin:</label>
+                                                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-8 col-xl-8">
+                                                    <input type="text" class="form-control myTxtBoxStl" placeholder="Type City/Airport name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Depart Date:</label>
+                                                <div class="col-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" readonly="" placeholder="Select date" id="kt_datepicker_2" style="max-width:100%!important;">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar-check-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Depart Time</label>
+                                                <div class="col-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group timepicker">
+                                                        <input class="form-control" id="kt_timepicker_2" readonly="" placeholder="Select time" type="text">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-clock-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-md-12 col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-form-label">Destination:</label>
+                                                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-8 col-xl-8">
+                                                    <input type="text" class="form-control myTxtBoxStl" placeholder="Type City/Airport name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Return Date:</label>
+                                                <div class="col-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" readonly="" placeholder="Select date" id="kt_datepicker_2" style="max-width:100%!important;">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar-check-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Return Time</label>
+                                                <div class="ccol-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group timepicker">
+                                                        <input class="form-control" id="kt_timepicker_2" readonly="" placeholder="Select time" type="text">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-clock-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-xl-4 col-md-12 col-sm-12">Class of Travel:</label>
+                                                <div class="col-lg-8 col-xl-8 col-md-12 col-sm-12">
+                                                    <div class="dropdown bootstrap-select form-control kt-">
+                                                        <select class="form-control kt-selectpicker" tabindex="-98">
+                                                            <option>Economy</option>
+                                                            <option>Premium Economy</option>
+                                                            <option>Business</option>
+                                                            <option>Premium Business</option>
+                                                            <option>First</option>
+                                                            <option>Premium First</option>
+                                                        </select>
+                                                        <button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">Economy</div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu" role="combobox" x-placement="bottom-start" style="max-height: 460px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                                                            <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1" style="max-height: 434px; overflow-y: auto; min-height: 0px;">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Economy</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false">
+                                                                            <span class="text">Premium Economy</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false">
+                                                                            <span class="text">Business</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Premium Business</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">First</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Premium First</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand lstChkbx">
+                                                <input type="checkbox"> Flexible Fares
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                        <div class="kt-portlet__foot">
+                            <div class="kt-form__actions">
+                                <div class="row">
+                                    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
+                                        <a href="@Url.Action("FlResp","FlightResponse")"><span type="reset" class="btn kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light srchBtn">Search Flights</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                    </form>
+                </div>
+                <div class="tab-pane" id="kt_tabs_5_2" role="tabpanel">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Flight Search
+                            </h3>
+                        </div>
+                    </div>
+                    <form class="kt-form">
+                        <div class="kt-portlet__body">
+                            <div class="kt-section kt-section--first">
+                                <div class="kt-section__body">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-md-12 col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-form-label">Origin:</label>
+                                                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-8 col-xl-8">
+                                                    <input type="text" class="form-control myTxtBoxStl" placeholder="Type City/Airport name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Depart Date:</label>
+                                                <div class="col-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" readonly="" placeholder="Select date" id="kt_datepicker_2" style="max-width:100%!important;">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar-check-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Depart Time</label>
+                                                <div class="col-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group timepicker">
+                                                        <input class="form-control" id="kt_timepicker_2" readonly="" placeholder="Select time" type="text">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-clock-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-md-12 col-xs-12 col-sm-12 col-lg-4 col-xl-4 col-form-label">Destination:</label>
+                                                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-8 col-xl-8">
+                                                    <input type="text" class="form-control myTxtBoxStl" placeholder="Type City/Airport name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Return Date:</label>
+                                                <div class="col-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" readonly="" placeholder="Select date" id="kt_datepicker_2" style="max-width:100%!important;">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar-check-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Return Time</label>
+                                                <div class="ccol-lg-8 col-md-9 col-sm-12 col-md-12 col-xl-8">
+                                                    <div class="input-group timepicker">
+                                                        <input class="form-control" id="kt_timepicker_2" readonly="" placeholder="Select time" type="text">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-clock-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-xl-4 col-md-12 col-sm-12">Class of Travel:</label>
+                                                <div class="col-lg-8 col-xl-8 col-md-12 col-sm-12">
+                                                    <div class="dropdown bootstrap-select form-control kt-">
+                                                        <select class="form-control kt-selectpicker" tabindex="-98">
+                                                            <option>Economy</option>
+                                                            <option>Premium Economy</option>
+                                                            <option>Business</option>
+                                                            <option>Premium Business</option>
+                                                            <option>First</option>
+                                                            <option>Premium First</option>
+                                                        </select>
+                                                        <button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">Economy</div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu" role="combobox" x-placement="bottom-start" style="max-height: 460px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                                                            <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1" style="max-height: 434px; overflow-y: auto; min-height: 0px;">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Economy</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false">
+                                                                            <span class="text">Premium Economy</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false">
+                                                                            <span class="text">Business</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Premium Business</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">First</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Premium First</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand lstChkbx">
+                                                <input type="checkbox"> Flexible Fares
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                        <div class="kt-portlet__foot">
+                            <div class="kt-form__actions">
+                                <div class="row">
+                                    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
+                                        <a href="@Url.Action("FlResp","FlightResponse")"><span type="reset" class="btn kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light srchBtn">Search Flights</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                    </form>
+                </div>
+                <div class="tab-pane" id="kt_tabs_5_3" role="tabpanel">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Flight Search
+                            </h3>
+                        </div>
+                    </div>
+                    <form class="kt-form">
+                        <div class="kt-portlet__body">
+                            <div class="kt-section kt-section--first">
+                                <div class="kt-section__body">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-form-label">Origin:</label>
+                                                <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                                                    <input type="text" class="form-control myTxtBoxStl" placeholder="Type City/Airport name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-sm-12 col-md-12 col-xl-4">Depart Date:</label>
+                                                <div class="col-lg-8 col-md-12 col-sm-12 col-xl-8">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" readonly="" placeholder="Select date" id="kt_datepicker_2" style="max-width:100%!important;">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar-check-o"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-md-12 col-sm-12 col-lg-4 col-xl-4 col-form-label">Destination:</label>
+                                                <div class="col-md-12 col-sm-12 col-lg-8 col-xl-8">
+                                                    <input type="text" class="form-control myTxtBoxStl" placeholder="Type City/Airport name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-4 col-xl-4 col-md-12 col-sm-12">Class of Travel:</label>
+                                                <div class="col-lg-8 col-xl-8 col-md-12 col-sm-12">
+                                                    <div class="dropdown bootstrap-select form-control kt-">
+                                                        <select class="form-control kt-selectpicker" tabindex="-98">
+                                                            <option>Economy</option>
+                                                            <option>Premium Economy</option>
+                                                            <option>Business</option>
+                                                            <option>Premium Business</option>
+                                                            <option>First</option>
+                                                            <option>Premium First</option>
+                                                        </select>
+                                                        <button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">Economy</div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu" role="combobox" x-placement="bottom-start" style="max-height: 460px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                                                            <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1" style="max-height: 434px; overflow-y: auto; min-height: 0px;">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Economy</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false">
+                                                                            <span class="text">Premium Economy</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false">
+                                                                            <span class="text">Business</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Premium Business</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">First</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="selected active">
+                                                                        <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                            <span class="text">Premium First</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12">
+                                            <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand lstChkbx">
+                                                <input type="checkbox"> Shop by Schedule
+                                                <span></span>
+                                            </label>
+                                            <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand lstChkbx">
+                                                <input type="checkbox"> Include Hotel
+                                                <span></span>
+                                            </label>
+                                            <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand lstChkbx">
+                                                <input type="checkbox"> Include Car
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-3 col-xl-3">
+                                <button type="button" class="btn btn-outline-brand btn-square doBtn">Add Leg</button>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-3 col-xl-3">
+                                <button type="button" class="btn btn-outline-brand btn-square doBtn">Remove Leg</button>
+                            </div>
+                        </div>
+                        <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                        <div class="kt-portlet__foot">
+                            <div class="kt-form__actions">
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-md-12 col-xl-12">
+                                        <a href="@Url.Action("FlResp","FlightResponse")"><span type="reset" class="btn kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light srchBtn">Search Flights</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

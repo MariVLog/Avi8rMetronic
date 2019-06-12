@@ -1,0 +1,1663 @@
+﻿
+@{
+    ViewBag.Title = "FlightResponse";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+
+<!--Start of Summary of Search-->
+<div class="kt-subheader kt-grid__item mySub" id="kt_subheader" style="margin-top:-16px!important;background-color:rgb(254,110,0);background: radial-gradient(circle, rgba(254,110,0,1) 15%, rgba(246,137,31,1) 51%, rgba(254,110,0,1) 82%);">
+    <div class="row col-lg-12 col-xl-12 col-md-12 col-sm-12 NRDisp" style="margin-left:30px;">
+        <div class="FltSum" style="color:white;width:100%;">
+            <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1">
+                <i class="la la-fighter-jet" style="margin-top:5px;font-size:40px;"></i>
+            </div>
+            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2">
+                <label class="fnt" style="font-size:13px!important;font-weight:300!important;margin-top:15px;">OR Tambo Intl (JNB)</label>
+                <label class="fnt" style="padding-left:15px;font-size:13px!important;font-weight:300!important;margin-top:15px;">12/08/2019</label>
+            </div>
+            <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1">
+                <i class="la la-exchange" style="margin-top:10px;font-size:40px;" "></i>
+            </div>
+            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2">
+                <label class="fnt" style="font-size:13px!important;font-weight:300!important;margin-top:15px;">King Shaka Intl (DUR)</label>
+                <label class="fnt" style="padding-left:15px;font-size:13px!important;font-weight:300!important;margin-top:15px;">15/08/2019</label>
+            </div>
+            <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1">
+                <label class="fnt" style="font-size:13px!important;font-weight:300!important;margin-top:15px;">Economy</label>
+            </div>
+            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2">
+                <label class="fnt" style="font-size:13px!important;font-weight:300!important;margin-top:15px;">Vernon Bear</label>
+                <label class="fnt" style="padding-left:15px;font-size:13px!important;font-weight:300!important;margin-top:15px;">VIP</label>
+            </div>
+            <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2">
+                <label class="fnt" style="font-size:13px!important;font-weight:300!important;margin-top:15px;"></label>
+                <label class="fnt" style="padding-left:15px;font-size:13px!important;font-weight:300!important;margin-top:15px;"></label>
+            </div>
+            <div class="col-lg-1 col-xl-1 col-md-1 col-sm-1">
+                <button type="reset" class="btn srchBtn HI5" style="margin-top:10px;">Change</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Summary-->
+<!--Start of Filters-->
+<div class="kt-portlet__head pnl">
+    <div class="kt-portlet__head-label">
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2" style="color:white;padding-top:10px;"><span style="float:left;"><i class="la la-filter"></i>FILTERS:</span></div>
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2" style="color:white;padding-top:10px;"><i class="la la-money IcnFilt"></i>Price</div>
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2" style="color:white;padding-top:10px;"><i class="la la-plane IcnFilt"></i>Airline</div>
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2" style="color:white;padding-top:10px;"><i class="la la-clock-o IcnFilt"></i>Time</div>
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2" style="color:white;padding-top:10px;"><i class="la la-building IcnFilt"></i>Departure Airport</div>
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2" style="color:white;padding-top:10px;"><i class="la la-building-o IcnFilt"></i>Arrival Airport</div>
+    </div>
+</div>
+<!--End of Filters-->
+<!--DROP Down Filters Panel-->
+<!--When click on anywhere on filters panel change the header to show number of results only as 'header' along with 'apply filters button'. Actual filters selected will slide out.-->
+<!--FILTERS PANEL END-->
+
+<div class="row">
+    <div class="col-lg-8 col-xl-8 col-md-12 col-sm-12">
+        <!--Start Results Sort-->
+        <div class="row Srts">
+            <div class="catalog-head large fly-in" style="width:100%;">
+                <label class="fnt">SORTING RESULTS BY:</label>
+                <div class="search-select SrtBx">
+                    <span class="SrtFnt1" style="padding-top:6px;padding-left:8px;">CARRIER<i class="flaticon2-sort icn"></i></span>
+                </div>
+                <div class="search-select SrtBx">
+                    <span class="SrtFnt2" style="padding-left:15px;padding-top:6px;">PRICE<i class="flaticon2-sort icn"></i></span>
+                </div>
+                <div class="search-select SrtBx">
+                    <span class="SrtFnt1" style="padding-left:2px;padding-top:6px;">DURATION<i class="flaticon2-sort icn"></i></span>
+                </div>
+                <div class="search-select SrtBx">
+                    <span class="SrtFnt2" style="padding-left:15px;padding-top:6px;">TIMES<i class="flaticon2-sort icn"></i></span>
+                </div>
+                <button type="reset" class="btn  srchBtn2 col-lg-2 col-xl-2 col-md-12 col-sm-12"><span><i class="la la-expand"></i>Combined Fares</span></button>
+                <button type="reset" class="btn  srchBtn2 col-lg-2 col-xl-2 col-md-12 col-sm-12"><span><i class="la la-bars"></i>Scheduled Fares</span></button>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!--End Results Sort-->
+        <div>
+            <!--Start Results Display: SPLIT FARES-->
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+                    <div class="catalog-row">
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">DEPARTURE</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">DEPARTURE</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">DEPARTURE</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">DEPARTURE</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">DEPARTURE</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+                    <div class="catalog-row">
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">RETURN</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">RETURN</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">RETURN</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">RETURN</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                        <!-- // flight-item // -->
+                        <div class="flight-item fly-in">
+                            <div class="flt-i-a">
+                                <div class="flt-i-b">
+                                    <div class="flt-i-bb">
+                                        <div class="flt-l-a">
+                                            <div class="flt-l-b">
+                                                <div class="way-lbl">RETURN</div>
+                                                <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                            </div>
+                                            <div class="flt-l-c">
+                                                <div class="flt-l-cb">
+                                                    <div class="flt-l-c-padding">
+                                                        <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                        <!-- // -->
+                                                        <div class="flight-line">
+                                                            <div class="flight-radio">
+                                                                <label>
+                                                                    <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                                    <span class="jq-radio" style="display: inline-block">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b>Departure</b>
+                                                                <span>14:12</span>
+                                                            </div>
+                                                            <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:8px;">Arrival</b>
+                                                                <span>17:50</span>
+                                                            </div>
+                                                            <div class="flight-line-a">
+                                                                <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                                <span style="color:orangered;">1H50M</span>
+                                                            </div>
+                                                            <div class="flight-line-b">
+                                                                <b><i class="flaticon2-information"></i></b>
+                                                                <span style="color:white;">More</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!-- // details // -->
+                                                            <div class="flight-details">
+                                                                <div class="flight-details-l">
+                                                                    <div class="flight-details-a">Operated by:</div>
+                                                                    <div class="flight-details-b">Code:</div>
+                                                                    <div class="flight-details-c">Travel Class:</div>
+                                                                </div>
+                                                                <div class="flight-details-r">
+                                                                    <div class="flight-details-a">Comair</div>
+                                                                    <div class="flight-details-b">MN4023</div>
+                                                                    <div class="flight-details-c">ECONOMY</div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="flight-details-d">
+                                                                    <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- \\ details \\ -->
+                                                        </div>
+                                                        <!-- \\ -->
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                            <div class="flt-i-c">
+                                <div class="flt-i-padding">
+                                    <div class="flt-i-price-i">
+                                        <div class="flt-i-price">R 634.24</div>
+                                    </div>
+                                    <a href="#" class="cat-list-btn">Select</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!-- \\ flight-item \\ -->
+                    </div>
+                </div>
+            </div>
+            <!--End Results Display: SPLIT FARES-->
+            <!--Start Results Display: COMBINED FARES-->
+            <div class="catalog-row">
+                <!-- // flight-item // -->
+                <div class="flight-item fly-in">
+                    <div class="flt-i-a">
+                        <div class="flt-i-b">
+
+                            <div class="flt-i-bb">
+                                <div class="flt-l-a">
+                                    <div class="flt-l-b">
+                                        <div class="way-lbl">DEPARTURE</div>
+                                        <div class="company"><img alt="" src="~/Content/Images/NU.png"></div>
+                                    </div>
+                                    <div class="flt-l-c">
+                                        <div class="flt-l-cb">
+                                            <div class="flt-l-c-padding">
+                                                <div class="flyght-info-head">TUE 06/01 Johannesburg - Durban</div>
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>14:12</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>17:50</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                            </div>
+                                        </div>
+                                        <br class="clear">
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <br class="clear">
+
+                            <div class="flt-i-bb flight-return">
+                                <div class="flt-l-a">
+                                    <div class="flt-l-b">
+                                        <div class="way-lbl">RETURN</div>
+                                        <div class="company"><img alt="" src="~/Content/Images/NU.png"></div>
+                                    </div>
+                                    <div class="flt-l-c">
+                                        <div class="flt-l-cb">
+                                            <div class="flt-l-c-padding">
+                                                <div class="flyght-info-head">FRI 09/01 Durban - Johannesburg</div>
+
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio-a" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>15:30</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>19:40</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                                <!-- \\ -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio-a" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>20:10</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>02:12</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                            </div>
+                                        </div>
+                                        <br class="clear">
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <br class="clear">
+
+                        </div>
+                    </div>
+                    <div class="flt-i-c">
+                        <div class="flt-i-padding">
+                            <div class="flt-i-price">R634.24</div>
+                            <a href="#" class="cat-list-btn">Select</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- \\ flight-item \\ -->
+                <!-- // flight-item // -->
+                <div class="flight-item fly-in">
+                    <div class="flt-i-a">
+                        <div class="flt-i-b">
+
+                            <div class="flt-i-bb">
+                                <div class="flt-l-a">
+                                    <div class="flt-l-b">
+                                        <div class="way-lbl">DEPARTURE</div>
+                                        <div class="company"><img alt="" src="~/Content/Images/NU.png"></div>
+                                    </div>
+                                    <div class="flt-l-c">
+                                        <div class="flt-l-cb">
+                                            <div class="flt-l-c-padding">
+                                                <div class="flyght-info-head">TUE 06/01 Johannesburg - Durban</div>
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>14:12</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>17:50</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>14:12</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>17:50</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>14:12</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>17:50</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                            </div>
+                                        </div>
+                                        <br class="clear">
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <br class="clear">
+
+                            <div class="flt-i-bb flight-return">
+                                <div class="flt-l-a">
+                                    <div class="flt-l-b">
+                                        <div class="way-lbl">RETURN</div>
+                                        <div class="company"><img alt="" src="~/Content/Images/NU.png"></div>
+                                    </div>
+                                    <div class="flt-l-c">
+                                        <div class="flt-l-cb">
+                                            <div class="flt-l-c-padding">
+                                                <div class="flyght-info-head">FRI 09/01 Durban - Johannesburg</div>
+
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio-a" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>15:30</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>19:40</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                                <!-- \\ -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio-a" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>20:10</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="padding-left:8px;">Arrival</b>
+                                                        <span>02:12</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:15px;color:orangered;">0 STOPS</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b" style="margin-right:80px!important;">
+                                                        <b>Details<i class="flaticon2-information" style="padding-left:5px;"></i></b>
+                                                        <span>Only 2 seats</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Airline:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r" style="float:left;">
+                                                            <div class="flight-details-a">Operated by Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                            </div>
+                                        </div>
+                                        <br class="clear">
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <br class="clear">
+
+                        </div>
+                    </div>
+                    <div class="flt-i-c">
+                        <div class="flt-i-padding">
+                            <div class="flt-i-price">R634.24</div>
+                            <a href="#" class="cat-list-btn">Select</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- \\ flight-item \\ -->
+            </div>
+            <!--End Results Display: COMBINED FARES-->
+            <!--Start Results Display: SCHEDULED FARES-->
+            <!--End Results Display: SCHEDULED FARES-->
+        </div>
+    </div>
+    <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12">
+        <div class="flight-item fly-in">
+            <div class="row">
+                <span style="padding-top:6px;padding-bottom:7px;color:green;margin-left:auto;margin-right:auto;font-weight:900;font-size:20px;">SELECTION</span>
+            </div>
+            <div class="row">
+                <div class="flight-item fly-in">
+                    <div class="flt-i-a">
+                        <div class="flt-i-b">
+                            <div class="flt-i-bb">
+                                <div class="flt-l-a">
+                                    <div class="flt-l-b">
+                                        <div class="way-lbl">DEPARTURE</div>
+                                        <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                    </div>
+                                    <div class="flt-l-c">
+                                        <div class="flt-l-cb">
+                                            <div class="flt-l-c-padding">
+                                                <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>14:12</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:8px;">Arrival</b>
+                                                        <span>17:50</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b">
+                                                        <b><i class="flaticon2-information"></i></b>
+                                                        <span style="color:white;">More</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Operated by:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r">
+                                                            <div class="flight-details-a">Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                            </div>
+                                        </div>
+                                        <br class="clear">
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <br class="clear">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="row">
+                <span style="margin-left:auto;margin-right:auto;font-weight:500;color:#3a4a62;">Fare: R 1111</span>
+                <span style="margin-left:auto;margin-right:auto;font-weight:500;color:#3a4a62;">Taxes: R 111</span>
+                <span style="margin-left:auto;margin-right:auto;font-weight:500;color:#3a4a62;">Total: R 1111</span>
+            </div>
+            <div class="row">
+                <div class="flight-item fly-in">
+                    <div class="flt-i-a">
+                        <div class="flt-i-b">
+                            <div class="flt-i-bb">
+                                <div class="flt-l-a">
+                                    <div class="flt-l-b">
+                                        <div class="way-lbl">RETURN</div>
+                                        <div class="company"><img src="~/Content/Images/BA.png"></div>
+                                    </div>
+                                    <div class="flt-l-c">
+                                        <div class="flt-l-cb">
+                                            <div class="flt-l-c-padding">
+                                                <div class="flyght-info-head">TUE 06/01 JNB - DUR</div>
+                                                <!-- // -->
+                                                <div class="flight-line">
+                                                    <div class="flight-radio">
+                                                        <label>
+                                                            <input name="radio" type="radio" style="position: absolute; left: -9999px;">
+                                                            <span class="jq-radio" style="display: inline-block">
+                                                                <span></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b>Departure</b>
+                                                        <span>14:12</span>
+                                                    </div>
+                                                    <div class="flight-line-d"><i class="flaticon2-right-arrow"></i></div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:8px;">Arrival</b>
+                                                        <span>17:50</span>
+                                                    </div>
+                                                    <div class="flight-line-a">
+                                                        <b style="margin-left:10px;color:orangered;">0 Stops</b>
+                                                        <span style="color:orangered;">1H50M</span>
+                                                    </div>
+                                                    <div class="flight-line-b">
+                                                        <b><i class="flaticon2-information"></i></b>
+                                                        <span style="color:white;">More</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <!-- // details // -->
+                                                    <div class="flight-details">
+                                                        <div class="flight-details-l">
+                                                            <div class="flight-details-a">Operated by:</div>
+                                                            <div class="flight-details-b">Code:</div>
+                                                            <div class="flight-details-c">Travel Class:</div>
+                                                        </div>
+                                                        <div class="flight-details-r">
+                                                            <div class="flight-details-a">Comair</div>
+                                                            <div class="flight-details-b">MN4023</div>
+                                                            <div class="flight-details-c">ECONOMY</div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="flight-details-d">
+                                                            <a style="padding:3px;color:white;background-color:darkorange">Fare Rules</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- \\ details \\ -->
+                                                </div>
+                                                <!-- \\ -->
+                                            </div>
+                                        </div>
+                                        <br class="clear">
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <br class="clear">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="row">
+                <span style="margin-left:auto;margin-right:auto;font-weight:500;color:#3a4a62;">Fare: R 1111</span>
+                <span style="margin-left:auto;margin-right:auto;font-weight:500;color:#3a4a62;">Taxes: R 111</span>
+                <span style="margin-left:auto;margin-right:auto;font-weight:500;color:#3a4a62;">Total: R 1111</span>
+            </div>
+            <div class="row">
+                <span style="font-weight:500;color:darkorange;margin-left:65%;margin-top:20px;">GRAND TOTAL: R 1111</span>
+            </div>
+            <div class="row">
+                <span style="color:limegreen;margin-left:auto;margin-right:auto;font-weight:500;margin-top:20px;"><i class="flaticon-like" style="padding-right:5px;"></i>In Policy</span>
+                <span style="color:mediumslateblue;margin-left:auto;margin-right:auto;font-weight:500;margin-top:20px;"><i class="flaticon-presentation-1" style="padding-right:5px;"></i>Negotiated Rate</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
+                    <a href="@Url.Action("FlResp","FlightResponse")"><span type="reset" class="btn kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light srchBtn" style="margin-top:20px;margin-bottom:20px;"><i class="flaticon-cart"></i>Add to Basket</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--PAGINATION-->
+    <div class="kt-portlet__body pagAlgn">
+        <div class="tab-content">
+            <!--begin: Section-->
+            <div class="kt-section">
+                <p class="kt-section__content">
+                    <!--begin: Pagination-->
+                </p>
+                <div class="kt-pagination  kt-pagination--brand">
+                    <ul class="kt-pagination__links">
+                        <li class="kt-pagination__link--first">
+                            <a href="#" class="pagSt"><i class="fa fa-angle-double-left kt-font-brand pagIc"></i></a>
+                        </li>
+                        <li class="kt-pagination__link--next">
+                            <a href="#" class="pagSt"><i class="fa fa-angle-left kt-font-brand pagIc"></i></a>
+                        </li>
+                        <li>
+                            <a href="#">...</a>
+                        </li>
+                        <li>
+                            <a href="#">29</a>
+                        </li>
+                        <li>
+                            <a href="#">30</a>
+                        </li>
+                        <li>
+                            <a href="#">31</a>
+                        </li>
+                        <li class="kt-pagination__link--active">
+                            <a href="#">32</a>
+                        </li>
+                        <li>
+                            <a href="#">33</a>
+                        </li>
+                        <li>
+                            <a href="#">34</a>
+                        </li>
+                        <li>
+                            <a href="#">...</a>
+                        </li>
+                        <li class="kt-pagination__link--prev">
+                            <a href="#" class="pagSt"><i class="fa fa-angle-right kt-font-brand pagIc"></i></a>
+                        </li>
+                        <li class="kt-pagination__link--last">
+                            <a href="#" class="pagSt"><i class="fa fa-angle-double-right kt-font-brand pagIc"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--end: Pagination-->
+                <p></p>
+            </div>
+            <!--end: Section-->
+        </div>
+    </div>
+    <!--PAGINATION END-->
+</div>

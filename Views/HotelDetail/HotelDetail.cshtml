@@ -1,0 +1,531 @@
+﻿
+@{
+    ViewBag.Title = "HotelDetail";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+
+<div class="kt-subheader kt-grid__item" id="kt_subheader" style="margin-top:-16px!important;background-color:rgb(254,110,0);background: radial-gradient(circle, rgba(254,110,0,1) 15%, rgba(246,137,31,1) 51%, rgba(254,110,0,1) 82%);">
+    <div class="table-responsive">
+        <table class="table hdtTblH3 col-md-10 col-md-offset-1">
+            <colgroup>
+                <col class="Cl3" />
+                <col class="Cl3" />
+                <col class="Cl3" />
+                <col class="Cl3" />
+                <col class="Cl3" />
+            </colgroup>
+            <tr>
+                <td style="border-top-color:none!important;color:white;">
+                    <i class="flaticon2-architecture-and-city HI6"></i>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">City:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">Durban (DUR)</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">Nights:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">3 Nights</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">Pax:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">Vernon Bear</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;">
+                    <button type="reset" class="btn srchBtn HI5">Change</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="row col-md-12 ">
+    <div class="col-md-9">
+        <div class="sp-page-p">
+            <div class="h-tabs">
+                <div class="h-tabs-left">
+                    <div class="h-tab-i active">
+                        <a href="#" class="h-tab-item-01">
+                            <i></i>
+                            <span class="fnt2 phTb">Photos</span>
+                            <span class="clear"></span>
+                        </a>
+                    </div>
+                    <div class="h-tab-i">
+                        <a href="#" class="h-tab-item-02 initMap">
+                            <i></i>
+                            <span>map</span>
+                            <span class="clear"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="mm-tabs-wrapper">
+                <!-- // tab item // -->
+                <div class="tab-item">
+                    <div class="tab-gallery-big">
+                        <img alt="" src="~/Content/Images/Sparrow Img/tab-photo-01.jpg">
+                    </div>
+                    <div class="tab-gallery-preview">
+                        <div class="bx-wrapper" style="max-width: 683px;">
+                            <div class="bx-viewport myBxVP" aria-live="polite">
+                                <div id="gallery myGal">
+                                    <div class="gallery-i active bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-01.jpg"><span></span></a>
+                                    </div><div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-02.jpg"><span></span></a>
+                                    </div><div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-03.jpg"><span></span></a>
+                                    </div><div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-04.jpg"><span></span></a>
+                                    </div><div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-05.jpg"><span></span></a>
+                                    </div><div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-06.jpg"><span></span></a>
+                                    </div>
+                                    <!-- // -->
+                                    <div class="gallery-i active myGalI" aria-hidden="false">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-01.jpg"><span></span></a>
+                                    </div>
+                                    <!-- \\ -->
+                                    <!-- // -->
+                                    <div class="gallery-i myGalI" aria-hidden="false">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-02.jpg"><span></span></a>
+                                    </div>
+                                    <!-- \\ -->
+                                    <!-- // -->
+                                    <div class="gallery-i myGalI" aria-hidden="false">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-03.jpg"><span></span></a>
+                                    </div>
+                                    <!-- \\ -->
+                                    <!-- // -->
+                                    <div class="gallery-i myGalI" aria-hidden="false">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-04.jpg"><span></span></a>
+                                    </div>
+                                    <!-- \\ -->
+                                    <!-- // -->
+                                    <div class="gallery-i myGalI" aria-hidden="false">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-05.jpg"><span></span></a>
+                                    </div>
+                                    <!-- \\ -->
+                                    <!-- // -->
+                                    <div class="gallery-i myGalI" aria-hidden="false">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-06.jpg"><span></span></a>
+                                    </div>
+                                    <!-- \\ -->
+                                    <div class="gallery-i active bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-01.jpg"><span></span></a>
+                                    </div>
+                                    <div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-02.jpg"><span></span></a>
+                                    </div>
+                                    <div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-03.jpg"><span></span></a>
+                                    </div>
+                                    <div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-04.jpg"><span></span></a>
+                                    </div>
+                                    <div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-05.jpg"><span></span></a>
+                                    </div>
+                                    <div class="gallery-i bx-clone myGalI" aria-hidden="true">
+                                        <a href="~/Content/Images/Sparrow Img/tab-photo-01.jpg"><img alt="" src="~/Content/Images/Sparrow Img/tabgall-prev-06.jpg"><span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bx-controls bx-has-controls-direction bx-has-pager">
+                                <div class="bx-controls-direction">
+                                    <a class="bx-prev" href="">Prev</a>
+                                    <a class="bx-next" href="">Next</a>
+                                </div>
+                                <div class="bx-pager bx-default-pager">
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="0" class="bx-pager-link active">1</a>
+                                    </div>
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="1" class="bx-pager-link">2</a>
+                                    </div>
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="2" class="bx-pager-link">3</a>
+                                    </div>
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="3" class="bx-pager-link">4</a>
+                                    </div>
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="4" class="bx-pager-link">5</a>
+                                    </div>
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="5" class="bx-pager-link">6</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- \\ tab item \\ -->
+            </div>
+            <div class="content-tabs">
+                <div class="row">
+                    <div class="content-tabs-head">
+                        <ul style="list-style:none!important;">
+                            <li><a href="#" class="fnt">Description</a></li>
+                            <li><a href="#" class="active fnt">Availability</a></li>
+                            <li><a href="#" class="fnt">Amenities</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="content-tabs-body">
+                    <!-- // content-tabs-i // -->
+                    <div class="content-tabs-i htlTb">
+                        <h2 class="h2Stl">Hotel Description</h2>
+                        <p class="pStl">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui. voluptatem sequi nesciunt. Neque porro quisqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
+                        <div class="tab-reasons">
+                            <div class="facilities">
+                                <h2 class="h2Stl">Facilities of Hotel</h2>
+                                <table class="HTblStl">
+                                    <tbody>
+                                        <tr>
+                                            <td class="facilities-a">Food &amp; Drink</td>
+                                            <td class="facilities-b">Breakfast in the Room</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facilities-a">Internet</td>
+                                            <td class="facilities-b"><span class="facility-label">Free! WiFi is available in all areas and is free of charge.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facilities-a">Parking</td>
+                                            <td class="facilities-b">Vending Machine (drinks), 24-Hour Front Desk, Express Check-in/Check-out</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="facilities-a">Languages</td>
+                                            <td class="facilities-b">Italian, French, Spanish, English, Arabic</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- \\ content-tabs-i \\ -->
+                    <!-- // content-tabs-i // -->
+                    <div class="content-tabs-i htlTb">
+                        <div class="rates-search">
+                            <h2 class="h2Stl">Room Type</h2>
+                            <div class="rates-devider"></div>
+                            <div class="row">
+                                <!-- // -->
+                                <div class="row col-md-12 myRw">
+                                    <div class="col-md-3">
+                                        <div class="">
+                                            <a href="#"><img alt="" src="~/Content/Images/Sparrow Img/available-01.jpg" class="myHImg"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="cat-list-item" style="width:100%!important;">
+                                            <div class="cat-list-item-r MyRLI">
+                                                <div class="cat-list-item-rb">
+                                                    <div class="cat-list-item-p">
+                                                        <div class="cat-list-content">
+                                                            <div class="cat-list-content-a">
+                                                                <div class="cat-list-content-l">
+                                                                    <div class="cat-list-content-lb">
+                                                                        <div class="cat-list-content-lpadding">
+                                                                            <div class="offer-slider-link"><a href="#" class="fnt">Single Room</a></div>
+                                                                            <div class="offer-slider-location">Max Occupancy: 2 persons</div>
+                                                                            <p class="fnt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+                                                                            <div class="cat-icons">
+                                                                                <span class="cat-icon-01 active"></span>
+                                                                                <span class="cat-icon-02"></span>
+                                                                                <span class="cat-icon-03"></span>
+                                                                                <span class="cat-icon-04"></span>
+                                                                                <span class="cat-icon-05"></span>
+                                                                                <span class="cat-icon-06"></span>
+                                                                                <div class="clear"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br class="clear">
+                                                                </div>
+                                                            </div>
+                                                            <div class="cat-list-content-r">
+                                                                <div class="cat-list-content-p myCLCP">
+                                                                    <div class="available-price myAP">R634</div>
+                                                                    <div class="available-price-a myAP">avg/night</div>
+                                                                    <div class="available-price-c myAPC">9 available</div>
+                                                                    <a href="#" class="available-btn"><span>Select</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rates-devider"></div>
+                            <div class="row">
+                                <!-- // -->
+                                <div class="row col-md-12 myRw">
+                                    <div class="col-md-3">
+                                        <div class="">
+                                            <a href="#"><img alt="" src="~/Content/Images/Sparrow Img/available-01.jpg" class="myHImg"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="cat-list-item" style="width:100%!important;">
+                                            <div class="cat-list-item-r MyRLI">
+                                                <div class="cat-list-item-rb">
+                                                    <div class="cat-list-item-p">
+                                                        <div class="cat-list-content">
+                                                            <div class="cat-list-content-a">
+                                                                <div class="cat-list-content-l">
+                                                                    <div class="cat-list-content-lb">
+                                                                        <div class="cat-list-content-lpadding">
+                                                                            <div class="offer-slider-link"><a href="#" class="fnt">Single Room</a></div>
+                                                                            <div class="offer-slider-location">Max Occupancy: 2 persons</div>
+                                                                            <p class="fnt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+                                                                            <div class="cat-icons">
+                                                                                <span class="cat-icon-01 active"></span>
+                                                                                <span class="cat-icon-02"></span>
+                                                                                <span class="cat-icon-03"></span>
+                                                                                <span class="cat-icon-04"></span>
+                                                                                <span class="cat-icon-05"></span>
+                                                                                <span class="cat-icon-06"></span>
+                                                                                <div class="clear"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br class="clear">
+                                                                </div>
+                                                            </div>
+                                                            <div class="cat-list-content-r">
+                                                                <div class="cat-list-content-p myCLCP">
+                                                                    <div class="available-price myAP">R634</div>
+                                                                    <div class="available-price-a myAP">avg/night</div>
+                                                                    <div class="available-price-c myAPC">9 available</div>
+                                                                    <a href="#" class="available-btn"><span>Select</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rates-devider"></div>
+                            <div class="row">
+                                <!-- // -->
+                                <div class="row col-md-12 myRw">
+                                    <div class="col-md-3">
+                                        <div class="">
+                                            <a href="#"><img alt="" src="~/Content/Images/Sparrow Img/available-01.jpg" class="myHImg"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="cat-list-item" style="width:100%!important;">
+                                            <div class="cat-list-item-r MyRLI">
+                                                <div class="cat-list-item-rb">
+                                                    <div class="cat-list-item-p">
+                                                        <div class="cat-list-content">
+                                                            <div class="cat-list-content-a">
+                                                                <div class="cat-list-content-l">
+                                                                    <div class="cat-list-content-lb">
+                                                                        <div class="cat-list-content-lpadding">
+                                                                            <div class="offer-slider-link"><a href="#" class="fnt">Single Room</a></div>
+                                                                            <div class="offer-slider-location">Max Occupancy: 2 persons</div>
+                                                                            <p class="fnt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+                                                                            <div class="cat-icons">
+                                                                                <span class="cat-icon-01 active"></span>
+                                                                                <span class="cat-icon-02"></span>
+                                                                                <span class="cat-icon-03"></span>
+                                                                                <span class="cat-icon-04"></span>
+                                                                                <span class="cat-icon-05"></span>
+                                                                                <span class="cat-icon-06"></span>
+                                                                                <div class="clear"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br class="clear">
+                                                                </div>
+                                                            </div>
+                                                            <div class="cat-list-content-r">
+                                                                <div class="cat-list-content-p myCLCP">
+                                                                    <div class="available-price myAP">R634</div>
+                                                                    <div class="available-price-a myAP">avg/night</div>
+                                                                    <div class="available-price-c myAPC">9 available</div>
+                                                                    <a href="#" class="available-btn"><span>Select</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br class="clear">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-tabs-i myCTI">
+                        <h2 class="h2Stl">Hotel Facilities</h2>
+                        <p class="pStl">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. </p>
+                        <ul class="preferences-list" style="padding-left:10px;">
+                            <li class="internet">High-speed Internet</li>
+                            <li class="conf-room">Conference room</li>
+                            <li class="play-place">Play Place</li>
+                            <li class="restourant">Restaurant</li>
+                            <li class="bar">Bar</li>
+                            <li class="doorman">Doorman</li>
+                            <li class="kitchen">Kitchen</li>
+                            <li class="spa">Spa services</li>
+                            <li class="bike">Bike Rental</li>
+                            <li class="entertaiment">Entertaiment</li>
+                            <li class="hot-tub">Hot Tub</li>
+                            <li class="pool">Swimming Pool</li>
+                            <li class="parking">Free parking</li>
+                            <li class="gym">Gym</li>
+                            <li class="tv">TV</li>
+                            <li class="pets">Pets allowed</li>
+                            <li class="handicap">Handicap</li>
+                            <li class="secure">Secure </li>
+                        </ul>
+                        <div class="clear"></div>
+                        <br />
+                        <br />
+                        <ul class="preferences-list-alt" style="padding-left:10px;margin-top:20px;">
+                            <li class="internet">High-speed Internet</li>
+                            <li class="parking">Free parking</li>
+                            <li class="gym">Gym</li>
+                            <li class="restourant">Restourant</li>
+                            <li class="pets">Pets allowed</li>
+                            <li class="pool">Swimming Pool</li>
+                            <li class="kitchen">Kitchen</li>
+                            <li class="conf-room">Conference room</li>
+                            <li class="bike">Bike Rental</li>
+                            <li class="entertaiment">Entertaiment</li>
+                            <li class="bar">Bar</li>
+                            <li class="secure">Secure</li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- \\ content-tabs-i \\ -->
+                </div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="col-md-3">
+        <div class="sp-page-r mySp">
+            <div class="h-detail-r">
+                <div class="h-detail-lbl">
+                    <div class="h-detail-lbl-a myHtlHdr">Andrassy Thai Hotel </div>
+                    <div class="h-detail-lbl-b">Paris, france</div>
+                </div>
+                <div class="h-details-text">
+                    <p class="fnt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. </p>
+                    <p class="fnt">Neque porro quisqua. Sed ut perspiciatis unde omnis ste natus error sit voluptatem.</p>
+                </div>
+            </div>
+            <div class="h-liked">
+                <div class="h-liked-lbl myHtlHdr2">You May Also Like</div>
+                <div class="h-liked-row">
+                    <!-- // -->
+                    <div class="h-liked-item">
+                        <div class="h-liked-item-i">
+                            <div class="h-liked-item-l">
+                                <a href="#"><img alt="" src="~/Content/Images/Sparrow Img/like-01.jpg"></a>
+                            </div>
+                            <div class="h-liked-item-c">
+                                <div class="h-liked-item-cb">
+                                    <div class="h-liked-item-p">
+                                        <div class="h-liked-title"><a href="#">Andrassy Thai Hotel</a></div>
+                                        <div class="h-liked-foot">
+                                            <span class="h-liked-price">850$</span>
+                                            <span class="h-liked-comment">avg/night</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- \\ -->
+                    <!-- // -->
+                    <div class="h-liked-item">
+                        <div class="h-liked-item-i">
+                            <div class="h-liked-item-l">
+                                <a href="#"><img alt="" src="~/Content/Images/Sparrow Img/like-02.jpg"></a>
+                            </div>
+                            <div class="h-liked-item-c">
+                                <div class="h-liked-item-cb">
+                                    <div class="h-liked-item-p">
+                                        <div class="h-liked-title"><a href="#">Campanile Cracovie</a></div>
+                                        <div class="h-liked-foot">
+                                            <span class="h-liked-price">964$</span>
+                                            <span class="h-liked-comment">avg/night</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- \\ -->
+                    <!-- // -->
+                    <div class="h-liked-item">
+                        <div class="h-liked-item-i">
+                            <div class="h-liked-item-l">
+                                <a href="#"><img alt="" src="~/Content/Images/Sparrow Img/like-02.jpg"></a>
+                            </div>
+                            <div class="h-liked-item-c">
+                                <div class="h-liked-item-cb">
+                                    <div class="h-liked-item-p">
+                                        <div class="h-liked-title"><a href="#">Campanile Cracovie</a></div>
+                                        <div class="h-liked-foot">
+                                            <span class="h-liked-price">964$</span>
+                                            <span class="h-liked-comment">avg/night</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- \\ -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+

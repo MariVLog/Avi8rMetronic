@@ -1,0 +1,847 @@
+﻿
+@{
+    ViewBag.Title = "TransferResponse";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+
+<div class="kt-subheader kt-grid__item" id="kt_subheader" style="margin-top:-16px!important;background-color:rgb(254,110,0);background: radial-gradient(circle, rgba(254,110,0,1) 15%, rgba(246,137,31,1) 51%, rgba(254,110,0,1) 82%);">
+    <div class="table-responsive">
+        <table class="table hdtTblC fnt col-md-10 col-md-offset-1">
+            <colgroup>
+                <col class="Cl1" />
+                <col class="Cl2" />
+                <col class="Cl1" />
+                <col class="Cl2" />
+                <col class="Cl2" />
+                <col class="Cl2" />
+                <col class="Cl2" />
+                <col class="Cl2" />
+            </colgroup>
+            <tr>
+                <td style="border-top-color:none!important;color:white;">
+                    <i class="la la-cab HI1"></i>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">Pick up:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">Johannesburg (JNB)</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <i class="la la-exchange HI4"></i>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">Drop off:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">Durban (DUR)</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">Pick up Date:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">12/08/2019</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">Drop off Date:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">15/08/2019</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;color:white;">
+                    <div class="row lbl">
+                        <label class="HI2 lblH">Travelers:</label>
+                    </div>
+                    <div class="row lbl">
+                        <label class="HI3">Vernon Bear</label>
+                    </div>
+                </td>
+                <td style="border-top-color:none!important;">
+                    <button type="reset" class="btn srchBtn HI5">Change</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+<div class="pnl">
+    <div class="panel panel-default" style="width:100%!important;">
+        <div class="panel-body myPnlBdy">
+            <div class="table-responsive FiltTbl">
+                <table class="table mytbl">
+                    <colgroup>
+                        <col class="Cl1" />
+                        <col class="Cl1" />
+                        <col class="Cl1" />
+                        <col class="Cl1" />
+                        <col class="Cl1" />
+                    </colgroup>
+                    <tr>
+                        <td style="border-top-color:white!important;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center!important;">
+                                    <i class="la la-filter IcnFilt"></i>
+                                    <label class="lblFilt">Filters</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="border-top-color:white!important;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center!important;">
+                                    <i class="la la-stop IcnFilt"></i>
+                                    <label class="lblFilt">Stops</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="border-top-color:white!important;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center!important;">
+                                    <i class="la la-money IcnFilt"></i>
+                                    <label class="lblFilt">Price</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="border-top-color:white!important;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center!important;">
+                                    <i class="la la-plane IcnFilt"></i>
+                                    <label class="lblFilt">Airline</label>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="border-top-color:white!important;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center!important;">
+                                    <i class="la la-star IcnFilt"></i>
+                                    <label class="lblFilt">Class</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--FILTERS PANEL: when click on panel the filter icons are replace with this panel and the drop down occurs simultaneously -->
+@*<div class="row col-md-12">
+        <div class="pnl" style="width:100%!important;margin-top:50px!important;">
+            <div class="panel panel-default" style="width:100%!important;">
+                <div class="panel-body" style="width:100%!important;height:50px!important;padding:10px;">
+                    <div class="table-responsive" style="border:none!important;overflow:hidden!important; margin-top:0px!important;">
+                        <table class="table" style="margin-top:-10px!important;">
+                            <colgroup>
+                                <col class="Cl4" />
+                                <col class="Cl4" />
+                                <col class="Cl4" />
+                            </colgroup>
+                            <tr>
+                                <td style="border-top-color:white!important;">
+                                    <div class="row">
+                                        <label style="font-size:12px!important;font-weight:200!important;padding-left:15px!important;padding-top:10px!important;">265 Flights Found</label>
+                                    </div>
+                                </td>
+                                <td style="border-top-color:white!important;">
+                                    <div class="row" style="float:right;">
+                                        <button type="reset" class="btn srchBtn" style="float:right!important;margin-left:5px;">Cancel</button>
+                                        <button type="reset" class="btn srchBtn" style="float:right!important;margin-left:5px;">Apply</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<!--DROP Down Filters Panel-->
+@*<div class="row col-md-12">
+        <div class="pnl" style="width:100%!important;">
+            <div class="panel panel-default pnl" style="width:100%!important;">
+                <div class="panel-body" style="width:100%!important;">
+                    <div class="table-responsive" style="border:none!important;overflow:hidden!important; margin-top:0px!important;">
+                        <table class="table" style="margin-top:-10px!important;">
+                            <colgroup>
+                                <col class="Cl5" />
+                                <col class="Cl5" />
+                                <col class="Cl5" />
+                                <col class="Cl5" />
+                            </colgroup>
+                            <tr>
+                                <td style="border-top-color:white!important;">
+                                    <table style="width:100%!important;">
+                                        <colgroup>
+                                            <col class="Cl6" />
+                                            <col class="Cl6" />
+                                            <col class="Cl6" />
+                                        </colgroup>
+                                        <tr>
+                                            <td style="font-weight:600;">Stops</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> 0
+                                                    <span></span>
+                                                </label>
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> 1
+                                                    <span></span>
+                                                </label>
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> 2
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border:none!important;padding-top:50px!important">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox" style="width:100%;"> Private Fares
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight:600!important;border:none!important;padding-top:50px!important;">
+                                                Price
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border:none!important;">
+                                                <div class="col-8">
+                                                    <div id="kt_nouislider_3" class="kt-nouislider noUi-target noUi-rtl noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(50%, 0px) scale(0.342857, 1);"></div></div><div class="noUi-origin" style="transform: translate(-15.7143%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="80.0" aria-valuenow="20.0" aria-valuetext="20.00"><div class="noUi-touch-area"></div><div class="noUi-tooltip">20.00</div></div></div><div class="noUi-origin" style="transform: translate(-50%, 0px); z-index: 6;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="20.0" aria-valuemax="200.0" aria-valuenow="80.0" aria-valuetext="80.00"><div class="noUi-touch-area"></div><div class="noUi-tooltip">80.0</div></div></div></div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="border-top-color:white!important;">
+                                    <table>
+                                        <colgroup>
+                                            <col class="Cl6" />
+                                            <col class="Cl6" />
+                                            <col class="Cl6" />
+                                        </colgroup>
+                                        <tr>
+                                            <td style="font-weight:600;">Airline</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> Mango
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> British Airways
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> Kulula
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight:600; border:none!important;padding-top:50px!important;">Class</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> Economy
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> Business
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> First
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:left;border:none!important;">
+                                                <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand flchk">
+                                                    <input type="checkbox"> Private
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="border-top-color:white!important;">
+                                    <table>
+                                        <colgroup>
+                                            <col class="Cl6" />
+                                            <col class="Cl6" />
+                                            <col class="Cl6" />
+                                            <col class="Cl6" />
+                                        </colgroup>
+                                        <tr><td style="font-weight:600;">Departure Time</td></tr>
+                                        <tr><td style="font-weight:400;">Form Johannesburg</td></tr>
+                                        <tr>
+                                            <td>
+
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr><td style="font-weight:400;">Form Durban</td></tr>
+                                        <tr>----------</tr>
+                                    </table>
+                                </td>
+                                <td style="border-top-color:white!important;">
+                                    <table>
+                                        <tr>Departure Airports</tr>
+                                        <tr>Departure Airports</tr>
+                                        <tr>Arrival Airports</tr>
+                                        <tr>Arrival Airports</tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+<!--FILTERS PANEL END-->
+<!--SORTS FOR RESULTS-->
+<div class="row Srts">
+    <div class="catalog-head large fly-in" style="width:100%;">
+        <label class="fnt">SORTING RESULTS BY:</label>
+        <div class="search-select SrtBx">
+            <span class="fnt2 SrtFnt">NAME<i class="flaticon2-sort icn"></i></span>
+        </div>
+        <div class="search-select SrtBx">
+            <span class="fnt2 SrtFnt2">PRICE<i class="flaticon2-sort icn"></i></span>
+        </div>
+        <a href="@Url.Action("HtlMap","HotelMaps")"><i class="flaticon-squares-1 tgl"></i></a>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--SORTS END-->
+<!--DISPLAY RESULTS SUMARY-->
+<div class="car-list-cn col-md-12" style="margin-bottom:30px;">
+    <div class="responsive-table col-md-12" style="width:100%;">
+        <table class="table car-list-table text-center">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th><img style="height:50px;" src="~/Content/Images/Cars/BV.png" alt=""></th>
+                    <th><img style="height:50px;" src="~/Content/Images/Cars/IM.png" alt=""></th>
+                    <th><img style="height:50px;" src="~/Content/Images/Cars/ZD.png" alt=""></th>
+                    <th><img style="height:50px;" src="~/Content/Images/Cars/ZE.png" alt=""></th>
+                    <th><img style="height:50px;" src="~/Content/Images/Cars/ZI.png" alt=""></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_CDAR.jpg" alt="">
+                            </a>
+                            <figcaption>Economy</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <a href="@Url.Action("CarDet","CarDetails")">
+                            <div class="price-box">
+                                <span class="price"><ins>$85</ins></span>
+                                <span class="price night">$61<small>/daily</small></span>
+                            </div>
+                        </a>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_CDMR.jpg" alt="">
+                            </a>
+                            <figcaption>Compact</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_EBMR.jpg" alt="">
+                            </a>
+                            <figcaption>Midsize</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_EDAR.jpg" alt="">
+                            </a>
+                            <figcaption>Standard</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_EDMR.jpg" alt="">
+                            </a>
+                            <figcaption>Full size</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_IFMR.jpg" alt="">
+                            </a>
+                            <figcaption>Midsize SUV</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_PCAR.jpg" alt="">
+                            </a>
+                            <figcaption>Mini Van</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_PRAR.jpg" alt="">
+                            </a>
+                            <figcaption>Standard SUV</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_PVMR.jpg" alt="">
+                            </a>
+                            <figcaption>Luxury</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-car">
+                        <figure>
+                            <a href="">
+                                <img style="height:50px;" src="~/Content/Images/Cars/BV_SFMR.jpg" alt="">
+                            </a>
+                            <figcaption>Premium SUV</figcaption>
+
+                        </figure>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <div class="price-box">
+                            <span class="price"><ins>$85</ins></span>
+                            <span class="price night">$61<small>/daily</small></span>
+                        </div>
+                    </td>
+                    <td class="td-price">
+                        <a href="@Url.Action("ERP","ErrorPage")">
+                            <div class="price-box">
+                                <span class="price"><ins>$85</ins></span>
+                                <span class="price night">$61<small>/daily</small></span>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--RESULTS SUMMARY END-->
+<!--PAGINATION-->
+<div class="kt-portlet__body pagAlgn">
+    <div class="tab-content">
+        <!--begin: Section-->
+        <div class="kt-section">
+            <p class="kt-section__content">
+                <!--begin: Pagination-->
+            </p>
+            <div class="kt-pagination  kt-pagination--brand">
+                <ul class="kt-pagination__links">
+                    <li class="kt-pagination__link--first">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-double-left kt-font-brand pagIc"></i></a>
+                    </li>
+                    <li class="kt-pagination__link--next">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-left kt-font-brand pagIc"></i></a>
+                    </li>
+                    <li>
+                        <a href="#">...</a>
+                    </li>
+                    <li>
+                        <a href="#">29</a>
+                    </li>
+                    <li>
+                        <a href="#">30</a>
+                    </li>
+                    <li>
+                        <a href="#">31</a>
+                    </li>
+                    <li class="kt-pagination__link--active">
+                        <a href="#">32</a>
+                    </li>
+                    <li>
+                        <a href="#">33</a>
+                    </li>
+                    <li>
+                        <a href="#">34</a>
+                    </li>
+                    <li>
+                        <a href="#">...</a>
+                    </li>
+                    <li class="kt-pagination__link--prev">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-right kt-font-brand pagIc"></i></a>
+                    </li>
+                    <li class="kt-pagination__link--last">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-double-right kt-font-brand pagIc"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!--end: Pagination-->
+            <p></p>
+        </div>
+        <!--end: Section-->
+    </div>
+</div>
+<!--PAGINATION END-->
