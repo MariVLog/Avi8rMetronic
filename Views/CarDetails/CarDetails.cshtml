@@ -4,323 +4,675 @@
     Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
 }
 
-    <div class="kt-subheader kt-grid__item" id="kt_subheader" style="margin-top:-16px!important;background-color:rgb(254,110,0);background: radial-gradient(circle, rgba(254,110,0,1) 15%, rgba(246,137,31,1) 51%, rgba(254,110,0,1) 82%);">
-        <div class="table-responsive">
-            <table class="table hdtTblC fnt col-md-10 col-md-offset-1">
-                <colgroup>
-                    <col class="Cl1" />
-                    <col class="Cl2" />
-                    <col class="Cl1" />
-                    <col class="Cl2" />
-                    <col class="Cl2" />
-                    <col class="Cl2" />
-                    <col class="Cl2" />
-                    <col class="Cl2" />
-                </colgroup>
-                <tr>
-                    <td style="border-top-color:none!important;color:white;">
-                        <i class="la la-cab HI1"></i>
-                    </td>
-                    <td style="border-top-color:none!important;color:white;">
-                        <div class="row lbl">
-                            <label class="HI2 lblH">Pick up:</label>
-                        </div>
-                        <div class="row lbl">
-                            <label class="HI3">Johannesburg (JNB)</label>
-                        </div>
-                    </td>
-                    <td style="border-top-color:none!important;color:white;">
-                        <i class="la la-exchange HI4"></i>
-                    </td>
-                    <td style="border-top-color:none!important;color:white;">
-                        <div class="row lbl">
-                            <label class="HI2 lblH">Drop off:</label>
-                        </div>
-                        <div class="row lbl">
-                            <label class="HI3">Durban (DUR)</label>
-                        </div>
-                    </td>
-                    <td style="border-top-color:none!important;color:white;">
-                        <div class="row lbl">
-                            <label class="HI2 lblH">Pick up Date:</label>
-                        </div>
-                        <div class="row lbl">
-                            <label class="HI3">12/08/2019</label>
-                        </div>
-                    </td>
-                    <td style="border-top-color:none!important;color:white;">
-                        <div class="row lbl">
-                            <label class="HI2 lblH">Drop off Date:</label>
-                        </div>
-                        <div class="row lbl">
-                            <label class="HI3">15/08/2019</label>
-                        </div>
-                    </td>
-                    <td style="border-top-color:none!important;color:white;">
-                        <div class="row lbl">
-                            <label class="HI2 lblH">Travelers:</label>
-                        </div>
-                        <div class="row lbl">
-                            <label class="HI3">Vernon Bear</label>
-                        </div>
-                    </td>
-                    <td style="border-top-color:none!important;">
-                        <button type="reset" class="btn srchBtn HI5">Change</button>
-                    </td>
-                </tr>
-            </table>
+<style>
+    .sumHdr {
+        margin-top: -16px !important;
+        background-color: rgb(254,110,0);
+        background: radial-gradient(circle, rgba(254,110,0,1) 15%, rgba(246,137,31,1) 51%, rgba(254,110,0,1) 82%);
+        color: white;
+    }
+
+    .fnt10 {
+        font-size: 10px;
+    }
+
+    .fnt12 {
+        font-size: 12px;
+    }
+
+    .fnt20 {
+        font-size: 20px;
+    }
+
+    .fnt15 {
+        font-size: 15px;
+    }
+
+    .fnt {
+        font-size: 13px !important;
+    }
+
+    .fnt11 {
+        font-size: 11px;
+    }
+
+    .fnt18 {
+        font-size: 18px;
+    }
+
+    .pd0 {
+        padding: 0px;
+    }
+
+    .pd {
+        padding: 5px;
+    }
+
+    .pdT {
+        padding-top: 5px;
+    }
+
+    .pdT2 {
+        padding-top: 10px;
+    }
+
+    .pdR {
+        padding-right: 5px;
+    }
+
+    .pdR2 {
+        padding-right: 10px;
+    }
+
+    .pdL {
+        padding-left: 5px;
+    }
+
+    .pdL2 {
+        padding-left: 10px;
+    }
+
+    .pdB {
+        padding-bottom: 5px;
+    }
+
+    .pdB2 {
+        padding-bottom: 10px;
+    }
+
+    .mrT {
+        margin-top: 5px;
+    }
+
+    .mrB0 {
+        margin-bottom: 0px;
+    }
+
+    .mrB2 {
+        margin-bottom: 10px;
+    }
+
+    .mrL {
+        margin-left: 5px;
+    }
+
+    .mrL2 {
+        margin-left: 10px;
+    }
+
+    .HI5 {
+        float: left !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        border-radius: 0px;
+    }
+
+    .Filertbl {
+        background-color: #1e1e2d;
+        margin-top: -55px;
+        margin-bottom: 25px !important;
+        border: none !important;
+        width: 100% !important;
+        display: table;
+        padding: 0px;
+    }
+
+    .colr1 {
+        color: white;
+    }
+
+    .colr2 {
+        color: forestgreen;
+    }
+
+    .colr3 {
+        color: firebrick;
+    }
+
+    .colr4 {
+        color: darkorange;
+    }
+
+    .colr5 {
+        color: red;
+    }
+
+    .colr6 {
+        color: orangered;
+    }
+
+    .IcnFilt {
+        font-size: 15px !important;
+        padding-right: 10px !important;
+    }
+
+    .headrtxt {
+        font-size: 15px;
+        font-weight: 500;
+        color: #212529;
+    }
+
+    .fw5 {
+        font-weight: 500;
+    }
+
+    .fw3 {
+        font-weight: 300;
+    }
+
+    .fw7 {
+        font-weight: 700;
+    }
+
+    .flSel {
+        margin-top: -15px;
+        padding-right: 0px;
+        margin-bottom: 10px;
+    }
+
+    .srchBtnFLSel {
+        border-radius: 0px !important;
+        background-color: mediumseagreen !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        float: right;
+    }
+
+    .seltxt {
+        color: forestgreen;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .brdr {
+        border-top: 1px dashed gainsboro;
+    }
+
+    .brdr2 {
+        border-bottom: 1px dashed gainsboro;
+    }
+
+    .Srts {
+        background-color: white;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .srchBtn {
+        border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        float: right;
+    }
+
+    .FltResp {
+        font-size: 13px;
+        font-family: 'Poppins';
+        font-weight: 400;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        /*padding: 0px;*/
+        margin-top: 10px;
+    }
+
+    .resptbl {
+        background-color: white;
+        width: 100%;
+    }
+
+    .hdbck {
+        background-color: #f2f2f2
+    }
+
+    .srchBtnS {
+        border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+    }
+
+    .HtlResp {
+        background-color: white;
+        font-size: 13px;
+        font-family: 'Poppins';
+        font-weight: 200;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        padding: 0px;
+        margin-top: 10px;
+    }
+</style>
+
+<!--Remember to add page and unit loaders!-->
+<!--Start of Summary of Search-->
+<div class="kt-subheader kt-grid__item mySub sumHdr" id="kt_subheader">
+    <table class="col-lg-12 col-xl-12 table-responsive" style="display: table;">
+        <colgroup>
+            <col style="width:5%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:25%;" />
+            <col style="width:10%;" />
+        </colgroup>
+        <tr>
+            <td align="right" valign="top" class="pdT2"><i class="fa fa-car fnt20"></i></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span>Johannesburg (JNB)</span></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span><i class="fa fa-calendar-check pdR2"></i>(12 Jul 2019)</span></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span><i class="fa fa-moon pdR2"></i>5 Days</span></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span><i class="fa fa-calendar-times pdR2"></i>(15 Jul 2019)</span></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span><i class="fa fa-users pdR"></i>Vernon Bear</span></td>
+            <td class="fnt15" align="center" valign="top"><button type="reset" class="btn HI5 mrT">Change</button></td>
+        </tr>
+    </table>
+</div>
+<!--End of Summary-->
+<!--Start of Filters-->
+<div class="row">
+    <table class="col-lg-12 col-xl-12 table-responsive Filertbl">
+        <colgroup>
+            <col style="width:20%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:20%;" />
+        </colgroup>
+        <tr>
+            <td align="center" valign="middle" class="colr1">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="#collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-filter IcnFilt"></i>Filters
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="#collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-money-bill-wave pdR2"></i>Price
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle" style="color:white;">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-handshake pdR2"></i> Deals
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" class="" data-toggle="collapse" href="#collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-person-booth IcnFilt"></i> Rental Agents
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle" style="color:white;">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-file-contract IcnFilt"></i> Policy
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle" style="color:white;">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-wrench IcnFilt"></i> Transmission Type
+                    </a>
+                </p>
+            </td>
+        </tr>
+        <!--ADD FILTERS IN HERE!!-->
+        <tr>
+            <td colspan="6" class="pdT">
+                <div class="collapse" id="collapseExampleF">
+                    <div class="card card-body pd0">
+                        <table class="col-lg-12 col-xl-12">
+                            <tr>
+                                <td align="center" class="pdT pdB">
+                                    <span class="headrtxt">15 Cars Returned</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pdT2">
+                                    <table class="col-lg-12 col-xl-12">
+                                        <colgroup>
+                                            <col style="width:33.33%;" />
+                                            <col style="width:33.33%;" />
+                                            <col style="width:33.33%;" />
+                                        </colgroup>
+                                        <tr>
+                                            <td valign="top">
+                                                <table>
+                                                    <tr><td><span class="fw5 fnt15">RENTAL AGENTS</span></td></tr>
+                                                    <tr>
+                                                        <td class="pdT">
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Aaaaaa
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Bbbbbb
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Cccccc
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td valign="top" class="pdR2">
+                                                <table class="col-lg-12 col-xl-12">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fw5 fnt15">PRICE</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pdT">
+                                                            <div>
+                                                                <div class="kt-ion-range-slider">
+                                                                    <span class="irs irs--flat js-irs-2 irs-with-grid">
+                                                                        <span class="irs">
+                                                                            <span class="irs-line" tabindex="0">
+                                                                            </span>
+                                                                            <span class="irs-min" style="visibility: visible;">
+                                                                                $0
+                                                                            </span>
+                                                                            <span class="irs-max" style="visibility: visible;">$1 000</span>
+                                                                            <span class="irs-from" style="visibility: visible; left: 18.8882%;">$200</span>
+                                                                            <span class="irs-to" style="visibility: visible; left: 77.9458%;">$800</span>
+                                                                            <span class="irs-single" style="visibility: hidden; left: 46.561%;">$200 — $800</span>
+                                                                        </span>
+                                                                        <span class="irs-grid" style="width: 98.4293%; left: 0.685345%;">
+                                                                            <span class="irs-grid-pol" style="left: 0%"></span>
+                                                                            <span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -0.540691%;">0</span>
+                                                                            <span class="irs-grid-pol small" style="left: 20%"></span>
+                                                                            <span class="irs-grid-pol small" style="left: 15%"></span>
+                                                                            <span class="irs-grid-pol small" style="left: 10%"></span>
+                                                                            <span class="irs-grid-pol small" style="left: 5%"></span>
+                                                                            <span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.0323%;">250</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -1.0323%;">500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.0323%;">750</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -1.40043%;">1 000</span>
+                                                                        </span><span class="irs-bar" style="left: 20.4712%; width: 59.0576%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 19.6859%;"><i></i><i></i><i></i></span><span class="irs-handle to type_last" style="left: 78.7434%;"><i></i><i></i><i></i></span>
+                                                                    </span><input type="hidden" id="kt_slider_3" class="irs-hidden-input" tabindex="-1" readonly="" value="200;800">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td valign="top" align="center">
+                                                <table>
+                                                    <tr><td><span class="fw5 fnt15">POLICY</span></td></tr>
+                                                    <tr>
+                                                        <td class="pdT">
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">In Policy
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Out of Policy
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">
+                                                <table>
+                                                    <tr><td><span class="fw5 fnt15">DEALS</span></td></tr>
+                                                    <tr>
+                                                        <td class="pdT">
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Aaaaaa
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Bbbbbb
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Cccccc
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td valign="top" align="left">
+                                                <table>
+                                                    <tr><td><span class="fw5 fnt15">TRANSMISSION</span></td></tr>
+                                                    <tr>
+                                                        <td class="pdT">
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Automatic
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="kt-radio fw3">
+                                                                <input type="radio" name="radio1">Manual
+                                                                <span></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--End of Filters-->
+<!--Start Sorts-->
+<div class="row">
+    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12" style="position:relative;">
+        <div>
+            <div class="row Srts mrB2 pd">
+                <table class="col-lg-12 col-xl-12">
+                    <colgroup>
+                        <col style="width:25%;" />
+                        <col style="width:25%;" />
+                    </colgroup>
+                    <tr>
+                        <td align="center" class="pd">
+                            <span class="fw5">SORTING RESULTS BY:</span>
+                        </td>
+                        <td align="center" class="pd">
+                            <span>PRICE<i class="flaticon2-arrow-up pdL colr5"></i><i class="flaticon2-arrow-down pdL colr5"></i></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
-
-
-
-
-<!--CAR RESULTS DISPLAY-->
-<div class="row col-md-12">
-    <div class="padding">
-        <div class="catalog-row list-rows">
-            <!-- // -->
-            <div class="cat-list-item fly-in col-md-12">
-                <div class="cat-list-item-l">
-                    <a href="#"><img class="htlImg" alt="" src="~/Content/Images/Cars/BV_CDAR.jpg"></a>
-                </div>
-                <div class="cat-list-item-r">
-                    <div class="cat-list-item-rb">
-                        <div class="cat-list-item-p">
-                            <div class="cat-list-content">
-                                <div class="cat-list-content-a">
-                                    <div class="cat-list-content-l">
-                                        <div class="cat-list-content-lb">
-                                            <div class="cat-list-content-lpadding">
-                                                <div class="offer-slider-link"><a href="#">Toyota Corolla</a></div>
-                                                <div class="offer-slider-location"><i class="flaticon-map-location"></i> Sit location choices hier in </div>
-                                                <p>Beskrywing en Driver select?</p>
-                                                <div class="cat-icons">
-                                                    <span class="cat-icon-01 active"></span>
-                                                    <span class="cat-icon-02"></span>
-                                                    <span class="cat-icon-03"></span>
-                                                    <span class="cat-icon-04"></span>
-                                                    <span class="cat-icon-05"></span>
-                                                    <span class="cat-icon-06"></span>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br class="clear">
-                                    </div>
-                                </div>
-                                <div class="cat-list-content-r">
-                                    <div class="cat-list-content-p">
-                                        <div class="offer-slider-r">
-                                            <b>R756</b>
-                                            <span>avg/night</span>
-                                        </div>
-                                        <a href="#" class="cat-list-btn">Select</a>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <br class="clear">
-                </div>
-                <div class="clear"></div>
-            </div>
-            <!-- \\ -->
-            <!-- // -->
-            <div class="cat-list-item fly-in col-md-12">
-                <div class="cat-list-item-l">
-                    <a href="#"><img class="htlImg" alt="" src="~/Content/Images/Cars/BV_CDMR.jpg"></a>
-                </div>
-                <div class="cat-list-item-r">
-                    <div class="cat-list-item-rb">
-                        <div class="cat-list-item-p">
-                            <div class="cat-list-content">
-                                <div class="cat-list-content-a">
-                                    <div class="cat-list-content-l">
-                                        <div class="cat-list-content-lb">
-                                            <div class="cat-list-content-lpadding">
-                                                <div class="offer-slider-link"><a href="#">Holiday Inn Express DURBAN - UMHLANGA</a></div>
-                                                <div class="offer-slider-location"><i class="flaticon-map-location"></i> Durban </div>
-                                                <p>Stay at the ocean-facing holiday inn express durban-umhlanga hotel, located on umhlanga ridge, a few minutes drive from the umhlanga beaches and minutes from the popular gateway theatre of shopping mall. The contemporary holiday inn express durban-umhlangas curving facade faces the indian ocean, showcasing spectacular sunrises each morning.This peaceful h...</p>
-                                                <div class="cat-icons">
-                                                    <span class="cat-icon-01"></span>
-                                                    <span class="cat-icon-02 active"></span>
-                                                    <span class="cat-icon-03 active"></span>
-                                                    <span class="cat-icon-04 active"></span>
-                                                    <span class="cat-icon-05"></span>
-                                                    <span class="cat-icon-06"></span>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br class="clear">
-                                    </div>
-                                </div>
-                                <div class="cat-list-content-r">
-                                    <div class="cat-list-content-p">
-                                        <div class="offer-slider-r">
-                                            <b>R756</b>
-                                            <span>avg/night</span>
-                                        </div>
-                                        <a href="#" class="cat-list-btn">Select</a>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <br class="clear">
-                </div>
-                <div class="clear"></div>
-            </div>
-            <!-- \\ -->
-            <!-- // -->
-            <div class="cat-list-item fly-in col-md-12">
-                <div class="cat-list-item-l">
-                    <a href="#"><img class="htlImg" alt="" src="~/Content/Images/Cars/BV_EBMR.jpg"></a>
-                </div>
-                <div class="cat-list-item-r">
-                    <div class="cat-list-item-rb">
-                        <div class="cat-list-item-p">
-                            <div class="cat-list-content">
-                                <div class="cat-list-content-a">
-                                    <div class="cat-list-content-l">
-                                        <div class="cat-list-content-lb">
-                                            <div class="cat-list-content-lpadding">
-                                                <div class="offer-slider-link"><a href="#">Holiday Inn Express DURBAN - UMHLANGA</a></div>
-                                                <div class="offer-slider-location"><i class="flaticon-map-location"></i> Durban </div>
-                                                <p>Stay at the ocean-facing holiday inn express durban-umhlanga hotel, located on umhlanga ridge, a few minutes drive from the umhlanga beaches and minutes from the popular gateway theatre of shopping mall. The contemporary holiday inn express durban-umhlangas curving facade faces the indian ocean, showcasing spectacular sunrises each morning.This peaceful h...</p>
-                                                <div class="cat-icons">
-                                                    <span class="cat-icon-01 active"></span>
-                                                    <span class="cat-icon-02"></span>
-                                                    <span class="cat-icon-03 active"></span>
-                                                    <span class="cat-icon-04"></span>
-                                                    <span class="cat-icon-05 active"></span>
-                                                    <span class="cat-icon-06"></span>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br class="clear">
-                                    </div>
-                                </div>
-                                <div class="cat-list-content-r">
-                                    <div class="cat-list-content-p">
-                                        <div class="offer-slider-r">
-                                            <b>R756</b>
-                                            <span>avg/night</span>
-                                        </div>
-                                        <a href="#" class="cat-list-btn">Select</a>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <br class="clear">
-                </div>
-                <div class="clear"></div>
-            </div>
-            <!-- \\ -->
-            <!-- // -->
-            <div class="cat-list-item fly-in col-md-12">
-                <div class="cat-list-item-l">
-                    <a href="#"><img class="htlImg" alt="" src="~/Content/Images/Cars/BV_EDAR.jpg"></a>
-                </div>
-                <div class="cat-list-item-r">
-                    <div class="cat-list-item-rb">
-                        <div class="cat-list-item-p">
-                            <div class="cat-list-content">
-                                <div class="cat-list-content-a">
-                                    <div class="cat-list-content-l">
-                                        <div class="cat-list-content-lb">
-                                            <div class="cat-list-content-lpadding">
-                                                <div class="offer-slider-link"><a href="#">Holiday Inn Express DURBAN - UMHLANGA</a></div>
-                                                <div class="offer-slider-location"><i class="flaticon-map-location"></i> Durban </div>
-                                                <p>Stay at the ocean-facing holiday inn express durban-umhlanga hotel, located on umhlanga ridge, a few minutes drive from the umhlanga beaches and minutes from the popular gateway theatre of shopping mall. The contemporary holiday inn express durban-umhlangas curving facade faces the indian ocean, showcasing spectacular sunrises each morning.This peaceful h...</p>
-                                                <div class="cat-icons">
-                                                    <span class="cat-icon-01 active"></span>
-                                                    <span class="cat-icon-02 active"></span>
-                                                    <span class="cat-icon-03"></span>
-                                                    <span class="cat-icon-04 active"></span>
-                                                    <span class="cat-icon-05"></span>
-                                                    <span class="cat-icon-06 active"></span>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br class="clear">
-                                    </div>
-                                </div>
-                                <div class="cat-list-content-r">
-                                    <div class="cat-list-content-p">
-                                        <div class="offer-slider-r">
-                                            <b>R756</b>
-                                            <span>avg/night</span>
-                                        </div>
-                                        <a href="#" class="cat-list-btn">Select</a>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <br class="clear">
-                </div>
-                <div class="clear"></div>
-            </div>
-            <!-- \\ -->
-            <!-- // -->
-            <div class="cat-list-item fly-in col-md-12">
-                <div class="cat-list-item-l">
-                    <a href="#"><img class="htlImg" alt="" src="~/Content/Images/Cars/BV_EDMR.jpg"></a>
-                </div>
-                <div class="cat-list-item-r">
-                    <div class="cat-list-item-rb">
-                        <div class="cat-list-item-p">
-                            <div class="cat-list-content">
-                                <div class="cat-list-content-a">
-                                    <div class="cat-list-content-l">
-                                        <div class="cat-list-content-lb">
-                                            <div class="cat-list-content-lpadding">
-                                                <div class="offer-slider-link"><a href="#">Holiday Inn Express DURBAN - UMHLANGA</a></div>
-                                                <div class="offer-slider-location"><i class="flaticon-map-location"></i> Durban </div>
-                                                <p>Stay at the ocean-facing holiday inn express durban-umhlanga hotel, located on umhlanga ridge, a few minutes drive from the umhlanga beaches and minutes from the popular gateway theatre of shopping mall. The contemporary holiday inn express durban-umhlangas curving facade faces the indian ocean, showcasing spectacular sunrises each morning.This peaceful h...</p>
-                                                <div class="cat-icons">
-                                                    <span class="cat-icon-01 active"></span>
-                                                    <span class="cat-icon-02 active"></span>
-                                                    <span class="cat-icon-03 active"></span>
-                                                    <span class="cat-icon-04 active"></span>
-                                                    <span class="cat-icon-05 active"></span>
-                                                    <span class="cat-icon-06 active"></span>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br class="clear">
-                                    </div>
-                                </div>
-                                <div class="cat-list-content-r">
-                                    <div class="cat-list-content-p">
-                                        <div class="offer-slider-r">
-                                            <b>R756</b>
-                                            <span>avg/night</span>
-                                        </div>
-                                        <a href="#" class="cat-list-btn">Select</a>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <br class="clear">
-                </div>
-                <div class="clear"></div>
-            </div>
-            <!-- \\ -->
-        </div>
-        <div class="clear"></div>
     </div>
 </div>
+<!--End Sorts-->
+<!--Car RESULTS DISPLAY-->
+<div class="row col-lg-12 col-xl-12 HtlResp">
+    <table class="col-lg-12 col-xl-12">
+        <colgroup>
+            <col style="width:15%;" />
+            <col style="width:70%;" />
+            <col style="width:15%;" />
+        </colgroup>
+        <tr>
+            <td align="left" valign="top">
+                <img src="~/Content/Images/Cars/BV_CDAR.jpg" style="width:100%;" />
+            </td>
+            <td align="left" valign="top" class="pdL2 pdR2 pdT2">
+                <table class="col-lg-12 col-xl-12">
+                    <tr>
+                        <td align="left">
+                            <span class="fnt15 pdB fw5">Europcar Southafrica (IM) - Economy</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="fnt11 fw5 pdB">
+                            Group B - Ford Fiesta or similar
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="pdB fnt12">
+                            EDMR - Economy 4-5 Door
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="pdB fnt12">
+                            Mileage Allowance - 100KM
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="brdr pdT">Extra mileage - ZAR 2.13</td>
+                    </tr>
+                    <tr>
+                        <td>Rate Guaranteed - YES</td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="pdT">
+                            <table class="col-lg-12 col-xl-12">
+                                <colgroup>
+                                    <col style="width:20%;" />
+                                    <col style="width:20%;" />
+                                    <col style="width:20%;" />
+                                    <col style="width:20%;" />
+                                    <col style="width:20%;" />
+                                </colgroup>
+                                <tr>
+                                    <td align="left" class="pdB2 pdT">4 - 5 Door</td>
+                                    <td align="left" class="pdB2 pdT"><i class="fa fa-snowflake pdR" style="color:aqua;"></i>Aircon</td>
+                                    <td align="left" class="pdB2 pdT"><i class="fa fa-water pdR" style="color:darkgreen;"></i>Petrol</td>
+                                    <td align="left" class="pdB2 pdT"><i class="fa fa-map-pin colr5 pdR"></i>Manual</td>
+                                    <td align="left" class="pdB2 pdT"><i class="fa fa-handshake colr3 pdR"></i>Deal</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td align="center" valign="middle">
+                <table>
+                    <tr>
+                        <td align="center">
+                            <span class="colr2 fnt18 fw5">R 100 000.00</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" class="pdB2">
+                            <span class="fnt11">R 100.00 est daily Rate</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" class="pdB2">
+                            <span class="fnt"><i class="fa fa-thumbs-up pdR colr2"></i>In Policy</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <div class="col-lg-12 col-xl-12">
+                                <a href="@Url.Action("HtlDet","HotelDetail")"><span type="reset" class="btn srchBtnS">Select Locations</span></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
 <!---->
+<!--PAGINATION-->
+<div class="kt-portlet__body pagAlgn" style="margin-top:20px;">
+    <div class="tab-content">
+        <!--begin: Section-->
+        <div class="kt-section">
+            <p class="kt-section__content">
+                <!--begin: Pagination-->
+            </p>
+            <div class="kt-pagination  kt-pagination--brand">
+                <ul class="kt-pagination__links">
+                    <li class="kt-pagination__link--first">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-double-left kt-font-brand pagIc"></i></a>
+                    </li>
+                    <li class="kt-pagination__link--next">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-left kt-font-brand pagIc"></i></a>
+                    </li>
+                    <li>
+                        <a href="#">...</a>
+                    </li>
+                    <li>
+                        <a href="#">29</a>
+                    </li>
+                    <li>
+                        <a href="#">30</a>
+                    </li>
+                    <li>
+                        <a href="#">31</a>
+                    </li>
+                    <li class="kt-pagination__link--active">
+                        <a href="#">32</a>
+                    </li>
+                    <li>
+                        <a href="#">33</a>
+                    </li>
+                    <li>
+                        <a href="#">34</a>
+                    </li>
+                    <li>
+                        <a href="#">...</a>
+                    </li>
+                    <li class="kt-pagination__link--prev">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-right kt-font-brand pagIc"></i></a>
+                    </li>
+                    <li class="kt-pagination__link--last">
+                        <a href="#" class="pagSt"><i class="fa fa-angle-double-right kt-font-brand pagIc"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!--end: Pagination-->
+            <p></p>
+        </div>
+        <!--end: Section-->
+    </div>
+</div>
+<!--PAGINATION END-->

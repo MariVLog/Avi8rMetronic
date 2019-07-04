@@ -1,0 +1,2438 @@
+﻿
+@{
+    ViewBag.Title = "CombinedFares";
+    Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
+}
+
+<style>
+    .sumHdr {
+        margin-top: -16px !important;
+        background-color: rgb(254,110,0);
+        background: radial-gradient(circle, rgba(254,110,0,1) 15%, rgba(246,137,31,1) 51%, rgba(254,110,0,1) 82%);
+        color: white;
+    }
+    .fnt10 {
+        font-size: 10px;
+    }
+    .fnt20 {
+        font-size: 20px;
+    }
+    .fnt15 {
+        font-size: 15px;
+    }
+    .fnt {
+        font-size: 13px !important;
+    }
+    .fnt12{
+        font-size:12px;
+    }
+    .pd0 {
+        padding: 0px;
+    }
+    .pd {
+        padding: 5px;
+    }
+    .pdT {
+        padding-top: 5px;
+    }
+    .pdT2 {
+        padding-top: 10px;
+    }
+    .pdR {
+        padding-right: 5px;
+    }
+    .pdR2 {
+        padding-right: 10px;
+    }
+    .pdL {
+        padding-left: 5px;
+    }
+    .pdL2 {
+        padding-left: 10px;
+    }
+    .pdB {
+        padding-bottom: 5px;
+    }
+    .pdB2 {
+        padding-bottom: 10px;
+    }
+    .mrT {
+        margin-top: 5px;
+    }
+    .mrB0 {
+        margin-bottom: 0px;
+    }
+    .mrB2 {
+        margin-bottom: 10px;
+    }
+    .mrL {
+        margin-left: 5px;
+    }
+    .mrL2 {
+        margin-left: 10px;
+    }
+    .HI5 {
+        float: left !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        border-radius: 0px;
+    }
+    .Filertbl {
+        background-color: #1e1e2d;
+        margin-top: -55px;
+        margin-bottom: 25px !important;
+        border: none !important;
+        width: 100% !important;
+        display: table;
+        padding: 0px;
+    }
+    .colr1 {
+        color: white;
+    }
+    .colr2 {
+        color: forestgreen;
+    }
+    .colr3 {
+        color: firebrick;
+    }
+    .colr4 {
+        color: darkorange;
+    }
+    .colr5 {
+        color: red;
+    }
+    .colr6 {
+        color: orangered;
+    }
+    .IcnFilt {
+        font-size: 15px !important;
+        padding-right: 10px !important;
+    }
+    .headrtxt {
+        font-size: 15px;
+        font-weight: 500;
+        color: #212529;
+    }
+    .fw5 {
+        font-weight: 500;
+    }
+    .fw3 {
+        font-weight: 300;
+    }
+    .fw7 {
+        font-weight: 700;
+    }
+    .flSel {
+        margin-top: -15px;
+        padding-right: 0px;
+        margin-bottom: 10px;
+    }
+    .srchBtnFLSel {
+        border-radius: 0px !important;
+        background-color: mediumseagreen !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        float: right;
+    }
+    .seltxt {
+        color: forestgreen;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .brdr {
+        border-top: 1px dashed gainsboro;
+    }
+    .brdr2 {
+        border-bottom: 1px dashed gainsboro;
+        padding-top:5px;
+    }
+    .Srts {
+        background-color: white;
+        width: 100%;
+        margin-left: 0px;
+    }
+    .srchBtn {
+        border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        float: right;
+    }
+    .FltResp {
+        font-size: 13px;
+        font-family: 'Poppins';
+        font-weight: 400;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        /*padding: 0px;*/
+        margin-top: 10px;
+        margin-bottom:10px;
+    }
+    .resptbl {
+        background-color: white;
+        width: 100%;
+    }
+    .resptbl td {
+       padding:2px;
+    }
+    .hdbck {
+        background-color: #f2f2f2
+    }
+    .srchBtnS {
+        border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+    }
+    .NoScroll {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+</style>
+
+<!--Add loaders and toastr messages-->
+
+<!--Start of Summary of Search-->
+<div class="kt-subheader kt-grid__item mySub sumHdr" id="kt_subheader">
+    <table class="col-lg-12 col-xl-12 table-responsive" style="display: table;">
+        <colgroup>
+            <col style="width:5%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:5%;" />
+            <col style="width:15%;" />
+            <col style="width:15%;" />
+            <col style="width:10%;" />
+        </colgroup>
+        <tr>
+            <td align="right" valign="top" class="pdT2"><i class="fa fa-plane fnt20"></i></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span>Johannesburg (JNB)</span></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span><i class="fa fa-plane-departure pdR2"></i>(12 Jul 2019)</span></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><i class="fa fa-exchange-alt fnt20"></i></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span>Durban (DUR)</span></td>
+            <td class="fnt15 pdT2" align="center" valign="top"><span><i class="fa fa-plane-arrival pdR2"></i>(15 Jul 2019)</span></td>
+            <td class="fnt15" align="center" valign="top"><button type="reset" class="btn HI5 mrT">Change</button></td>
+        </tr>
+    </table>
+</div>
+<!--End of Summary-->
+<!--Start of Filters-->
+<div class="row">
+    <table class="col-lg-12 col-xl-12 table-responsive Filertbl">
+        <colgroup>
+            <col style="width:20%;" />
+            <col style="width:20%;" />
+            <col style="width:20%;" />
+            <col style="width:20%;" />
+            <col style="width:20%;" />
+        </colgroup>
+        <tr>
+            <td align="center" valign="middle" class="colr1">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="#collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-filter IcnFilt"></i>Filters
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="#collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-money-bill-wave pdR2"></i>Price
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle" style="color:white;">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" data-toggle="collapse" href="collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-plane IcnFilt"></i> Airline
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" class="colr1" data-toggle="collapse" href="#collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-clock IcnFilt"></i> Time
+                    </a>
+                </p>
+            </td>
+            <td align="center" valign="middle">
+                <p class="pdT2 pdB mrB0">
+                    <a style="color:white;" class="" data-toggle="collapse" href="#collapseExampleF" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-building IcnFilt"></i> Airport
+                    </a>
+                </p>
+            </td>
+        </tr>
+        <!--ADD FILTERS IN HERE!!-->
+        <tr>
+            <td colspan="5" class="pdT">
+                <div class="collapse" id="collapseExampleF">
+                    <div class="card card-body pd0">
+                        <table class="col-lg-12 col-xl-12">
+                            <tr>
+                                <td align="center" class="pdT">
+                                    <span class="headrtxt">101 Flights Returned</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pdT2">
+                                    <div class="kt-portlet__body">
+                                        <ul class="nav nav-pills nav-fill" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-toggle="tab" href="#kt_tabs_5_1">JNB - DUR</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_2">DUR - JNB</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="kt_tabs_5_1" role="tabpanel">
+                                                <table class="col-lg-12 col-xl-12">
+                                                    <colgroup>
+                                                        <col style="width:25%;" />
+                                                        <col style="width:25%;" />
+                                                        <col style="width:25%;" />
+                                                        <col style="width:25%;" />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td valign="top">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">PRIVATE FARES</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Agency Rates
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" class="pdR2">
+                                                            <table class="col-lg-12 col-xl-12">
+                                                                <tr>
+                                                                    <td>
+                                                                        <span class="fw5 fnt15">PRICE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <div>
+                                                                            <div class="kt-ion-range-slider">
+                                                                                <span class="irs irs--flat js-irs-2 irs-with-grid">
+                                                                                    <span class="irs">
+                                                                                        <span class="irs-line" tabindex="0">
+                                                                                        </span>
+                                                                                        <span class="irs-min" style="visibility: visible;">
+                                                                                            $0
+                                                                                        </span>
+                                                                                        <span class="irs-max" style="visibility: visible;">$1 000</span>
+                                                                                        <span class="irs-from" style="visibility: visible; left: 18.8882%;">$200</span>
+                                                                                        <span class="irs-to" style="visibility: visible; left: 77.9458%;">$800</span>
+                                                                                        <span class="irs-single" style="visibility: hidden; left: 46.561%;">$200 — $800</span>
+                                                                                    </span>
+                                                                                    <span class="irs-grid" style="width: 98.4293%; left: 0.685345%;">
+                                                                                        <span class="irs-grid-pol" style="left: 0%"></span>
+                                                                                        <span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -0.540691%;">0</span>
+                                                                                        <span class="irs-grid-pol small" style="left: 20%"></span>
+                                                                                        <span class="irs-grid-pol small" style="left: 15%"></span>
+                                                                                        <span class="irs-grid-pol small" style="left: 10%"></span>
+                                                                                        <span class="irs-grid-pol small" style="left: 5%"></span>
+                                                                                        <span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.0323%;">250</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -1.0323%;">500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.0323%;">750</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -1.40043%;">1 000</span>
+                                                                                    </span><span class="irs-bar" style="left: 20.4712%; width: 59.0576%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 19.6859%;"><i></i><i></i><i></i></span><span class="irs-handle to type_last" style="left: 78.7434%;"><i></i><i></i><i></i></span>
+                                                                                </span><input type="hidden" id="kt_slider_3" class="irs-hidden-input" tabindex="-1" readonly="" value="200;800">
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">AIRLINES</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Mango
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Comair
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">British Airways
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <table>
+                                                                <tr>
+                                                                    <td><span class="fw5 fnt15">DEPARTURE TIME</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" class="pdT">
+                                                                        <table class="col-lg-12 col-xl-12">
+                                                                            <colgroup>
+                                                                                <col style="width:33.33%;" />
+                                                                                <col style="width:33.33%;" />
+                                                                                <col style="width:33.33%;" />
+                                                                            </colgroup>
+                                                                            <tr>
+                                                                                <td align="center"><i class="fa fa-cloud-sun"></i></td>
+                                                                                <td align="center"><i class="fa fa-sun"></i></td>
+                                                                                <td align="center"><i class="fa fa-moon"></i></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" class="pdT">
+                                                            <table>
+                                                                <tr><td><span class="fnt5 fnt15">DEPARTURE AIRPORTS</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Lanseria
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">OR Tambo
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" class="pdT">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">ARRIVAL AIRPORTS</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">King Shaka
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Somewhere else
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" align="center" class="pdT">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">CLASSES</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Economy
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Business Class
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">First Class
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane" id="kt_tabs_5_2" role="tabpanel">
+                                                <table class="col-lg-12 col-xl-12">
+                                                    <colgroup>
+                                                        <col style="width:25%;" />
+                                                        <col style="width:25%;" />
+                                                        <col style="width:25%;" />
+                                                        <col style="width:25%;" />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td valign="top">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">PRIVATE FARES</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Agency Rates
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" class="pdR2">
+                                                            <table class="col-lg-12 col-xl-12">
+                                                                <tr>
+                                                                    <td>
+                                                                        <span class="fw5 fnt15">PRICE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <div>
+                                                                            <div class="kt-ion-range-slider">
+                                                                                <span class="irs irs--flat js-irs-2 irs-with-grid">
+                                                                                    <span class="irs">
+                                                                                        <span class="irs-line" tabindex="0">
+                                                                                        </span>
+                                                                                        <span class="irs-min" style="visibility: visible;">
+                                                                                            $0
+                                                                                        </span>
+                                                                                        <span class="irs-max" style="visibility: visible;">$1 000</span>
+                                                                                        <span class="irs-from" style="visibility: visible; left: 18.8882%;">$200</span>
+                                                                                        <span class="irs-to" style="visibility: visible; left: 77.9458%;">$800</span>
+                                                                                        <span class="irs-single" style="visibility: hidden; left: 46.561%;">$200 — $800</span>
+                                                                                    </span>
+                                                                                    <span class="irs-grid" style="width: 98.4293%; left: 0.685345%;">
+                                                                                        <span class="irs-grid-pol" style="left: 0%"></span>
+                                                                                        <span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -0.540691%;">0</span>
+                                                                                        <span class="irs-grid-pol small" style="left: 20%"></span>
+                                                                                        <span class="irs-grid-pol small" style="left: 15%"></span>
+                                                                                        <span class="irs-grid-pol small" style="left: 10%"></span>
+                                                                                        <span class="irs-grid-pol small" style="left: 5%"></span>
+                                                                                        <span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.0323%;">250</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -1.0323%;">500</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.0323%;">750</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -1.40043%;">1 000</span>
+                                                                                    </span><span class="irs-bar" style="left: 20.4712%; width: 59.0576%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 19.6859%;"><i></i><i></i><i></i></span><span class="irs-handle to type_last" style="left: 78.7434%;"><i></i><i></i><i></i></span>
+                                                                                </span><input type="hidden" id="kt_slider_3" class="irs-hidden-input" tabindex="-1" readonly="" value="200;800">
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">AIRLINES</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Mango
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Comair
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">British Airways
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" align="center">
+                                                            <table>
+                                                                <tr>
+                                                                    <td><span class="fw5 fnt15">DEPARTURE TIME</span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" class="pdT">
+                                                                        <table class="col-lg-12 col-xl-12">
+                                                                            <colgroup>
+                                                                                <col style="width:33.33%;" />
+                                                                                <col style="width:33.33%;" />
+                                                                                <col style="width:33.33%;" />
+                                                                            </colgroup>
+                                                                            <tr>
+                                                                                <td align="center"><i class="fa fa-cloud-sun"></i></td>
+                                                                                <td align="center"><i class="fa fa-sun"></i></td>
+                                                                                <td align="center"><i class="fa fa-moon"></i></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" class="pdT">
+                                                            <table>
+                                                                <tr><td><span class="fnt5 fnt15">DEPARTURE AIRPORTS</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Lanseria
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">OR Tambo
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" class="pdT">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">ARRIVAL AIRPORTS</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">King Shaka
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Somewhere else
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td valign="top" align="center" class="pdT">
+                                                            <table>
+                                                                <tr><td><span class="fw5 fnt15">CLASSES</span></td></tr>
+                                                                <tr>
+                                                                    <td class="pdT">
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Economy
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">Business Class
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <label class="kt-radio fw3">
+                                                                            <input type="radio" name="radio1">First Class
+                                                                            <span></span>
+                                                                        </label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--End of Filters-->
+<!--Start of Flight selection-->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 flSel">
+        <span>
+            <button class="btn srchBtnFLSel" type="button" data-toggle="collapse" data-target="#collapseFLSel" aria-expanded="false" aria-controls="collapseExample">
+                Flights Selected
+            </button>
+        </span>
+    </div>
+</div>
+<div class="row">
+    <div class="collapse col-lg-12 col-xl-12 mrB2" id="collapseFLSel">
+        <div class="card card-body pd">
+            <div class="row">
+                <table class="col-lg-6 col-xl-6">
+                    <colgroup>
+                        <col style="width:10%;" />
+                        <col style="width:40%;" />
+                        <col style="width:25%;" />
+                        <col style="width:25%;" />
+                    </colgroup>
+                    <tr>
+                        <td colspan="4" class="pdL2 pdB2"><span class="seltxt">SELECTION</span></td>
+                    </tr>
+                    <tr>
+                        <td align="center" class="pdL">
+                            <img src="~/Content/Images/FA.png" />
+                        </td>
+                        <td colspan="3" class="pdL2">
+                            <span class="fw5">Some Airline Operated by Comair</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="fnt10">MN4023</span></td>
+                        <td class="pdL2 pdB">
+                            <span><i class="fa fa-plane-departure pdR"></i>OR Tambo Intl (JNB)</span>
+                        </td>
+                        <td class="pdB"><span>06-01-2019</span></td>
+                        <td class="pdB"><span>14:12</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdB"><span><i class="fa fa-plane-arrival pdR"></i>King Shaka Intl (DUR)</span></td>
+                        <td class="pdB"><span>06/01/2019</span></td>
+                        <td class="pdB"><span>17:50</span></td>
+                    </tr>
+                    <tr class="brdr">
+                        <td class="pdT2"><span></span></td>
+                        <td class="pdT2 pdL2 colr2"><i class="fa fa-thumbs-up" style="padding-right:5px;"></i>In Policy</td>
+                        <td class="pdT2"><span><i class="fa fa-clock pdR"></i>1H50M</span></td>
+                        <td class="pdT2"><span>Economy</span></td>
+                    </tr>
+                    <tr class="brdr2">
+                        <td class="pdB2 pdT2"><span></span></td>
+                        <td class="pdB2 pdT2 pdL2 colr3"><i class="fa fa-handshake pdR"></i>Negotiated Rate</td>
+                        <td class="pdB2 pdT2 colr4"><span><i class="fa fa-users pdR"></i>9 Seats left</span></td>
+                        <td class="pdB2 pdT2"><span>(Y)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdT2"><span>Fare:</span></td>
+                        <td colspan="2" class="pdL2 pdT2"><span>R 100 000.00</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdT2"><span>Taxes:</span></td>
+                        <td colspan="2" class="pdL2 pdT2"><span>R 100 000.00</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdT2"><span>Total:</span></td>
+                        <td colspan="2" class="pdL2 pdT2"><span>R 100 000.00</span></td>
+                    </tr>
+                </table>
+                <table class="col-lg-6 col-xl-6">
+                    <colgroup>
+                        <col style="width:10%;" />
+                        <col style="width:40%;" />
+                        <col style="width:25%;" />
+                        <col style="width:25%;" />
+                    </colgroup>
+                    <tr>
+                        <td colspan="4" class="pdL2 pdB2"><span class="colr1 fnt20 fw5">SELECTION</span></td>
+                    </tr>
+                    <tr>
+                        <td align="center" class="pdL">
+                            <img src="~/Content/Images/MN.png" />
+                        </td>
+                        <td colspan="3" class="pdL2">
+                            <span class="fw5">Some Airline Operated by Comair</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span class="fnt10">MN4023</span></td>
+                        <td class="pdL2 pdB">
+                            <span><i class="fa fa-plane-departure pdR"></i>OR Tambo Intl (JNB)</span>
+                        </td>
+                        <td class="pdB"><span>06-01-2019</span></td>
+                        <td class="pdB"><span>14:12</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdB"><span><i class="fa fa-plane-arrival pdR"></i>King Shaka Intl (DUR)</span></td>
+                        <td class="pdB"><span>06/01/2019</span></td>
+                        <td class="pdB"><span>17:50</span></td>
+                    </tr>
+                    <tr class="brdr">
+                        <td class="pdT2"><span></span></td>
+                        <td class="pdT2 colr2 pdL2"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
+                        <td class="pdT2"><span><i class="fa fa-clock pdR"></i>1H50M</span></td>
+                        <td class="pdT2"><span>Economy</span></td>
+                    </tr>
+                    <tr class="brdr2">
+                        <td class="pdB2 pdT2"><span></span></td>
+                        <td class="pdB2 pdT2 pdL2 colr3"><i class="fa fa-handshake pdR"></i>Negotiated Rate</td>
+                        <td class="pdB2 pdT2 colr4"><span><i class="fa fa-users pdR"></i>9 Seats left</span></td>
+                        <td class="pdB2 pdT2"><span>(Y)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdT2"><span>Fare:</span></td>
+                        <td colspan="2" class="pdL2 pdT2"><span>R 100 000.00</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdT2"><span>Taxes:</span></td>
+                        <td colspan="2" class="pdL2 pdT2"><span>R 100 000.00</span></td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td class="pdL2 pdT2"><span>Total:</span></td>
+                        <td colspan="2" class="pdL2 pdT2"><span>R 100 000.00</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                <table class="col-lg-12 col-xl-12">
+                    <tr>
+                        <td align="right" style="padding-top:20px;padding-right:10px;">
+                            <span style="color:forestgreen;font-weight:500;font-size:15px;">GRAND TOTAL: R 100 000.00</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-top:5px;padding-right:10px;"> <a href=""><span type="reset" class="btn  srchBtn"><i class="fa fa-shopping-cart"></i>Add to Basket</span></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Flight selection-->
+<!--Start Flight Results-->
+<div class="row">
+    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12" style="position:relative;">
+        <div class="NoScroll">
+            <!--Start Results Sort-->
+            <div class="row Srts mrB2 pd">
+                <table class="col-lg-12 col-xl-12 table-responsive">
+                    <colgroup>
+                        <col style="width:10%" />
+                        <col style="width:10%" />
+                        <col style="width:10%" />
+                        <col style="width:10%" />
+                        <col style="width:10%" />
+                        <col style="width:10%" />
+                        <col style="width:10%" />
+                    </colgroup>
+                    <tr>
+                        <td align="center">
+                            <span class="fw5">SORTING RESULTS BY:</span>
+                        </td>
+                        <td align="center">
+                            <span>CARRIER<i class="flaticon2-arrow-up pdL colr5"></i><i class="flaticon2-arrow-down pdL colr5"></i></span>
+                        </td>
+                        <td align="center">
+                            <span>PRICE<i class="flaticon2-arrow-up pdL colr5"></i><i class="flaticon2-arrow-down pdL colr5"></i></span>
+                        </td>
+                        <td align="center">
+                            <span>DURATION<i class="flaticon2-arrow-up pdL colr5"></i><i class="flaticon2-arrow-down pdL colr5"></i></span>
+                        </td>
+                        <td align="center">
+                            <span>TIME<i class="flaticon2-arrow-up pdL colr5"></i><i class="flaticon2-arrow-down pdL colr5"></i></span>
+                        </td>
+                        <td align="center">
+                            <a href="@Url.Action("FlResp","FlightResponse")"><span type="reset" class="btn  srchBtn"><i class="fa fa-exchange-alt"></i>Split Fares</span></a>
+                        </td>
+                        <td align="right">
+                            <a href="@Url.Action("SchedFares","ScheduledFares")"><span type="reset" class="btn  srchBtn"><i class="la la-bars"></i>Scheduled Fares</span></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--End Results Sort-->
+            <!--Start results display-->
+            <div class="row">
+                <div class="row col-lg-12 col-xl-12 FltResp pdR">
+                    <table class="resptbl">
+                        <colgroup>
+                            <col style="width:90%;" />
+                            <col style="width:10%;" />
+                        </colgroup>
+                        <tr>
+                            <td>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-departure"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">TUE 06/01 Johannesburg (JNB) - Durban (DUR)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="/Content/Images/BA.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-arrival"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">FRI 09/01 DURBAN (DUR) - JOHANNESBURG (JNB)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/2P.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/4Z.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td rowspan="3" valign="middle" align="center">
+                                <table>
+                                    <tr>
+                                        <td align="center"><div class="colr2 fw5 fnt15">R 100 000.00</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="pdT"> <a href=""><span type="reset" class="btn  srchBtnS">Select</span></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--the rest have not been added to stylesheet as the first row will be repeated when data source added-->
+            <div class="row">
+                <div class="row col-lg-12 col-xl-12 FltResp pdR">
+                    <table class="resptbl">
+                        <colgroup>
+                            <col style="width:90%;" />
+                            <col style="width:10%;" />
+                        </colgroup>
+                        <tr>
+                            <td>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-departure"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">TUE 06/01 Johannesburg (JNB) - Durban (DUR)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/MN.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/JE.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-arrival"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">FRI 09/01 DURBAN (DUR) - JOHANNESBURG (JNB)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/2P.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/FA.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/EK.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td rowspan="3" valign="middle" align="center">
+                                <table>
+                                    <tr>
+                                        <td align="center"><div class="colr2 fw5 fnt15">R 100 000.00</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="pdT"> <a href=""><span type="reset" class="btn  srchBtnS">Select</span></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row col-lg-12 col-xl-12 FltResp pdR">
+                    <table class="resptbl">
+                        <colgroup>
+                            <col style="width:90%;" />
+                            <col style="width:10%;" />
+                        </colgroup>
+                        <tr>
+                            <td>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-departure"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">TUE 06/01 Johannesburg (JNB) - Durban (DUR)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="/Content/Images/BA.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-arrival"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">FRI 09/01 DURBAN (DUR) - JOHANNESBURG (JNB)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/2P.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/4Z.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td rowspan="3" valign="middle" align="center">
+                                <table>
+                                    <tr>
+                                        <td align="center"><div class="colr2 fw5 fnt15">R 100 000.00</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="pdT"> <a href=""><span type="reset" class="btn  srchBtnS">Select</span></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row col-lg-12 col-xl-12 FltResp pdR">
+                    <table class="resptbl">
+                        <colgroup>
+                            <col style="width:90%;" />
+                            <col style="width:10%;" />
+                        </colgroup>
+                        <tr>
+                            <td>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-departure"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">TUE 06/01 Johannesburg (JNB) - Durban (DUR)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/MN.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/JE.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-arrival"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">FRI 09/01 DURBAN (DUR) - JOHANNESBURG (JNB)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/2P.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/FA.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/EK.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td rowspan="3" valign="middle" align="center">
+                                <table>
+                                    <tr>
+                                        <td align="center"><div class="colr2 fw5 fnt15">R 100 000.00</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="pdT"> <a href=""><span type="reset" class="btn  srchBtnS">Select</span></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row col-lg-12 col-xl-12 FltResp pdR">
+                    <table class="resptbl">
+                        <colgroup>
+                            <col style="width:90%;" />
+                            <col style="width:10%;" />
+                        </colgroup>
+                        <tr>
+                            <td>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-departure"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">TUE 06/01 Johannesburg (JNB) - Durban (DUR)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="/Content/Images/BA.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="resptbl">
+                                    <colgroup>
+                                        <col style="width:10%;" />
+                                        <col style="width:90%;" />
+                                    </colgroup>
+                                    <tr>
+                                        <td align="center"><div class="fw7 hdbck pd mrT mrL"><i class="fa fa-plane-arrival"></i></div></td>
+                                        <td>
+                                            <div class="hdbck fw5 pd mrT">FRI 09/01 DURBAN (DUR) - JOHANNESBURG (JNB)</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/2P.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><img src="~/Content/Images/4Z.png" /></td>
+                                        <td class="pdB">
+                                            <table class="col-lg-12 col-xl-12">
+                                                <colgroup>
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:5%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:12%;" />
+                                                    <col style="width:6%" />
+                                                </colgroup>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <label class="kt-radio mrL2">
+                                                            <input type="radio" name="radio1">
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td align="left" valign="middle" class="pdL">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt">Departure</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt">14:12</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <i class="la la-caret-right fw5"></i>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt">Arrival</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt">17:50</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <table>
+                                                            <tr><td align="center"><span class="fnt12 colr6">0 Stop(s)</span></td></tr>
+                                                            <tr><td align="center"><span class="fnt12 colr6 fw5">1H50M</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12 fw5">Comair</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">MN4023</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt12">Economy</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt12">(Y)</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center" valign="middle">
+                                                        <table>
+                                                            <tr><td align="center"> <span class="fnt colr3"><i class="fa fa-handshake pdR"></i>Deal</span></td></tr>
+                                                            <tr><td align="center"> <span class="fnt colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td></tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="center">
+                                                        <div class="colr4"><a><i class="fa fa-folder pdR"></i>Fare Rules</a></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td rowspan="3" valign="middle" align="center">
+                                <table>
+                                    <tr>
+                                        <td align="center"><div class="colr2 fw5 fnt15">R 100 000.00</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="pdT"> <a href=""><span type="reset" class="btn  srchBtnS">Select</span></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--End results display-->
+        </div>
+    </div>
+</div>
+<!--End Flight Results-->

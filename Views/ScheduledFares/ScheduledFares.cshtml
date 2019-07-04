@@ -1,192 +1,198 @@
 ﻿
 @{
-    ViewBag.Title = "FlightResponse";
+    ViewBag.Title = "ScheduledFares";
     Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
 }
 
 <style>
-    .sumHdr{
-        margin-top:-16px!important;
-        background-color:rgb(254,110,0);
+    .sumHdr {
+        margin-top: -16px !important;
+        background-color: rgb(254,110,0);
         background: radial-gradient(circle, rgba(254,110,0,1) 15%, rgba(246,137,31,1) 51%, rgba(254,110,0,1) 82%);
-        color:white;
+        color: white;
     }
-    .fnt10{
-        font-size:10px;
+    .fnt10 {
+        font-size: 10px;
     }
-    .fnt20{
-        font-size:20px;
+    .fnt20 {
+        font-size: 20px;
     }
-    .fnt15{
-        font-size:15px;
+    .fnt15 {
+        font-size: 15px;
     }
     .fnt {
-    font-size: 13px!important;
-}
-    .pd0{
-        padding:0px;
+        font-size: 13px !important;
     }
-    .pd{
-        padding:5px;
+    .pd0 {
+        padding: 0px;
     }
-    .pdT{
-        padding-top:5px;
+    .pd {
+        padding: 5px;
     }
-    .pdT2{
-        padding-top:10px;
+    .pdT {
+        padding-top: 5px;
     }
-    .pdR{
-        padding-right:5px;
+    .pdT2 {
+        padding-top: 10px;
     }
-    .pdR2{
-        padding-right:10px;
+    .pdR {
+        padding-right: 5px;
     }
-    .pdL{
-        padding-left:5px;
+    .pdR2 {
+        padding-right: 10px;
     }
-    .pdL2{
-        padding-left:10px;
+    .pdL {
+        padding-left: 5px;
     }
-    .pdB{
-        padding-bottom:5px;
+    .pdL2 {
+        padding-left: 10px;
     }
-    .pdB2{
-        padding-bottom:10px;
+    .pdB {
+        padding-bottom: 5px;
     }
-    .mrT{
-        margin-top:5px;
+    .pdB2 {
+        padding-bottom: 10px;
     }
-    .mrB0{
-        margin-bottom:0px;
+    .mrT {
+        margin-top: 5px;
     }
-    .mrB2{
-        margin-bottom:10px;
+    .mrB0 {
+        margin-bottom: 0px;
     }
-    .mrL{
-        margin-left:5px;
+    .mrB2 {
+        margin-bottom: 10px;
     }
-    .mrL2{
-        margin-left:10px;
+    .mrL {
+        margin-left: 5px;
+    }
+    .mrL2 {
+        margin-left: 10px;
     }
     .HI5 {
-    float: left !important;
-    background-color: #1e1e2d !important;
-    font-weight: 300 !important;
-    border: none !important;
-    color: white !important;
-    border-radius:0px;
-}
-    .Filertbl {
-    background-color: #1e1e2d;
-    margin-top: -55px;
-    margin-bottom: 25px !important;
-    border: none !important;
-    width: 100% !important;
-    display:table;
-    padding:0px;
-}
-    .colr1{
-        color:white;
-    } 
-    .colr2{
-        color:forestgreen;
-    } 
-    .colr3{
-        color:firebrick;
-    } 
-    .colr4{
-        color:darkorange;
-    } 
-    .colr5{
-        color:red;
+        float: left !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        border-radius: 0px;
     }
-    .colr6{
-        color:orangered;
+    .Filertbl {
+        background-color: #1e1e2d;
+        margin-top: -55px;
+        margin-bottom: 25px !important;
+        border: none !important;
+        width: 100% !important;
+        display: table;
+        padding: 0px;
+    }
+    .colr1 {
+        color: white;
+    }
+    .colr2 {
+        color: forestgreen;
+    }
+    .colr3 {
+        color: firebrick;
+    }
+    .colr4 {
+        color: darkorange;
+    }
+    .colr5 {
+        color: red;
+    }
+    .colr6 {
+        color: orangered;
     }
     .IcnFilt {
-    font-size: 15px !important;
-    padding-right: 10px !important;
-}
-    .headrtxt{
-        font-size:15px;
-        font-weight:500;
-        color:#212529;
+        font-size: 15px !important;
+        padding-right: 10px !important;
     }
-    .fw5{
-        font-weight:500;
+    .headrtxt {
+        font-size: 15px;
+        font-weight: 500;
+        color: #212529;
     }
-    .fw3{
-        font-weight:300;
+    .fw5 {
+        font-weight: 500;
     }
-    .fw7{
-        font-weight:700;
+    .fw3 {
+        font-weight: 300;
     }
-    .flSel{
-        margin-top:-15px;
-        padding-right:0px;
-        margin-bottom:10px;
+    .fw7 {
+        font-weight: 700;
+    }
+    .flSel {
+        margin-top: -15px;
+        padding-right: 0px;
+        margin-bottom: 10px;
     }
     .srchBtnFLSel {
-    border-radius: 0px !important;
-    background-color: mediumseagreen !important;
-    font-weight: 300 !important;
-    border: none !important;
-    color: white !important;
-    float: right;
-}
-    .seltxt{
-        color:forestgreen;
-        font-size:20px;
-        font-weight:500;
+        border-radius: 0px !important;
+        background-color: mediumseagreen !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        float: right;
     }
-    .brdr{
-        border-top:1px dashed gainsboro;
+    .seltxt {
+        color: forestgreen;
+        font-size: 20px;
+        font-weight: 500;
     }
-    .brdr2{
-        border-bottom:1px dashed gainsboro;
+    .brdr {
+        border-top: 1px dashed gainsboro;
+    }
+    .brdr2 {
+        border-bottom: 1px dashed gainsboro;
     }
     .Srts {
-    background-color:white;
-    width: 100%;
-    margin-left:0px;
-}
-    .srchBtn {
-    border-radius: 0px !important;
-    background-color: #1e1e2d !important;
-    font-weight: 300 !important;
-    border: none !important;
-    color: white !important;
-    float: right;
-}
-    .FltResp {
-    font-size: 13px;
-    font-family: 'Poppins';
-    font-weight: 400;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 100%;
-    /*padding: 0px;*/
-    margin-top: 10px;
-}
-    .resptbl{
-      background-color:white;
-      width:100%;
+        background-color: white;
+        width: 100%;
+        margin-left: 0px;
     }
-    .hdbck{
-        background-color:#f2f2f2
+    .srchBtn {
+        border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        float: right;
+    }
+    .srchBtnFR{
+          border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        padding:3px;
+        width:100%;
+        margin-bottom:2px;
+    }
+    .FltResp {
+        font-size: 13px;
+        font-family: 'Poppins';
+        font-weight: 400;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        /*padding: 0px;*/
+        margin-top: 10px;
+    }
+    .resptbl {
+        background-color: white;
+        width: 100%;
+    }
+    .hdbck {
+        background-color: #f2f2f2
     }
     .srchBtnS {
-    border-radius: 0px !important;
-    background-color: #1e1e2d !important;
-    font-weight: 300 !important;
-    border: none !important;
-    color: white !important;
-}
+        border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+    }
 </style>
-
-
-<!--Remember to add page and unit loaders!-->
-
 
 <!--Start of Summary of Search-->
 <div class="kt-subheader kt-grid__item mySub sumHdr" id="kt_subheader">
@@ -826,7 +832,7 @@
 <!--Start Flight Results-->
 <div class="row">
     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-12" style="position:relative;">
-        <div >
+        <div>
             <!--Start Results Sort-->
             <div class="row Srts mrB2 pd">
                 <table class="col-lg-12 col-xl-12 table-responsive">
@@ -859,7 +865,7 @@
                             <a href="@Url.Action("CombFares","CombinedFares")"><span type="reset" class="btn  srchBtn"><i class="la la-expand"></i>Combined Fares</span></a>
                         </td>
                         <td align="right">
-                            <a href="@Url.Action("SchedFares","ScheduledFares")"><span type="reset" class="btn  srchBtn"><i class="la la-bars"></i>Scheduled Fares</span></a>
+                            <a href="@Url.Action("FlResp","FlightResponse")"><span type="reset" class="btn  srchBtn"><i class="fa fa-exchange-alt"></i>Split Fares</span></a>
                         </td>
                     </tr>
                 </table>
@@ -891,6 +897,7 @@
                                     </table>
                                 </td>
                             </tr>
+                            <!--disable select button until a fare has been chosen - choose fare by clicking on (i)-->
                             <tr>
                                 <td><img src="/Content/Images/BA.png" class="mrL" /></td>
                                 <td>
@@ -946,31 +953,43 @@
                                         <div class="card card-body fnt">
                                             <table class="col-lg-12 col-xl-12">
                                                 <colgroup>
-                                                    <col style="width:50%;" />
-                                                    <col style="width:50%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
                                                 </colgroup>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5">Operated by:</span></td>
-                                                    <td class="pdB"><span>Comair</span></td>
+                                                    <td colspan="4" align="center"><div class="hdbck fw5 pd mrB2">5 Fare(s) returned</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5">Code:</span></td>
-                                                    <td class="pdB"><span>MN4023</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5">Travel Class:</span></td>
-                                                    <td class="pdB"><span>ECONOMY</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5"></span></td>
-                                                    <td class="pdB"><span class="colr3"><i class="fa fa-handshake pdR"></i>Agency Fare</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5"></span></td>
-                                                    <td class="pdB"><span class="colr2"><i class="fa fa-thumbs-up pdR"></i>In Policy</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"> <a href="@Url.Action("FrRls","FareRules")"><span type="reset" class="btn  srchBtn"><i class="la la-list"></i>Fare Rules</span></a></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -1060,23 +1079,43 @@
                                         <div class="card card-body">
                                             <table class="col-lg-12 col-xl-12">
                                                 <colgroup>
-                                                    <col style="width:50%;" />
-                                                    <col style="width:50%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
                                                 </colgroup>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5">Operated by:</span></td>
-                                                    <td class="pdB"><span>Comair</span></td>
+                                                    <td colspan="4" align="center"><div class="hdbck fw5 pd mrB2">5 Fare(s) returned</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5">Code:</span></td>
-                                                    <td class="pdB"><span>MN4023</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="pdB"><span class="fw5">Travel Class:</span></td>
-                                                    <td class="pdB"><span>ECONOMY</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"> <a href=""><span type="reset" class="btn  srchBtn"><i class="la la-list"></i>Fare Rules</span></a></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -1167,23 +1206,43 @@
                                         <div class="card card-body">
                                             <table class="col-lg-12 col-xl-12">
                                                 <colgroup>
-                                                    <col style="width:50%;" />
-                                                    <col style="width:50%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
                                                 </colgroup>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Operated by:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>Comair</span></td>
+                                                    <td colspan="4" align="center"><div class="hdbck fw5 pd mrB2">5 Fare(s) returned</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Code:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>MN4023</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Travel Class:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>ECONOMY</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"> <a href=""><span type="reset" class="btn  srchBtn" style="background-color:darkorange;float:left;"><i class="la la-list"></i>Fare Rules</span></a></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -1272,31 +1331,43 @@
                                         <div class="card card-body">
                                             <table class="col-lg-12 col-xl-12">
                                                 <colgroup>
-                                                    <col style="width:50%;" />
-                                                    <col style="width:50%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
                                                 </colgroup>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Operated by:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>Comair</span></td>
+                                                    <td colspan="4" align="center"><div class="hdbck fw5 pd mrB2">5 Fare(s) returned</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Code:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>MN4023</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Travel Class:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>ECONOMY</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;"></span></td>
-                                                    <td style="padding-bottom:5px;"><span style="color:firebrick;"><i class="fa fa-handshake" style="padding-right:5px;"></i>Agency Fare</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;"></span></td>
-                                                    <td style="padding-bottom:5px;"><span style="color:forestgreen;"><i class="fa fa-thumbs-up" style="padding-right:5px;"></i>In Policy</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"> <a href=""><span type="reset" class="btn  srchBtn" style="background-color:darkorange;float:left;"><i class="la la-list"></i>Fare Rules</span></a></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -1386,23 +1457,43 @@
                                         <div class="card card-body">
                                             <table class="col-lg-12 col-xl-12">
                                                 <colgroup>
-                                                    <col style="width:50%;" />
-                                                    <col style="width:50%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
                                                 </colgroup>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Operated by:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>Comair</span></td>
+                                                    <td colspan="4" align="center"><div class="hdbck fw5 pd mrB2">5 Fare(s) returned</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Code:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>MN4023</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Travel Class:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>ECONOMY</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"> <a href=""><span type="reset" class="btn  srchBtn" style="background-color:darkorange;float:left;"><i class="la la-list"></i>Fare Rules</span></a></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -1491,31 +1582,43 @@
                                         <div class="card card-body">
                                             <table class="col-lg-12 col-xl-12">
                                                 <colgroup>
-                                                    <col style="width:50%;" />
-                                                    <col style="width:50%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
+                                                    <col style="width:25%;" />
                                                 </colgroup>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Operated by:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>Comair</span></td>
+                                                    <td colspan="4" align="center"><div class="hdbck fw5 pd mrB2">5 Fare(s) returned</div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Code:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>MN4023</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;">Travel Class:</span></td>
-                                                    <td style="padding-bottom:5px;"><span>ECONOMY</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;"></span></td>
-                                                    <td style="padding-bottom:5px;"><span style="color:firebrick;"><i class="fa fa-handshake" style="padding-right:5px;"></i>Agency Fare</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding-bottom:5px;"><span style="font-weight:500;"></span></td>
-                                                    <td style="padding-bottom:5px;"><span style="color:forestgreen;"><i class="fa fa-thumbs-up" style="padding-right:5px;"></i>In Policy</span></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"> <a href=""><span type="reset" class="btn  srchBtn" style="background-color:darkorange;float:left;"><i class="la la-list"></i>Fare Rules</span></a></td>
+                                                    <td><i class="fa fa-handshake pdR colr3"></i>Corporate Deal</td>
+                                                    <td align="center">MN2043</td>
+                                                    <td><div class="colr2">R 100 000.00</div></td>
+                                                    <td align="center"><a href=""><span type="reset" class="btn  srchBtnFR">Select</span></a></td>
                                                 </tr>
                                             </table>
                                         </div>

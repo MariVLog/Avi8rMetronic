@@ -20563,8 +20563,8 @@ strong {
     position: absolute;
     top: 1px;
     left: 0;
-    height: 18px;
-    width: 18px;
+    height: 15px;
+    width: 15px;
     border-radius: 50% !important; }
     .kt-radio > span:after {
       content: '';
@@ -31178,7 +31178,7 @@ body {
     /*Use*/
     .kt-header--fixed.kt-subheader--fixed .kt-subheader {
       position: fixed;
-      height: 54px;
+      height: 40px;
       top: 65px;
       left: 0;
       right: 0;

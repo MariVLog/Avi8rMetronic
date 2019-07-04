@@ -4,9 +4,139 @@
     Layout = "~/Views/FlightSearch/Flights_Layout.cshtml";
 }
 
+
+<style>
+    .formSpcing {
+        margin-left: 50px;
+    }
+    .bdg {
+        background-color: steelblue !important;
+    }
+    .fnt10 {
+        font-size: 10px;
+    }
+    .fnt20 {
+        font-size: 20px;
+    }
+    .fnt15 {
+        font-size: 15px;
+    }
+    .fnt {
+        font-size: 13px !important;
+    }
+    .pd0 {
+        padding: 0px;
+    }
+    .pd {
+        padding: 5px;
+    }
+    .pdT {
+        padding-top: 5px;
+    }
+    .pdT2 {
+        padding-top: 10px;
+    }
+    .pdR {
+        padding-right: 5px;
+    }
+    .pdR2 {
+        padding-right: 10px;
+    }
+    .pdL {
+        padding-left: 5px;
+    }
+    .pdL2 {
+        padding-left: 10px;
+    }
+    .pdB {
+        padding-bottom: 5px;
+    }
+    .pdB2 {
+        padding-bottom: 10px;
+    }
+    .mrT {
+        margin-top: 5px;
+    }
+    .mrB0 {
+        margin-bottom: 0px;
+    }
+    .mrB2 {
+        margin-bottom: 10px;
+    }
+    .mrL {
+        margin-left: 5px;
+    }
+    .mrL2 {
+        margin-left: 10px;
+    }
+    .colr1 {
+        color: white;
+    }
+    .colr2 {
+        color: forestgreen;
+    }
+    .colr3 {
+        color: firebrick;
+    }
+    .colr4 {
+        color: darkorange;
+    }
+    .colr5 {
+        color: red;
+    }
+    .colr6 {
+        color: orangered;
+    }
+    .fw5 {
+        font-weight: 500;
+    }
+    .fw3 {
+        font-weight: 300;
+    }
+    .fw7 {
+        font-weight: 700;
+    }
+    .srchBtnAd {
+        border-radius: 0px !important;
+        background-color: #1e1e2d !important;
+        font-weight: 300 !important;
+        border: none !important;
+        color: white !important;
+        margin-bottom:5px;
+    }
+    .srchBtnM {
+    border-radius: 0px !important;
+    background-color: #1e1e2d !important;
+    font-weight: 300 !important;
+    border: none !important;
+    color: white !important;
+}
+    .mlbl {
+    font-size: 13px !important;
+    color: #1e1e2d !important;
+}
+    .frmspc {
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+}
+    .myTxtBoxStl {
+    width: 100% !important;
+    float: right;
+}
+    .lstChkbx {
+    font-weight: 300 !important;
+    margin-top: 10px !important;
+    margin-right: 10px !important;
+}
+</style>
+
+<!--Remember to add loaders etc!-->
+
+
 <div class="row" style="margin-top:-50px!important;">
-    <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4">
-        <div class="kt-portlet__body" style="margin-bottom:30px;">
+    <!-- Start Traveller and cost center select-->
+    <div class="col-lg-4 col-xl-4">
+        <div class="kt-portlet__body">
             <!--begin::Accordion-->
             <div class="accordion" id="accordionExample1">
                 <div class="card">
@@ -47,11 +177,11 @@
                                 </form>
                             </div>
                             <div class="trsrchtag">
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information" style="padding-left:10px!important;"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title mdalTit" id="exampleModalLabel">Traveler Info</h5>
@@ -59,7 +189,14 @@
                                     <div class="modal-body">
                                         <div class="kt-scroll ps ps--active-y" data-scroll="true" data-height="200" style="height: 200px; overflow: hidden;">
                                             put traveler details in here phone, id etc
-                                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px; height: 200px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 72px;"></div></div>
+                                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                                                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;">
+                                                </div>
+                                            </div>
+                                            <div class="ps__rail-y" style="top: 0px; right: 0px; height: 200px;">
+                                                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 72px;">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -82,21 +219,21 @@
                             <div>
                                 <span class="mlbl">Available Traveler(s)</span>
                                 <div class="trsrchtag">
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
                                 </div>
                             </div>
-                            <div style="padding-top:10px;">
+                            <div class="pdT2">
                                 <span class="mlbl">Selected Traveler(s)</span>
                                 <div class="trsrchtag">
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
+                                    <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information pdL"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -110,22 +247,8 @@
                     </div>
                     <div id="collapseOne4" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
                         <div class="card-body">
-                            <div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
-                                <form method="get" class="kt-quick-search__form">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
-                                        <input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
-                                        <div class="input-group-append"><span class="input-group-text"></span></div>
-                                    </div>
-                                </form>
-                            </div>
                             <div class="trsrchtag">
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                <span class="kt-badge kt-badge--primary kt-badge--inline bdg">Vernon Bear<i class="flaticon2-information bdgeIcn"></i></span>
-                                <button type="button" class="btn btn-primary btn-square adhbtn">Add Ad hoc Traveler</button>
+                                <button type="button" class="btn btn-primary btn-square srchBtnAd">Add Ad hoc Traveler</button>
                             </div>
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -189,14 +312,12 @@
                                                 <button type="submit" class="btn btn-primary srchBtnM">Save Traveler</button>
                                             </div>
                                         </div>
-                                        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px; height: 200px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 72px;"></div></div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -204,9 +325,9 @@
             <!--end::Accordion-->
         </div>
     </div>
-
-
-    <div class="col-md-12 formSpcing col-xs-12 col-sm-12 col-lg-7">
+    <!-- End Traveller and cost center select-->
+    <!-- Start Flight Search Form-->
+    <div class="formSpcing col-lg-7 col-xl-7">
         <div class="kt-portlet__body">
             <ul class="nav nav-pills nav-fill myclr" role="tablist">
                 <li class="nav-item">
@@ -218,7 +339,6 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_3">Multi</a>
                 </li>
-
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="kt_tabs_5_1" role="tabpanel">
@@ -736,10 +856,10 @@
                         <div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
+    <!-- End Flight Search Form-->
 </div>
 
 
