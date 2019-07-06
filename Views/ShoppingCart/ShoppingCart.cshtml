@@ -241,7 +241,15 @@
         border: none !important;
         color: white !important;
     }
-
+    .srchBtnQ {
+        border-radius: 0px !important;
+        background-color: gainsboro;
+        font-weight: 300 !important;
+        border: none !important;
+        color: black;
+        text-align:center;
+        padding:8px;
+    }
     .HtlResp {
         background-color: white;
         font-size: 13px;
@@ -251,21 +259,22 @@
         margin-right: 0px;
         width: 100%;
         padding: 0px;
-        margin-top: 20px;
-        -webkit-box-shadow: 10px 10px 5px 0px grey;
-        -moz-box-shadow: 10px 10px 5px 0px grey;
-        box-shadow: 10px 10px 5px 0px grey;
+        margin-top: 10px;
+        margin-bottom:10px;
+        -webkit-box-shadow: 5px 5px 5px 0px grey;
+        -moz-box-shadow: 5px 5px 5px 0px grey;
+        box-shadow: 5px 5px 5px 0px grey;
     }
     .myclr{
-         -webkit-box-shadow: 10px 10px 5px 0px grey;
-        -moz-box-shadow: 10px 10px 5px 0px grey;
-        box-shadow: 10px 10px 5px 0px grey;
+        -webkit-box-shadow: 5px 5px 5px 0px grey;
+        -moz-box-shadow: 5px 5px 5px 0px grey;
+        box-shadow: 5px 5px 5px 0px grey;
     }
 </style>
 
 <div class="kt-portlet__body" style="margin-top:-70px;">
     <div class="pdB2 pdL fnt20 fw5" style="text-shadow: 2px 2px 2px #999797;color:#1e1e2d;">REQUISITION</div>
-    <ul class="nav nav-pills nav-fill myclr" style="margin-bottom:0px;" role="tablist">
+    <ul class="nav nav-pills nav-fill myclr" style="margin-bottom:10px;" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#kt_tabs_5_1"><i class="fa fa-briefcase"></i>Trip Items</a>
         </li>
@@ -345,6 +354,9 @@
                             <table class="col-lg-12 col-xl-12">
                                 <tr>
                                     <td align="center" class="colr2 fw5"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" class="colr3 fw5"><i class="fa fa-handshake pdR"></i>Private Fare</td>
                                 </tr>
                                 <tr>
                                     <td class="pdT">
@@ -622,20 +634,20 @@
                                     <td align="center">
                                         <table>
                                             <tr>
-                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-departure pdR"></i>17:15, 01 JUL</div></td>
+                                                <td align="center"><div class="fnt12"><i class="fa fa-arrow-up pdR"></i>17:15, 01 JUL</div></td>
                                             </tr>
                                             <tr>
-                                                <td align="center"><div>OR Tambo Intl Arpt, Johannesburg</div></td>
+                                                <td align="center"><div>King Shaka Intl Arpt, Durban</div></td>
                                             </tr>
                                         </table>
                                     </td>
                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
-                                    <td align="center"><i class="fa fa-clock pdR"></i>1H50M</td>
+                                    <td align="center"><i class="fa fa-sun pdR"></i>4 Day(s)</td>
                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
                                     <td align="center">
                                         <table>
                                             <tr>
-                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>18:20, 01 JUL</div></td>
+                                                <td align="center"><div class="fnt12"><i class="fa fa-arrow-down pdR"></i>18:20, 01 JUL</div></td>
                                             </tr>
                                             <tr>
                                                 <td align="center"><div>King Shaka Intl Arpt, Durban</div></td>
@@ -648,7 +660,7 @@
                         <td class="pdB"><a href="#" class="cat-list-btn" style="background-color:darkred!important;">Remove</a></td>
                     </tr>
                     <tr>
-                        <td align="center" class="pdT brdr brdr2"><img src="~/Content/Images/MN.png" /></td>
+                        <td align="center" class="pdT brdr brdr2"><img src="~/Content/Images/Cars/BV_CDAR.jpg" style="width:40%;" /></td>
                         <td align="center" class="pdT pdL brdr brdr2">
                             <table class="col-lg-12 col-xl-12">
                                 <colgroup>
@@ -657,9 +669,9 @@
                                     <col style="width:30%;" />
                                 </colgroup>
                                 <tr>
-                                    <td align="center" class="fw5">Some Airline Operated by Comair</td>
-                                    <td align="left" style="padding-left:40px;"><i class="fa fa-file-code pdR"></i>MN4023</td>
-                                    <td align="left" style="padding-left:40px;"><i class="fa fa-stopwatch pdR"></i>0 Stop(s)</td>
+                                    <td align="center" class="fw5">(IM) - Europcar South Africa</td>
+                                    <td align="left" style="padding-left:40px;"><i class="fa fa-file-code pdR"></i>EDMR - Group B</td>
+                                    <td align="left" style="padding-left:40px;"><i class="fa fa-stopwatch pdR"></i>Economy 4-5 Door</td>
                                 </tr>
                             </table>
                         </td>
@@ -669,18 +681,7 @@
                                     <td align="center" class="colr2 fw5"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
                                 </tr>
                                 <tr>
-                                    <td class="pdT">
-                                        <table class="col-lg-12 col-xl-12">
-                                            <colgroup>
-                                                <col style="width:50%;" />
-                                                <col style="width:50%;" />
-                                            </colgroup>
-                                            <tr>
-                                                <td align="left" class="pdL">Base Price</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
+                                    <td align="center" class="colr3 fw5"><i class="fa fa-handshake pdR"></i>Negotiated Deal</td>
                                 </tr>
                                 <tr>
                                     <td class="pdT">
@@ -690,22 +691,8 @@
                                                 <col style="width:50%;" />
                                             </colgroup>
                                             <tr>
-                                                <td align="left" class="pdL">Taxes</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pdT">
-                                        <table class="col-lg-12 col-xl-12">
-                                            <colgroup>
-                                                <col style="width:50%;" />
-                                                <col style="width:50%;" />
-                                            </colgroup>
-                                            <tr>
-                                                <td align="left" class="pdL">Total</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                <td align="left" class="pdL">Est. Total</td>
+                                                <td align="right" class="pdR colr2">R 100 000.00</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -731,7 +718,7 @@
                                             </colgroup>
                                             <tr>
                                                 <td rowspan="2" align="center"><i class="flaticon-users-1" style="font-size:25px;color:purple;"></i></td>
-                                                <td align="left" class="pdL fnt fw5">Traveller(s)</td>
+                                                <td align="left" class="pdL fnt fw5">Driver</td>
                                             </tr>
                                             <tr><td align="left" class="pdL fnt12">Vernon Bear</td></tr>
                                         </table>
@@ -771,7 +758,7 @@
                                             <tr>
                                                 <td colspan="2" align="left" class="pdL fw5 colr5">
                                                     <p class="pdT2 pdB mrB0">
-                                                        <a class="colr5" data-toggle="collapse" href="#collapseExampleITIN1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <a class="colr5" data-toggle="collapse" href="#collapseExampleITIN2" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                             Cheaper Option Available<i class="fa fa-arrow-down pdL"></i>
                                                         </a>
                                                     </p>
@@ -785,11 +772,11 @@
                     </tr>
                     <tr>
                         <td colspan="3" class="pdT">
-                            <div class="collapse" id="collapseExampleITIN1">
+                            <div class="collapse" id="collapseExampleITIN2">
                                 <div class="card card-body pd0">
                                     <table class="col-lg-12 col-xl-12">
                                         <tr>
-                                            <td class="pdL brdr2 fw5" style="padding-top:20px;padding-bottom:20px;">Cheaper Flight available for <span class="colr2 pdR">R 100 000.00</span><span class="colr5">(R 100 000.00 cheaper)</span></td>
+                                            <td class="pdL brdr2 fw5" style="padding-top:20px;padding-bottom:20px;">Cheaper Car available for <span class="colr2 pdR">R 100 000.00</span><span class="colr5">(R 100 000.00 cheaper)</span></td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -801,34 +788,154 @@
                                                     <tr>
                                                         <td class="pdB pdT2">
                                                             <table class="col-lg-12 col-xl-12">
-                                                                <colgroup>
-                                                                    <col style="width:40%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:10%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:40%;" />
-                                                                </colgroup>
                                                                 <tr>
-                                                                    <td align="center">
-                                                                        <table>
-                                                                            <tr>
-                                                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-departure pdR"></i>17:15, 01 JUL</div></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td align="center"><div>OR Tambo Intl Arpt, Johannesburg</div></td>
-                                                                            </tr>
-                                                                        </table>
+                                                                    <td class="pd2 fw5 brdr2" style="background-color:gainsboro;">
+                                                                        Select Locations and confirm rate
                                                                     </td>
-                                                                    <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
-                                                                    <td align="center"><i class="fa fa-clock pdR"></i>1H50M</td>
-                                                                    <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
-                                                                    <td align="center">
-                                                                        <table>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="pdL2">
+                                                                        <table class="col-lg-12 col-xl-12">
+                                                                            <colgroup>
+                                                                                <col style="width:25%;" />
+                                                                                <col style="width:60%;" />
+                                                                                <col style="width:15%;" />
+                                                                            </colgroup>
                                                                             <tr>
-                                                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>18:20, 01 JUL</div></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td align="center"><div>King Shaka Intl Arpt, Durban</div></td>
+                                                                                <td class="pdT">
+                                                                                    <table class="col-lg-12 col-xl-12">
+                                                                                        <tr>
+                                                                                            <td align="center" class="fw5">Pick-up Location</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="center" class="brdr2">
+                                                                                                <div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
+                                                                                                    <form method="get" class="kt-quick-search__form" style="padding:2px;">
+                                                                                                        <div class="input-group">
+                                                                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
+                                                                                                            <input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
+                                                                                                            <div class="input-group-append"><span class="input-group-text"></span></div>
+                                                                                                        </div>
+                                                                                                    </form>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="center" class="fw5 pdT">Drop-off Location</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="center">
+                                                                                                <div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
+                                                                                                    <form method="get" class="kt-quick-search__form" style="padding:2px;">
+                                                                                                        <div class="input-group">
+                                                                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
+                                                                                                            <input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
+                                                                                                            <div class="input-group-append"><span class="input-group-text"></span></div>
+                                                                                                        </div>
+                                                                                                    </form>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td align="left" valign="middle" class="pdR2 pdT" style="padding-left:50px;">
+                                                                                    <table class="col-lg-12 col-xl-12">
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <div class="form-group row" style="margin-bottom:0;">
+                                                                                                    <label class="col-form-label col-lg-4 col-xl-4">Select Driver:</label>
+                                                                                                    <div class="col-lg-8 col-xl-8">
+                                                                                                        <div class="dropdown bootstrap-select form-control kt-">
+                                                                                                            <select class="form-control kt-selectpicker" tabindex="-98">
+                                                                                                                <option>Vernon Bear</option>
+                                                                                                                <option>Dawood Tagari</option>
+                                                                                                            </select>
+                                                                                                            <button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" title="Mustard" aria-expanded="false">
+                                                                                                                <div class="filter-option">
+                                                                                                                    <div class="filter-option-inner">
+                                                                                                                        <div class="filter-option-inner-inner">Vernon Bear</div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </button>
+                                                                                                            <div class="dropdown-menu" role="combobox" x-placement="bottom-start" style="max-height: 460px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                                                                                                                <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1" style="max-height: 434px; overflow-y: auto; min-height: 0px;">
+                                                                                                                    <ul class="dropdown-menu inner show">
+                                                                                                                        <li class="selected active">
+                                                                                                                            <a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true">
+                                                                                                                                <span class="text">Vernon Bear</span>
+                                                                                                                            </a>
+                                                                                                                        </li>
+                                                                                                                        <li>
+                                                                                                                            <a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false">
+                                                                                                                                <span class="text">Dawood Tagari</span>
+                                                                                                                            </a>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left" class="pdT">
+                                                                                                <span class="fnt15 pdB fw5">Europcar Southafrica (IM) - Economy</span>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left" class="fnt11 fw5 pdB2">
+                                                                                                Group B - Ford Fiesta or similar
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <table class="col-lg-12 col-xl-12">
+                                                                                                    <colgroup>
+                                                                                                        <col style="width:50%;" />
+                                                                                                        <col style="width:50%;" />
+                                                                                                    </colgroup>
+                                                                                                    <tr>
+                                                                                                        <td align="left" class="pdB fnt12">
+                                                                                                            EDMR - Economy 4-5 Door
+                                                                                                        </td>
+                                                                                                        <td align="left" class="pdB fnt12">
+                                                                                                            Extra mileage - ZAR 2.13
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td align="left" class="pdB fnt12">
+                                                                                                            Mileage Allowance - 100KM
+                                                                                                        </td>
+                                                                                                        <td align="left" class="pdB fnt12">
+                                                                                                            Rate Guaranteed - YES
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left" class="pdT">
+                                                                                                <table class="col-lg-12 col-xl-12">
+                                                                                                    <colgroup>
+                                                                                                        <col style="width:20%;" />
+                                                                                                        <col style="width:20%;" />
+                                                                                                        <col style="width:20%;" />
+                                                                                                        <col style="width:20%;" />
+                                                                                                        <col style="width:20%;" />
+                                                                                                    </colgroup>
+                                                                                                    <tr>
+                                                                                                        <td align="left" class="pdB2 pdT">4 - 5 Door</td>
+                                                                                                        <td align="left" class="pdB2 pdT"><i class="fa fa-snowflake pdR" style="color:aqua;"></i>Aircon</td>
+                                                                                                        <td align="left" class="pdB2 pdT"><i class="fa fa-water pdR" style="color:darkgreen;"></i>Petrol</td>
+                                                                                                        <td align="left" class="pdB2 pdT"><i class="fa fa-map-pin colr5 pdR"></i>Manual</td>
+                                                                                                        <td align="left" class="pdB2 pdT"><i class="fa fa-handshake colr3 pdR"></i>Deal</td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
@@ -841,18 +948,7 @@
                                                                     <td align="center" class="colr2 fw5"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="pdT">
-                                                                        <table class="col-lg-12 col-xl-12">
-                                                                            <colgroup>
-                                                                                <col style="width:50%;" />
-                                                                                <col style="width:50%;" />
-                                                                            </colgroup>
-                                                                            <tr>
-                                                                                <td align="left" class="pdL">Base Price</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
+                                                                    <td align="center" class="colr3 fw5"><i class="fa fa-handshake pdR"></i>Negotiated Deal</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="pdT">
@@ -862,52 +958,14 @@
                                                                                 <col style="width:50%;" />
                                                                             </colgroup>
                                                                             <tr>
-                                                                                <td align="left" class="pdL">Taxes</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                                                <td align="left" class="pdL">Est. Total</td>
+                                                                                <td align="right" class="pdR colr2">R 100 000.00</td>
                                                                             </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="pdT">
-                                                                        <table class="col-lg-12 col-xl-12">
-                                                                            <colgroup>
-                                                                                <col style="width:50%;" />
-                                                                                <col style="width:50%;" />
-                                                                            </colgroup>
                                                                             <tr>
-                                                                                <td align="left" class="pdL">Total</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                                                <td colspan="2" class="pdT"><div class="pd srchBtn" style="width:100%;background-color:forestgreen!important;text-align:center;">SWAP</div></td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <table class="col-lg-12 col-xl-12">
-                                                                <colgroup>
-                                                                    <col style="width:40%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:10%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:40%;" />
-                                                                </colgroup>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <table>
-                                                                            <tr>
-                                                                                <td align="center" valign="middle"><img src="~/Content/Images/FA.png" /></td>
-                                                                                <td align="center" valign="middle" class="pdL2"><div>FA261</div></td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                    <td align="center" valign="middle"></td>
-                                                                    <td align="center">0 Stop(s)</td>
-                                                                    <td align="center" valign="middle"></td>
-                                                                    <td align="center" class="pdL2 pdR2"><a href="#" class="cat-list-btn" style="background-color:green!important;">SWAP</a></td>
                                                                 </tr>
                                                             </table>
                                                         </td>
@@ -944,23 +1002,23 @@
                                     <td align="center">
                                         <table>
                                             <tr>
-                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-departure pdR"></i>17:15, 01 JUL</div></td>
+                                                <td align="center"><div class="fnt12"><i class="fa fa-calendar-plus pdR"></i>01 JUL</div></td>
                                             </tr>
                                             <tr>
-                                                <td align="center"><div>OR Tambo Intl Arpt, Johannesburg</div></td>
+                                                <td align="center"><div>Durban</div></td>
                                             </tr>
                                         </table>
                                     </td>
                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
-                                    <td align="center"><i class="fa fa-clock pdR"></i>1H50M</td>
+                                    <td align="center"><i class="fa fa-moon pdR"></i>4 Day(s)</td>
                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
                                     <td align="center">
                                         <table>
                                             <tr>
-                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>18:20, 01 JUL</div></td>
+                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>05 JUL</div></td>
                                             </tr>
                                             <tr>
-                                                <td align="center"><div>King Shaka Intl Arpt, Durban</div></td>
+                                                <td align="center"><div>Durban</div></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -970,7 +1028,7 @@
                         <td class="pdB"><a href="#" class="cat-list-btn" style="background-color:darkred!important;">Remove</a></td>
                     </tr>
                     <tr>
-                        <td align="center" class="pdT brdr brdr2"><img src="~/Content/Images/MN.png" /></td>
+                        <td align="center" class="pdT brdr brdr2"><img src="~/Content/Images/HTL1.jpg" style="width:50%;" /></td>
                         <td align="center" class="pdT pdL brdr brdr2">
                             <table class="col-lg-12 col-xl-12">
                                 <colgroup>
@@ -979,9 +1037,9 @@
                                     <col style="width:30%;" />
                                 </colgroup>
                                 <tr>
-                                    <td align="center" class="fw5">Some Airline Operated by Comair</td>
-                                    <td align="left" style="padding-left:40px;"><i class="fa fa-file-code pdR"></i>MN4023</td>
-                                    <td align="left" style="padding-left:40px;"><i class="fa fa-stopwatch pdR"></i>0 Stop(s)</td>
+                                    <td align="center" class="fw5">Some Hotel Somewhere</td>
+                                    <td align="left" style="padding-left:40px;"><i class="fa fa-file-code pdR"></i>62 Gordon Street</td>
+                                    <td align="left" style="padding-left:40px;"><i class="fa fa-stopwatch pdR"></i>Room Cost: ZAR 100 000.00</td>
                                 </tr>
                             </table>
                         </td>
@@ -991,6 +1049,9 @@
                                     <td align="center" class="colr2 fw5"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
                                 </tr>
                                 <tr>
+                                    <td align="center">(RH) - RESERVATIONS HUB</td>
+                                </tr>
+                                <tr>
                                     <td class="pdT">
                                         <table class="col-lg-12 col-xl-12">
                                             <colgroup>
@@ -998,8 +1059,8 @@
                                                 <col style="width:50%;" />
                                             </colgroup>
                                             <tr>
-                                                <td align="left" class="pdL">Base Price</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                <td align="left" class="pdL"><i class="fa fa-map-marker pdR"></i>Durban</td>
+                                                <td align="right" class="pdR"><i class="fa fa-moon pdR"></i>4 Night(s)</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -1012,22 +1073,8 @@
                                                 <col style="width:50%;" />
                                             </colgroup>
                                             <tr>
-                                                <td align="left" class="pdL">Taxes</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pdT">
-                                        <table class="col-lg-12 col-xl-12">
-                                            <colgroup>
-                                                <col style="width:50%;" />
-                                                <col style="width:50%;" />
-                                            </colgroup>
-                                            <tr>
-                                                <td align="left" class="pdL">Total</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                <td align="left" class="pdL">Est. Total</td>
+                                                <td align="right" class="pdR colr2">R 100 000.00</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -1052,10 +1099,11 @@
                                                 <col style="width:80%;" />
                                             </colgroup>
                                             <tr>
-                                                <td rowspan="2" align="center"><i class="flaticon-users-1" style="font-size:25px;color:purple;"></i></td>
-                                                <td align="left" class="pdL fnt fw5">Traveller(s)</td>
+                                                <td rowspan="3" align="center"><i class="flaticon-users-1" style="font-size:25px;color:purple;"></i></td>
+                                                <td align="left" class="pdL fnt fw5">Info/Traveller(s)</td>
                                             </tr>
                                             <tr><td align="left" class="pdL fnt12">Vernon Bear</td></tr>
+                                            <tr><td align="left" class="pdL fnt12">Budget Non SC Suite(1)/1-2 Sleeper</td></tr>
                                         </table>
                                     </td>
                                     <td align="center">
@@ -1078,9 +1126,10 @@
                                                 <col style="width:80%;" />
                                             </colgroup>
                                             <tr>
-                                                <td rowspan="2" align="center"><i class="flaticon-rotate" style="font-size:25px;color:mediumpurple;"></i></td>
+                                                <td rowspan="3" align="center"><i class="flaticon-rotate" style="font-size:25px;color:mediumpurple;"></i></td>
                                                 <td align="left" class="pdL fw5 fnt">Status</td>
                                             </tr>
+                                            <tr><td align="left" class="pdL fnt12">Rack General</td></tr>
                                             <tr><td align="left" class="pdL fnt12"><i class="fa fa-exclamation-triangle colr4 pdR"></i>Unconfirmed</td></tr>
                                         </table>
                                     </td>
@@ -1093,7 +1142,7 @@
                                             <tr>
                                                 <td colspan="2" align="left" class="pdL fw5 colr5">
                                                     <p class="pdT2 pdB mrB0">
-                                                        <a class="colr5" data-toggle="collapse" href="#collapseExampleITIN1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <a class="colr5" data-toggle="collapse" href="#collapseExampleITIN3" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                             Cheaper Option Available<i class="fa fa-arrow-down pdL"></i>
                                                         </a>
                                                     </p>
@@ -1107,11 +1156,11 @@
                     </tr>
                     <tr>
                         <td colspan="3" class="pdT">
-                            <div class="collapse" id="collapseExampleITIN1">
+                            <div class="collapse" id="collapseExampleITIN3">
                                 <div class="card card-body pd0">
                                     <table class="col-lg-12 col-xl-12">
                                         <tr>
-                                            <td class="pdL brdr2 fw5" style="padding-top:20px;padding-bottom:20px;">Cheaper Flight available for <span class="colr2 pdR">R 100 000.00</span><span class="colr5">(R 100 000.00 cheaper)</span></td>
+                                            <td class="pdL brdr2 fw5" style="padding-top:20px;padding-bottom:20px;">Cheaper Hotel available for <span class="colr2 pdR">R 100 000.00</span><span class="colr5">(R 100 000.00 cheaper)</span></td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -1134,30 +1183,30 @@
                                                                     <td align="center">
                                                                         <table>
                                                                             <tr>
-                                                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-departure pdR"></i>17:15, 01 JUL</div></td>
+                                                                                <td align="center"><div class="fnt12"><i class="fa fa-calendar-plus pdR"></i>01 JUL</div></td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td align="center"><div>OR Tambo Intl Arpt, Johannesburg</div></td>
+                                                                                <td align="center"><div>Durban</div></td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
                                                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
-                                                                    <td align="center"><i class="fa fa-clock pdR"></i>1H50M</td>
+                                                                    <td align="center"><i class="fa fa-moon pdR"></i>4 Night(s)</td>
                                                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
                                                                     <td align="center">
                                                                         <table>
                                                                             <tr>
-                                                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>18:20, 01 JUL</div></td>
+                                                                                <td align="center"><div class="fnt12"><i class="fa fa-calendar-minus pdR"></i>05 JUL</div></td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td align="center"><div>King Shaka Intl Arpt, Durban</div></td>
+                                                                                <td align="center"><div>Durban</div></td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
                                                                 </tr>
                                                             </table>
                                                         </td>
-                                                        <td rowspan="2" align="center" class="pdT pdB brdr2" style="border-left:1px dashed gainsboro;">
+                                                        <td rowspan="3" align="center" class="pdT pdB brdr2" style="border-left:1px dashed gainsboro;">
                                                             <table class="col-lg-12 col-xl-12">
                                                                 <tr>
                                                                     <td align="center" class="colr2 fw5"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
@@ -1170,38 +1219,15 @@
                                                                                 <col style="width:50%;" />
                                                                             </colgroup>
                                                                             <tr>
-                                                                                <td align="left" class="pdL">Base Price</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                                                <td align="left" class="pdL">Est Total</td>
+                                                                                <td align="right" class="pdR colr2">R 100 000.00</td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="pdT">
-                                                                        <table class="col-lg-12 col-xl-12">
-                                                                            <colgroup>
-                                                                                <col style="width:50%;" />
-                                                                                <col style="width:50%;" />
-                                                                            </colgroup>
-                                                                            <tr>
-                                                                                <td align="left" class="pdL">Taxes</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="pdT">
-                                                                        <table class="col-lg-12 col-xl-12">
-                                                                            <colgroup>
-                                                                                <col style="width:50%;" />
-                                                                                <col style="width:50%;" />
-                                                                            </colgroup>
-                                                                            <tr>
-                                                                                <td align="left" class="pdL">Total</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
-                                                                            </tr>
-                                                                        </table>
+                                                                        <div class="srchBtn" style="width:100%;background-color:forestgreen!important;text-align:center;">SWAP</div>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -1209,31 +1235,10 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <table class="col-lg-12 col-xl-12">
-                                                                <colgroup>
-                                                                    <col style="width:40%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:10%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:40%;" />
-                                                                </colgroup>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <table>
-                                                                            <tr>
-                                                                                <td align="center" valign="middle"><img src="~/Content/Images/FA.png" /></td>
-                                                                                <td align="center" valign="middle" class="pdL2"><div>FA261</div></td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                    <td align="center" valign="middle"></td>
-                                                                    <td align="center">0 Stop(s)</td>
-                                                                    <td align="center" valign="middle"></td>
-                                                                    <td align="center" class="pdL2 pdR2"><a href="#" class="cat-list-btn" style="background-color:green!important;">SWAP</a></td>
-                                                                </tr>
-                                                            </table>
+                                                            ROAD LODGE UMHLANGA RIDGE
                                                         </td>
                                                     </tr>
+                                                    <tr><td>Room (1 pax) - A Standard Smoking Room With Two Separate Beds.. En Suite Bathroom With A Shower..</td></tr>
                                                 </table>
                                             </td>
                                         </tr>
@@ -1266,23 +1271,23 @@
                                     <td align="center">
                                         <table>
                                             <tr>
-                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-departure pdR"></i>17:15, 01 JUL</div></td>
+                                                <td align="center"><div class="fnt12"><i class="fa fa-calendar-plus pdR"></i>01 JUL</div></td>
                                             </tr>
                                             <tr>
-                                                <td align="center"><div>OR Tambo Intl Arpt, Johannesburg</div></td>
+                                                <td align="center"><div>Durban</div></td>
                                             </tr>
                                         </table>
                                     </td>
                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
-                                    <td align="center"><i class="fa fa-clock pdR"></i>1H50M</td>
+                                    <td align="center"><i class="fa fa-moon pdR"></i>4 Night(s)</td>
                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
                                     <td align="center">
                                         <table>
                                             <tr>
-                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>18:20, 01 JUL</div></td>
+                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>05 JUL</div></td>
                                             </tr>
                                             <tr>
-                                                <td align="center"><div>King Shaka Intl Arpt, Durban</div></td>
+                                                <td align="center"><div>Durban</div></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -1292,7 +1297,7 @@
                         <td class="pdB"><a href="#" class="cat-list-btn" style="background-color:darkred!important;">Remove</a></td>
                     </tr>
                     <tr>
-                        <td align="center" class="pdT brdr brdr2"><img src="~/Content/Images/MN.png" /></td>
+                        <td align="center" class="pdT brdr brdr2"><img src="~/Content/Images/GH1.jpg" style="width:50%;" /></td>
                         <td align="center" class="pdT pdL brdr brdr2">
                             <table class="col-lg-12 col-xl-12">
                                 <colgroup>
@@ -1301,9 +1306,9 @@
                                     <col style="width:30%;" />
                                 </colgroup>
                                 <tr>
-                                    <td align="center" class="fw5">Some Airline Operated by Comair</td>
-                                    <td align="left" style="padding-left:40px;"><i class="fa fa-file-code pdR"></i>MN4023</td>
-                                    <td align="left" style="padding-left:40px;"><i class="fa fa-stopwatch pdR"></i>0 Stop(s)</td>
+                                    <td align="center" class="fw5">Some Guest House Somewhere Fancy</td>
+                                    <td align="left" style="padding-left:40px;"><i class="fa fa-file-code pdR"></i>Popular Street, Durban</td>
+                                    <td align="left" style="padding-left:40px;"><i class="fa fa-stopwatch pdR"></i>Room Cost: ZAR 100 000.00</td>
                                 </tr>
                             </table>
                         </td>
@@ -1313,6 +1318,9 @@
                                     <td align="center" class="colr2 fw5"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
                                 </tr>
                                 <tr>
+                                    <td align="center" class="fw5">Nightsbridge Bnb's</td>
+                                </tr>
+                                <tr>
                                     <td class="pdT">
                                         <table class="col-lg-12 col-xl-12">
                                             <colgroup>
@@ -1320,8 +1328,8 @@
                                                 <col style="width:50%;" />
                                             </colgroup>
                                             <tr>
-                                                <td align="left" class="pdL">Base Price</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                <td align="left" class="pdL"><i class="fa fa-map-marker pdR"></i>Durban</td>
+                                                <td align="right" class="pdR"><i class="fa fa-moon pdR"></i>4 Night(s)</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -1334,22 +1342,8 @@
                                                 <col style="width:50%;" />
                                             </colgroup>
                                             <tr>
-                                                <td align="left" class="pdL">Taxes</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pdT">
-                                        <table class="col-lg-12 col-xl-12">
-                                            <colgroup>
-                                                <col style="width:50%;" />
-                                                <col style="width:50%;" />
-                                            </colgroup>
-                                            <tr>
-                                                <td align="left" class="pdL">Total</td>
-                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                <td align="left" class="pdL">Est. Total</td>
+                                                <td align="right" class="pdR colr2">R 100 000.00</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -1374,10 +1368,11 @@
                                                 <col style="width:80%;" />
                                             </colgroup>
                                             <tr>
-                                                <td rowspan="2" align="center"><i class="flaticon-users-1" style="font-size:25px;color:purple;"></i></td>
-                                                <td align="left" class="pdL fnt fw5">Traveller(s)</td>
+                                                <td rowspan="3" align="center"><i class="flaticon-users-1" style="font-size:25px;color:purple;"></i></td>
+                                                <td align="left" class="pdL fnt fw5">Info/Traveller(s)</td>
                                             </tr>
                                             <tr><td align="left" class="pdL fnt12">Vernon Bear</td></tr>
+                                            <tr><td align="left" class="pdL fnt12">Standard Double or Twin</td></tr>
                                         </table>
                                     </td>
                                     <td align="center">
@@ -1400,9 +1395,10 @@
                                                 <col style="width:80%;" />
                                             </colgroup>
                                             <tr>
-                                                <td rowspan="2" align="center"><i class="flaticon-rotate" style="font-size:25px;color:mediumpurple;"></i></td>
+                                                <td rowspan="3" align="center"><i class="flaticon-rotate" style="font-size:25px;color:mediumpurple;"></i></td>
                                                 <td align="left" class="pdL fw5 fnt">Status</td>
                                             </tr>
+                                            <tr><td align="left" class="pdL fnt12">Public Rate</td></tr>
                                             <tr><td align="left" class="pdL fnt12"><i class="fa fa-exclamation-triangle colr4 pdR"></i>Unconfirmed</td></tr>
                                         </table>
                                     </td>
@@ -1415,7 +1411,7 @@
                                             <tr>
                                                 <td colspan="2" align="left" class="pdL fw5 colr5">
                                                     <p class="pdT2 pdB mrB0">
-                                                        <a class="colr5" data-toggle="collapse" href="#collapseExampleITIN1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <a class="colr5" data-toggle="collapse" href="#collapseExampleITIN4" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                             Cheaper Option Available<i class="fa fa-arrow-down pdL"></i>
                                                         </a>
                                                     </p>
@@ -1429,11 +1425,11 @@
                     </tr>
                     <tr>
                         <td colspan="3" class="pdT">
-                            <div class="collapse" id="collapseExampleITIN1">
+                            <div class="collapse" id="collapseExampleITIN4">
                                 <div class="card card-body pd0">
                                     <table class="col-lg-12 col-xl-12">
                                         <tr>
-                                            <td class="pdL brdr2 fw5" style="padding-top:20px;padding-bottom:20px;">Cheaper Flight available for <span class="colr2 pdR">R 100 000.00</span><span class="colr5">(R 100 000.00 cheaper)</span></td>
+                                            <td class="pdL brdr2 fw5" style="padding-top:20px;padding-bottom:20px;">Cheaper Bnb available for <span class="colr2 pdR">R 100 000.00</span><span class="colr5">(R 100 000.00 cheaper)</span></td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -1456,30 +1452,30 @@
                                                                     <td align="center">
                                                                         <table>
                                                                             <tr>
-                                                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-departure pdR"></i>17:15, 01 JUL</div></td>
+                                                                                <td align="center"><div class="fnt12"><i class="fa fa-calendar-plus pdR"></i>01 JUL</div></td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td align="center"><div>OR Tambo Intl Arpt, Johannesburg</div></td>
+                                                                                <td align="center"><div>Durban</div></td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
                                                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
-                                                                    <td align="center"><i class="fa fa-clock pdR"></i>1H50M</td>
+                                                                    <td align="center"><i class="fa fa-moon pdR"></i>4 Night(s)</td>
                                                                     <td align="center" valign="middle"><i class="fa fa-arrow-right"></i></td>
                                                                     <td align="center">
                                                                         <table>
                                                                             <tr>
-                                                                                <td align="center"><div class="fnt12"><i class="fa fa-plane-arrival pdR"></i>18:20, 01 JUL</div></td>
+                                                                                <td align="center"><div class="fnt12"><i class="fa fa-calendar-minus pdR"></i>05 JUL</div></td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td align="center"><div>King Shaka Intl Arpt, Durban</div></td>
+                                                                                <td align="center"><div>Durban</div></td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
                                                                 </tr>
                                                             </table>
                                                         </td>
-                                                        <td rowspan="2" align="center" class="pdT pdB brdr2" style="border-left:1px dashed gainsboro;">
+                                                        <td rowspan="3" align="center" class="pdT pdB brdr2" style="border-left:1px dashed gainsboro;">
                                                             <table class="col-lg-12 col-xl-12">
                                                                 <tr>
                                                                     <td align="center" class="colr2 fw5"><i class="fa fa-thumbs-up pdR"></i>In Policy</td>
@@ -1492,38 +1488,15 @@
                                                                                 <col style="width:50%;" />
                                                                             </colgroup>
                                                                             <tr>
-                                                                                <td align="left" class="pdL">Base Price</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
+                                                                                <td align="left" class="pdL">Est Total</td>
+                                                                                <td align="right" class="pdR colr2">R 100 000.00</td>
                                                                             </tr>
                                                                         </table>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="pdT">
-                                                                        <table class="col-lg-12 col-xl-12">
-                                                                            <colgroup>
-                                                                                <col style="width:50%;" />
-                                                                                <col style="width:50%;" />
-                                                                            </colgroup>
-                                                                            <tr>
-                                                                                <td align="left" class="pdL">Taxes</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="pdT">
-                                                                        <table class="col-lg-12 col-xl-12">
-                                                                            <colgroup>
-                                                                                <col style="width:50%;" />
-                                                                                <col style="width:50%;" />
-                                                                            </colgroup>
-                                                                            <tr>
-                                                                                <td align="left" class="pdL">Total</td>
-                                                                                <td align="right" class="pdR">R 100 000.00</td>
-                                                                            </tr>
-                                                                        </table>
+                                                                        <div class="srchBtn" style="width:100%;background-color:forestgreen!important;text-align:center;">SWAP</div>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -1531,31 +1504,10 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <table class="col-lg-12 col-xl-12">
-                                                                <colgroup>
-                                                                    <col style="width:40%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:10%;" />
-                                                                    <col style="width:5%;" />
-                                                                    <col style="width:40%;" />
-                                                                </colgroup>
-                                                                <tr>
-                                                                    <td align="center">
-                                                                        <table>
-                                                                            <tr>
-                                                                                <td align="center" valign="middle"><img src="~/Content/Images/FA.png" /></td>
-                                                                                <td align="center" valign="middle" class="pdL2"><div>FA261</div></td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                    <td align="center" valign="middle"></td>
-                                                                    <td align="center">0 Stop(s)</td>
-                                                                    <td align="center" valign="middle"></td>
-                                                                    <td align="center" class="pdL2 pdR2"><a href="#" class="cat-list-btn" style="background-color:green!important;">SWAP</a></td>
-                                                                </tr>
-                                                            </table>
+                                                            ROAD LODGE UMHLANGA RIDGE
                                                         </td>
                                                     </tr>
+                                                    <tr><td>Room (1 pax) - A Standard Smoking Room With Two Separate Beds.. En Suite Bathroom With A Shower..</td></tr>
                                                 </table>
                                             </td>
                                         </tr>
@@ -1566,12 +1518,83 @@
                     </tr>
                 </table>
             </div>
+            <div class="row col-lg-12 col-xl-12 HtlResp" style="padding-bottom:5px;">
+                <table class="col-lg-12 col-xl-12">
+                    <colgroup>
+                        <col style="width:20%;" />
+                        <col style="width:60%;" />
+                        <col style="width:20%;" />
+                    </colgroup>
+                    <tr>
+                        <td class="pdL2">
+                            <table class="col-lg-12 col-xl-12">
+                                <tr><td align="left" class="pdL pdT pdB"><button class="srchBtnQ"><i class="fa fa-paperclip pdR"></i>Submit as Quote</button></td></tr>
+                                <tr><td align="left" class="pdL pdB2"><div>Your reference is <span class="colr2 pdL fw5">F11F07C2</span></div></td></tr>
+                                <tr><td align="left" class="pdL"><div>Please read the terms and conditions by clicking<span class="colr2 pdL fw5">here</span></div></td></tr>
+                                <tr><td align="left" class="pdL pdB"><button class="srchBtnQ"><i class="fa fa-check-square pdR"></i>I accept the terms and conditions</button></td></tr>
+                            </table>
+                        </td>
+                        <td class="pdL2" style="padding-right:30px;">
+                            <table class="col-lg-12 col-xl-12">
+                                <colgroup>
+                                    <col style="width:15%;" />
+                                    <col style="width:85%;" />
+                                </colgroup>
+                                <tr>
+                                    <td colspan="2" align="center" class="pdT pdB2 fw5"><i class="fa fa-user-check colr2 pdR"></i>Your trip was booked successfully</td>
+                                </tr>
+                                <tr>
+                                    <td align="right" class="pdR pdB">Trip Name</td>
+                                    <td class="pdB">
+                                        <input type="text" class="form-control" id="exampleInputPassword1">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" class="pdR pdB">Reason for Travel</td>
+                                    <td class="pdB"><input type="text" class="form-control" id="exampleInputPassword1"></td>
+                                </tr>
+                                <tr>
+                                    <td align="right" class="pdR pdB">Notes to Approver</td>
+                                    <td class="pdB"><input type="text" class="form-control" id="exampleInputPassword1"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center" class="colr6 fw5 pdT2">Time to complete: 00:56:58</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td align="right" class="pdR2">
+                            <table class="col-lg-12 col-xl-12">
+                                <colgroup>
+                                    <col style="width:50%;" />
+                                    <col style="width:50%;" />
+                                </colgroup>
+                                <tr>
+                                    <td colspan="2" class="fw5 fnt15 pdB2" align="center">SUMMARY</td>
+                                </tr>
+                                <tr>
+                                    <td>Est. Cart Total</td>
+                                    <td class="colr3">ZAR 100 000.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="pdB">Est. Missed Savings</td>
+                                    <td class="colr5 pdB">ZAR 100 000.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="pdT" align="center">
+                                        <a href="#" class="srchBtn" style="width:100%;padding:10px;">Complete Booking</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div class="tab-pane" id="kt_tabs_5_2" role="tabpanel">
-            fhdjkshfsadjkhfjksdf
+            
         </div>
         <div class="tab-pane" id="kt_tabs_5_3" role="tabpanel">
-            fjdkfhdsjkfhdsjk
+            
         </div>
     </div>
 </div>
